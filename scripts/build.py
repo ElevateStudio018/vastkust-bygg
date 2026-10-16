@@ -18,7 +18,7 @@ OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "docs")
 E = html.escape
 SVC = {s["slug"]: s for s in C.SERVICES}
 PRJ = {p["slug"]: p for p in C.PROJECTS}
-VERSION = "2"
+VERSION = "3"
 
 # --- Ikoner -------------------------------------------------------------------------------------------------------
 def icon(name, cls="ic"):
@@ -40,6 +40,8 @@ def icon(name, cls="ic"):
         "left": '<path d="M15 5l-7 7 7 7"/>',
         "right": '<path d="M9 5l7 7-7 7"/>',
         "chev": '<path d="m6 9 6 6 6-6"/>',
+        "doc": '<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/>',
+        "tool": '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>',
         "expand": '<path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/>',
     }
     fill = ' fill="currentColor" stroke="none"' if name == "star" else ' fill="none" stroke="currentColor"'
@@ -83,21 +85,21 @@ def alt_for(name):
 
 
 # --- Delar --------------------------------------------------------------------------------------------------------
-def btn(label, href, kind="blue", ic=None, arrow=False, extra=""):
+def btn(text, href, kind="blue", ic=None, arrow=False, extra=""):
     i = icon(ic) if ic else ""
-    a = icon("arrow") if arrow else ""
-    return f'<a class="btn btn-{kind}" href="{href}"{extra}>{i}<span>{label}</span>{a}</a>'
+    a = f'<span class="btn-arrow">{icon("arrow")}</span>' if arrow else ""
+    return f'<a class="btn btn-{kind}{" has-arrow" if arrow else ""}" href="{href}"{extra}>{i}<span>{text}</span>{a}</a>'
 
 
 def quote_href(typ=None):
     return "kontakt.html" + (f"?typ={quote_plus(typ)}" if typ else "") + "#offert"
 
 
-def label(text):
-    return f'<p class="label">{text}</p>'
+def eyebrow(text):
+    return f'<p class="eyebrow">{text}</p>'
 
 
-NAV = [("tjanster", "Tjänster"), ("projekt.html", "Projekt"), ("trygghet.html", "Trygghet"),
+NAV = [("tjanster", "Tjänster"), ("projekt.html", "Projekt"), ("trygghet.html", "Certifikat"),
        ("om-oss.html", "Om oss"), ("kontakt.html", "Kontakt")]
 
 
@@ -116,10 +118,11 @@ def header(active):
     return f'''<a class="skip" href="#main">Hoppa till innehållet</a>
 <div class="topbar">
   <div class="wrap topbar-in">
-    <span>{C.AREA} · {C.HOURS_SHORT}</span>
+    <span>Bygg och renovering i {C.AREA}</span>
     <span class="topbar-r">
       <a href="tel:{C.TEL}">{icon("phone")}{C.PHONE}</a>
       <a href="mailto:{C.EMAIL}">{icon("mail")}{C.EMAIL}</a>
+      <span class="tb-stars">{icon("star")}5/5 i omdömen</span>
     </span>
   </div>
 </div>
@@ -127,7 +130,8 @@ def header(active):
   <div class="wrap bar">
     <a class="logo" href="index.html" aria-label="{C.NAME}, till startsidan"><img src="img/logo-mork.png" alt="{C.NAME}" width="900" height="320"></a>
     <nav class="nav" aria-label="Huvudmeny"><ul>{"".join(items)}</ul></nav>
-    <a class="btn btn-blue btn-sm head-cta" href="{quote_href()}"><span>Få offert</span></a>
+    <a class="head-tel" href="tel:{C.TEL}">{icon("phone")}{C.PHONE}</a>
+    <a class="btn btn-dark btn-sm has-arrow head-cta" href="{quote_href()}"><span>Begär offert</span><span class="btn-arrow">{icon("arrow")}</span></a>
     <a class="round" href="tel:{C.TEL}" aria-label="Ring {C.PHONE}">{icon("phone")}</a>
     <button class="burger" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Meny"><span></span><span></span><span></span></button>
   </div>
@@ -136,7 +140,7 @@ def header(active):
       <ul>{mob}</ul>
       <p class="m-h">Tjänster</p>
       <ul>{svc}</ul>
-      <div class="btns">{btn("Få offert", quote_href())}{btn("Ring " + C.PHONE, "tel:" + C.TEL, "ghost", "phone")}</div>
+      <div class="btns">{btn("Begär offert", quote_href(), "blue", arrow=True)}{btn("Ring " + C.PHONE, "tel:" + C.TEL, "ghost", "phone")}</div>
     </div>
   </nav>
 </header>'''
@@ -147,27 +151,26 @@ def cta_band():
   <div class="wrap cta-in">
     <div>
       <h2>Har du ett projekt på gång?</h2>
-      <p>Berätta vad du vill göra så återkommer vi med en skräddarsydd offert.</p>
+      <p>Berätta vad du vill göra så återkommer vi med en skräddarsydd offert. {C.HOURS[0][0]} {C.HOURS[0][1]}.</p>
     </div>
-    <div class="btns">{btn("Ring " + C.PHONE, "tel:" + C.TEL, "dark", "phone")}{btn("Få offert", quote_href(), "light", arrow=True)}</div>
+    <div class="btns">{btn("Begär offert", quote_href(), "light", arrow=True)}{btn(C.PHONE, "tel:" + C.TEL, "outline", "phone")}</div>
   </div>
 </section>'''
 
 
 def footer():
     svc = "".join(f'<li><a href="tjanst-{s["slug"]}.html">{s["title"]}</a></li>' for s in C.SERVICES)
-    prj = "".join(f'<li><a href="projekt-{p["slug"]}.html">{p["title"]}</a></li>' for p in C.PROJECTS)
     hours = "".join(f"<li>{d}: {t}</li>" for d, t in C.HOURS)
     return f'''<footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
         <a class="logo" href="index.html" aria-label="{C.NAME}, till startsidan"><img src="img/logo-ljus.png" alt="{C.NAME}" width="900" height="320" loading="lazy"></a>
-        <p>Bygg och renovering i {C.AREA}. Behörig våtrum, ID06 och BAS P/U.</p>
+        <p>Med er hela vägen – från idé till färdigt projekt. Bygg och renovering i {C.AREA}.</p>
+        <ul class="foot-certs"><li>Behörig våtrum</li><li>ID06</li><li>BAS P/U</li></ul>
       </div>
       <div><p class="foot-h">Tjänster</p><ul>{svc}</ul></div>
-      <div><p class="foot-h">Projekt</p><ul>{prj}</ul></div>
-      <div><p class="foot-h">Västkust Bygg</p><ul><li><a href="trygghet.html">Trygghet och certifikat</a></li><li><a href="om-oss.html">Om oss</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><p class="foot-h">Västkust Bygg</p><ul><li><a href="projekt.html">Projekt</a></li><li><a href="trygghet.html">Certifikat och försäkringar</a></li><li><a href="om-oss.html">Om oss</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
       <div>
         <p class="foot-h">Kontakt</p>
         <ul>
@@ -208,7 +211,7 @@ def jsonld():
     return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
 
 
-def page(name, title, desc, main, image="kok-efter-1", home=False):
+def page(name, title, desc, main, image="kok-efter-1", home=False, cta=True):
     url = C.SITE_URL + ("" if name == "index.html" else name)
     doc = f'''<!doctype html>
 <html lang="sv">
@@ -224,9 +227,9 @@ def page(name, title, desc, main, image="kok-efter-1", home=False):
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:image" content="{C.SITE_URL}img/foto/{image}.jpg">
-<meta name="theme-color" content="#1b1c1d">
+<meta name="theme-color" content="#121418">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/site.css?v={VERSION}">
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -237,40 +240,27 @@ def page(name, title, desc, main, image="kok-efter-1", home=False):
 <main id="main">
 {main}
 </main>
-{cta_band() if name not in ("kontakt.html", "404.html") else ""}
+{cta_band() if cta else ""}
 {footer()}'''
     (OUT / name).write_text(doc, encoding="utf-8")
 
 
 # --- Byggstenar ---------------------------------------------------------------------------------------------------
-def hero(title, lead, photos, crumbs=None, btns=None, home=False):
-    """Syd-hero: bilden inom sidans marginaler, rubrik och en rad nere till vänster. Flera bilder = bildspel."""
-    slides = "".join(f'<div class="slide{" on" if i == 0 else ""}">{img(n, a, pos, "100vw", lazy=i > 0)}</div>'
-                     for i, (n, a, pos) in enumerate(photos))
+def hero(eb, title, lead, photo, alt, pos="50% 50%", crumbs=None, btns=None, home=False):
     cr = ""
     if crumbs:
         parts = " / ".join(f'<a href="{h}">{t}</a>' for h, t in crumbs[:-1])
         cr = f'<nav class="crumbs" aria-label="Brödsmulor">{parts} / <span aria-current="page">{crumbs[-1][1]}</span></nav>'
     b = f'<div class="btns">{btns}</div>' if btns else ""
+    row = ""
+    if home:
+        links = "".join(f'<li><a href="tjanst-{s["slug"]}.html"><small>0{i + 1}</small>{s["title"]}</a></li>'
+                        for i, s in enumerate(C.SERVICES))
+        row = f'<div class="hero-row"><ul class="wrap">{links}</ul></div>'
     return f'''<section class="hero{" hero-home" if home else ""}">
-  <div class="hero-frame">
-    <div class="hero-bg{" slides" if len(photos) > 1 else ""}">{slides}</div>
-    <div class="hero-in">{cr}<h1>{title}</h1><p class="hero-lead">{lead}</p>{b}</div>
-    <a class="hero-down" href="#main-start" aria-label="Till innehållet">{icon("chev")}</a>
-  </div>
-</section>
-<span id="main-start"></span>'''
-
-
-def intro(lab, title, paras, btns=None, narrow=True):
-    b = f'<div class="btns">{btns}</div>' if btns else ""
-    return f'''<section class="sec">
-  <div class="wrap{" narrow" if narrow else ""} intro">
-    {label(lab)}
-    <h2>{title}</h2>
-    {"".join(f"<p>{p}</p>" for p in paras)}
-    {b}
-  </div>
+  <div class="hero-bg">{img(photo, alt, pos, "100vw", lazy=False)}</div>
+  <div class="wrap hero-in">{cr}{eyebrow(eb) if eb else ""}<h1>{title}</h1><p class="hero-lead">{lead}</p>{b}</div>
+  {row}
 </section>'''
 
 
@@ -285,179 +275,238 @@ def trust_strip():
     return f'<section class="trust" aria-label="Certifikat och försäkringar"><ul class="wrap trust-in">{li}</ul></section>'
 
 
-def panel(text_html, media_html, flip=False, pid="", white=False):
-    i = f' id="{pid}"' if pid else ""
-    cls = "panel" + (" flip" if flip else "") + (" white" if white else "")
-    return f'''<section class="pwrap"{i}>
-  <div class="wrap">
-    <div class="{cls}">
-      <div class="panel-text"><div class="sticky">{text_html}</div></div>
-      <div class="panel-media">{media_html}</div>
+def sec_head(eb, title, right=""):
+    return f'<div class="sec-head"><div>{eyebrow(eb)}<h2>{title}</h2></div>{right}</div>'
+
+
+def more_link(text, href):
+    return f'<a class="more" href="{href}">{text} {icon("arrow")}</a>'
+
+
+def svc_tile(s):
+    """JJ El-ruta: bild, rubrik nere till vänster, pil uppe till höger."""
+    return (f'<li class="tile"><a href="tjanst-{s["slug"]}.html">{img(s["photo"], s["alt"], s["pos"], "(min-width: 960px) 33vw, 100vw")}'
+            f'<span class="tile-go">{icon("arrow")}</span><span class="tile-text"><b>{s["title"]}</b><span>{s["short"]}</span></span></a></li>')
+
+
+def services_grid(skip=None, extra=True):
+    tiles = "".join(svc_tile(s) for s in C.SERVICES if s["slug"] != skip)
+    if extra:
+        small = "".join(f"<li>{icon('check')}{j}</li>" for j in C.SMALL_JOBS)
+        tiles += (f'<li class="tile tile-list"><div><p class="tile-h">Även mindre uppdrag</p><ul>{small}</ul></div></li>'
+                  f'<li class="tile tile-cta"><div><p class="tile-h">Hittar du inte det du söker?</p>'
+                  f'<p>Vi tar uppdrag i alla storlekar. Berätta vad du behöver hjälp med.</p>'
+                  f'{btn("Begär offert", quote_href(), "dark", arrow=True)}</div></li>')
+    return f'<ul class="tiles">{tiles}</ul>'
+
+
+def gallery(photos, group, captions=None, cols=4):
+    captions = captions or {}
+    items = "".join(
+        f'<li><a href="img/foto/{n}.jpg" data-lb="{group}" data-cap="{E(captions.get(n) or alt_for(n))}">'
+        f'{img(n, alt_for(n), sizes="(min-width: 960px) 25vw, 50vw")}'
+        f'{f"<span class=\"g-cap\">{E(captions[n])}</span>" if n in captions else ""}</a></li>'
+        for n in photos)
+    return f'<ul class="gallery c{cols}">{items}</ul>'
+
+
+def before_after(before, after, text=""):
+    return f'''<div class="ba">
+  <a class="ba-fig" href="img/foto/{before}.jpg" data-lb="ba-{before}" data-cap="Före">{img(before, alt_for(before), sizes="(min-width: 960px) 50vw, 100vw")}<span class="ba-tag">Före</span></a>
+  <a class="ba-fig" href="img/foto/{after}.jpg" data-lb="ba-{before}" data-cap="Efter">{img(after, alt_for(after), sizes="(min-width: 960px) 50vw, 100vw")}<span class="ba-tag ba-after">Efter</span></a>
+</div>'''
+
+
+def facts():
+    name, role = C.CONTACT_PERSON
+    rows = [(role, name), ("Område", C.AREA), ("Våtrum", "Behörig enligt BBV"), ("Försäkring", "Länsförsäkringar"),
+            ("Arbetsplats", "ID06 och personalliggare"), ("Öppettider", f"{C.HOURS[0][0]} {C.HOURS[0][1]}")]
+    return '<dl class="facts">' + "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in rows) + "</dl>"
+
+
+def about_split(heading, paras, photo="bad1-2", link=True):
+    b = f'<div class="btns">{btn("Läs mer om oss", "om-oss.html", "ghost", arrow=True)}</div>' if link else ""
+    return f'''<section class="sec">
+  <div class="wrap split">
+    <figure class="split-ph">{img(photo, "Badrum med upplyst nisch och tvättställ på trä", "50% 55%")}
+      <span class="badge-round"><b>5/5</b><span>i omdömen</span></span></figure>
+    <div>
+      {eyebrow("Om Västkust Bygg")}
+      <h2>{heading}</h2>
+      {"".join(f'<p{" class=lead" if i == 0 else ""}>{p}</p>' for i, p in enumerate(paras))}
+      {facts()}
+      {b}
     </div>
   </div>
 </section>'''
 
 
-def mosaic(photos, tile=None, captions=None, group="g"):
-    captions = captions or {}
-    out = []
-    for i, n in enumerate(photos):
-        cap = captions.get(n, "")
-        tag = f'<span class="tag">{E(cap)}</span>' if cap else ""
-        wide = " wide" if i == 0 else ""
-        out.append(f'<a class="m-item{wide}" href="img/foto/{n}.jpg" data-lb="{group}" data-cap="{E(cap or alt_for(n))}">'
-                   f'{img(n, alt_for(n), sizes="(min-width: 960px) 30vw, 50vw")}{tag}</a>')
-        if tile and (i == 2 or (len(photos) <= 2 and i == len(photos) - 1)):
-            out.append(f'<div class="m-tile"><p>{E(tile)}</p></div>')
-    return f'<div class="mosaic">{"".join(out)}</div>'
+def feature(photo, alt, eb, title, text, chips, link_text, link_href, pos="50% 50%"):
+    """Antonsson-blocket: bred bild med en mörk ruta som ligger över."""
+    ch = "".join(f"<li>{c}</li>" for c in chips)
+    return f'''<section class="sec sec-feature">
+  <div class="wrap feature">
+    <div class="feature-ph">{img(photo, alt, pos, "(min-width: 960px) 70vw, 100vw")}</div>
+    <div class="feature-box">
+      {eyebrow(eb)}
+      <h2>{title}</h2>
+      <p>{text}</p>
+      <ul class="chips">{ch}</ul>
+      <a class="btn btn-outline has-arrow" href="{link_href}"><span>{link_text}</span><span class="btn-arrow">{icon("arrow")}</span></a>
+    </div>
+  </div>
+</section>'''
 
 
-def before_after(before, after):
-    return f'''<div class="ba">
-  <a class="ba-fig" href="img/foto/{before}.jpg" data-lb="ba-{before}" data-cap="Före">{img(before, alt_for(before), sizes="(min-width: 960px) 30vw, 50vw")}<span class="tag">Före</span></a>
-  <a class="ba-fig" href="img/foto/{after}.jpg" data-lb="ba-{before}" data-cap="Efter">{img(after, alt_for(after), sizes="(min-width: 960px) 30vw, 50vw")}<span class="tag tag-blue">Efter</span></a>
-</div>'''
+def values_band(title="Vad gör oss unika?"):
+    ics = ["helmet", "tool", "users"]
+    li = "".join(f'<li>{icon(ics[i])}<h3>{t}</h3><p>{d}</p></li>' for i, (t, d) in enumerate(C.VALUES))
+    return f'''<section class="band">
+  <div class="wrap">
+    {sec_head("Varför arbeta med oss", title, f'<p class="band-lead">{C.TEAM_TEXT}</p>')}
+    <ul class="values">{li}</ul>
+  </div>
+</section>'''
 
 
-def svc_tile(s, big=False):
-    """Syd-ruta: stor bild, text uppe till vänster, vit pill-knapp nere till vänster."""
-    return (f'<li class="tile{" big" if big else ""}"><a href="tjanst-{s["slug"]}.html">'
-            f'{img(s["photo"], s["alt"], s["pos"], "(min-width: 960px) 50vw, 100vw")}'
-            f'<span class="tile-text"><span class="label">{s["nav"]}</span><b>{s["title"]}</b><span>{s["short"]}</span></span>'
-            f'<span class="tile-btn">{s["title"]} {icon("arrow")}</span></a></li>')
-
-
-def project_card(p):
-    n = sum(len(x["photos"]) for x in p["parts"])
-    return (f'<li class="card"><a href="projekt-{p["slug"]}.html"><span class="card-ph">{img(p["cover"], alt_for(p["cover"]), "50% 55%", "(min-width: 960px) 33vw, 100vw")}</span>'
-            f'<span class="card-meta">{p["tag"]} · {n} bilder</span><b>{p["title"]}</b><span class="card-txt">{p["intro"]}</span>'
-            f'<span class="btn btn-blue btn-xs">Se projektet {icon("arrow")}</span></a></li>')
+def steps():
+    ics = ["phone", "pin", "doc", "tool"]
+    li = "".join(f'<li><span class="step-top">{icon(ics[i])}<span class="step-no">0{i + 1}</span></span><h3>{t}</h3><p>{d}</p></li>'
+                 for i, (t, d) in enumerate(C.STEPS))
+    return f'<ol class="steps">{li}</ol>'
 
 
 def review_card(r):
     meta = ", ".join(x for x in (r["place"], r["date"]) if x)
-    return (f'<figure class="rev">{stars()}<blockquote><p>{E(r["text"])}</p></blockquote>'
-            f'<figcaption><b>{E(r["name"])}</b> · {E(meta)}<span>{E(r["job"])}</span></figcaption></figure>')
+    return (f'<figure class="rev">{stars()}<p class="rev-job">{E(r["job"])}</p><blockquote><p>”{E(r["text"])}”</p></blockquote>'
+            f'<figcaption><span class="av" aria-hidden="true">{E(r["name"][0])}</span><span><b>{E(r["name"])}</b><small>{E(meta)}</small></span></figcaption></figure>')
 
 
-def badges_grid():
-    cells = [("badge-vatrum", "Behörig våtrum"), ("badge-id06", "ID06"), ("badge-lf", "Länsförsäkringar"), ("badge-fora", "FORA")]
-    out = "".join(f'<li><a href="trygghet.html#{a}"><img src="img/{b}.png" alt="{t}" loading="lazy"><span>{t}</span></a></li>'
-                  for (b, t), a in zip(cells, ("vatrum", "id06", "forsakring", "forsakring")))
-    out += '<li class="bas"><a href="trygghet.html#bas"><b>BAS P / BAS U</b><span>Byggarbetsmiljösamordning</span></a></li>'
-    return f'<ul class="badges">{out}</ul>'
+def reviews_sec(idx=(0, 2, 3), tint=True):
+    cards = "".join(review_card(C.REVIEWS[i]) for i in idx)
+    right = f'<p class="rating">{stars()}<span><b>5 av 5</b> i alla omdömen</span></p>'
+    return f'''<section class="sec{" tint" if tint else ""}">
+  <div class="wrap">
+    {sec_head("Omdömen", "Vad kunderna säger", right)}
+    <div class="revs">{cards}</div>
+  </div>
+</section>'''
 
 
-def steps():
-    li = "".join(f'<li><span class="step-no">{i + 1}</span><h3>{t}</h3><p>{d}</p></li>' for i, (t, d) in enumerate(C.STEPS))
-    return f'<ol class="steps">{li}</ol>'
-
-
-def faq_block(head=True):
-    items = "".join(f'<details><summary>{q}<span class="pm" aria-hidden="true"></span></summary><p>{a}</p></details>'
+def faq_sec(tint=False):
+    items = "".join(f'<details><summary>{q}<span class="pm" aria-hidden="true">{icon("plus")}</span></summary><p>{a}</p></details>'
                     for q, a in C.FAQ)
-    side = (f'<div>{label("Vanliga frågor")}<h2>Frågor och svar</h2><p>Hittar du inte svaret? Ring <a href="tel:{C.TEL}">{C.PHONE}</a> '
-            f'eller mejla <a href="mailto:{C.EMAIL}">{C.EMAIL}</a>.</p></div>') if head else ""
-    return f'<section class="sec"><div class="wrap faq-wrap">{side}<div class="faq">{items}</div></div></section>'
+    return f'''<section class="sec{" tint" if tint else ""}" id="fragor">
+  <div class="wrap narrow">
+    {eyebrow("Vanliga frågor")}<h2>Frågor och svar</h2>
+    <div class="faq">{items}</div>
+  </div>
+</section>'''
 
 
 def quote_form():
     opts = "".join(f"<option>{E(t)}</option>" for t in C.WORK_TYPES)
     req = '<span class="req" aria-hidden="true">*</span>'
     return f'''<form class="form" id="qform" novalidate data-endpoint="https://formsubmit.co/ajax/{C.FORM_EMAIL}">
-  <p class="field"><label for="f-typ">Typ av projekt</label><select id="f-typ" name="Typ av projekt"><option value="">– Välj –</option>{opts}</select></p>
-  <div class="field-row">
-    <p class="field"><label for="f-namn">Namn{req}</label><input id="f-namn" name="Namn" autocomplete="name" required><span class="err" id="e-namn" hidden>Skriv ditt namn.</span></p>
-    <p class="field"><label for="f-ort">Ort</label><input id="f-ort" name="Ort" autocomplete="address-level2"></p>
-  </div>
+  <p class="form-h">Begär offert</p>
+  <p class="field"><label for="f-typ">Typ av projekt</label><select id="f-typ" name="Typ av projekt"><option value="">– Välj ett alternativ –</option>{opts}</select></p>
+  <p class="field"><label for="f-namn">För- och efternamn{req}</label><input id="f-namn" name="Namn" autocomplete="name" required><span class="err" id="e-namn" hidden>Skriv ditt namn.</span></p>
   <div class="field-row">
     <p class="field"><label for="f-tel">Telefon{req}</label><input id="f-tel" name="Telefon" type="tel" autocomplete="tel"><span class="err" id="e-tel" hidden>Skriv telefonnummer eller e-post.</span></p>
     <p class="field"><label for="f-epost">E-post</label><input id="f-epost" name="E-post" type="email" autocomplete="email"><span class="err" id="e-epost" hidden>Kontrollera e-postadressen.</span></p>
   </div>
-  <p class="field"><label for="f-besk">Berätta om projektet</label><textarea id="f-besk" name="Beskrivning" rows="5" placeholder="Vad ska göras, ungefär hur stort och när?"></textarea></p>
+  <p class="field"><label for="f-ort">Ort</label><input id="f-ort" name="Ort" autocomplete="address-level2"></p>
+  <p class="field"><label for="f-besk">Beskriv projektet</label><textarea id="f-besk" name="Beskrivning" rows="4" placeholder="Vad ska göras, ungefär hur stort och när?"></textarea></p>
   <p class="hp" aria-hidden="true"><label for="f-web">Lämna tomt</label><input id="f-web" name="_honey" tabindex="-1" autocomplete="off"></p>
-  <p class="small">{req} Telefon eller e-post räcker. Uppgifterna används bara för att svara dig.</p>
-  <p><button class="btn btn-blue" type="submit"><span>Skicka förfrågan</span></button></p>
+  <p class="small">{req} Telefon eller e-post räcker.</p>
+  <button class="btn btn-blue has-arrow" type="submit"><span>Skicka förfrågan</span><span class="btn-arrow">{icon("arrow")}</span></button>
   <p class="send-err" id="send-err" role="alert" hidden>Det gick inte att skicka just nu. Försök igen, mejla <a href="mailto:{C.EMAIL}">{C.EMAIL}</a> eller ring <a href="tel:{C.TEL}">{C.PHONE}</a>.</p>
 </form>
 <div class="done" id="qdone" tabindex="-1" hidden>
-  <p class="done-h">Tack! Vi har fått din förfrågan.</p>
+  <p class="form-h">Tack! Vi har fått din förfrågan.</p>
   <p>Vi återkommer så snart vi kan. Brådskar det, ring <a href="tel:{C.TEL}">{C.PHONE}</a>.</p>
   <p><button class="link" type="button" id="qagain">Skicka en ny förfrågan</button></p>
 </div>'''
 
 
+def contact_sec(tint=True):
+    name, role = C.CONTACT_PERSON
+    hours = "".join(f"<li><span>{d}</span><b>{t}</b></li>" for d, t in C.HOURS)
+    return f'''<section class="sec{" tint" if tint else ""}" id="offert">
+  <div class="wrap contact">
+    <div class="contact-info">
+      {eyebrow("Kontakt")}
+      <h2>Kontakta oss</h2>
+      <p class="lead">Få en skräddarsydd offert för ditt byggprojekt. Hör av dig så återkommer vi – vill du hellre ringa går det lika bra.</p>
+      <ul class="clist">
+        <li>{icon("phone")}<span><small>Telefon</small><a href="tel:{C.TEL}">{C.PHONE}</a></span></li>
+        <li>{icon("mail")}<span><small>E-post</small><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></span></li>
+        <li>{icon("users")}<span><small>{role}</small>{name}</span></li>
+        <li>{icon("pin")}<span><small>Område</small>{C.AREA} med omnejd</span></li>
+      </ul>
+      <p class="hours-h">Öppettider</p>
+      <ul class="hours">{hours}</ul>
+    </div>
+    <div class="form-box">{quote_form()}</div>
+  </div>
+</section>'''
+
+
 # --- Startsidan ---------------------------------------------------------------------------------------------------
 def index():
-    tiles = "".join(svc_tile(s, big=i == 0) for i, s in enumerate(C.SERVICES))
-    small = "".join(f'<li class="pill">{j}</li>' for j in C.SMALL_JOBS)
-    values = "".join(f'<li><h3>{t}</h3><p>{d}</p></li>' for t, d in C.VALUES)
-    cards = "".join(project_card(p) for p in C.PROJECTS)
-    reviews = "".join(review_card(r) for r in C.REVIEWS[:3])
-    name, role = C.CONTACT_PERSON
-    main = f'''{hero("Kompetens, noggrannhet och tydlighet",
-                 f"Badrum, kök, renovering och nybyggnation i {C.AREA}. Med er hela vägen – från idé till färdigt projekt.",
-                 [("kok-efter-1", ALTS["kok-efter-1"], "50% 60%"), ("bad1-5", "Renoverat badrum med grå plattor", "50% 62%"),
-                  ("kontor-glas", ALTS["kontor-glas"], "50% 45%")],
-                 btns=btn("Få offert", quote_href(), "blue") + btn("Se våra projekt", "projekt.html", "light"), home=True)}
+    jobs = ["bad1-1", "kok-efter-1", "kontor-glas", "bad2-1", "bastu", "kok-detalj", "bad3-1", "kontor-3"]
+    caps = {"bad1-1": "Badrum med nisch", "kok-efter-1": "Kök från golv till tak", "kontor-glas": "Glasvägg på kontor",
+            "bad2-1": "Badrum under snedtak", "bastu": "Bastu", "kok-detalj": "Bänkskiva och stänkskydd",
+            "bad3-1": "Duschrum", "kontor-3": "Lokalanpassning"}
+    main = f'''{hero(f"Bygg och renovering · {C.AREA}", "Kompetens, noggrannhet och tydlighet",
+                 "Badrum, kök, renoveringar och nybyggnation – vi är med er hela vägen, från idé till färdigt projekt.",
+                 "kok-efter-1", ALTS["kok-efter-1"], "50% 62%",
+                 btns=btn("Begär offert", quote_href(), "blue", arrow=True) + btn("Ring " + C.PHONE, "tel:" + C.TEL, "outline", "phone"),
+                 home=True)}
 {trust_strip()}
-{intro(C.NAME, "Ett byggföretag med kompetens", C.ABOUT, btn("Om oss", "om-oss.html", "ghost") + btn("Ring " + C.PHONE, "tel:" + C.TEL, "ghost", "phone"))}
 
-<section class="pwrap" id="tjanster">
+<section class="sec" id="tjanster">
   <div class="wrap">
-    <ul class="tiles">{tiles}</ul>
-    <div class="also"><p>Vi tar också mindre uppdrag:</p><ul>{small}</ul></div>
+    {sec_head("Våra tjänster", "Erfaret byggföretag för alla dina behov", more_link("Alla projekt", "projekt.html"))}
+    {services_grid()}
   </div>
 </section>
 
-{panel(f"""{label("Före och efter")}<h2>Samma kök, två helt olika rum</h2>
-<p>Ut åkte de gamla luckorna, kaklet och korkmattan. In kom ljusa trästommar, massiv bänkskiva, stänkskydd i marmormönster och inbyggda vitvaror.</p>
-<p>Väggarna rättades till innan något monterades och taket fick ny belysning.</p>
-<div class="btns">{btn("Se köksprojektet", "projekt-kok.html", "blue", arrow=True)}</div>""", before_after("kok-fore", "kok-efter-2"))}
+{about_split("Ett byggföretag med kompetens", C.ABOUT)}
 
-<section class="band">
-  <div class="wrap band-in">
-    <div class="band-head">
-      {label("Varför arbeta med oss")}
-      <h2>Vad gör oss unika?</h2>
-      <p>{C.TEAM_TEXT}</p>
-      <p class="sign"><b>{name}</b>, {role.lower()}</p>
-    </div>
-    <ul class="values">{values}</ul>
+{feature("bad1-5", "Renoverat badrum med grå plattor och glasvägg", "Badrum", "Behörig våtrumsbyggare",
+         "Vi har gått utbildning hos Byggkeramikrådet och arbetar efter branschreglerna BBV. Efter avslutad entreprenad lämnar vi ett Kvalitetsdokument till dig som beställare.",
+         ["Tätskikt enligt BBV", "Kvalitetsdokument", "Plattsättning", "Helrenovering"], "Läs om badrumsrenovering", "tjanst-badrum.html", "50% 62%")}
+
+<section class="sec tint">
+  <div class="wrap">
+    {sec_head("Före och efter", "Samma kök – helt nytt rum", more_link("Se köksprojektet", "projekt-kok.html"))}
+    {before_after("kok-fore", "kok-efter-2")}
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <div class="box">
-      <div class="box-head"><div>{label("Projektportfölj")}<h2>Senaste projekten</h2></div>{btn("Alla projekt", "projekt.html", "ghost", arrow=True)}</div>
-      <ul class="cards">{cards}</ul>
-    </div>
+    {sec_head("Utförda jobb", "Ett urval av våra projekt", more_link("Se alla projekt", "projekt.html"))}
+    {gallery(jobs, "jobb", caps)}
   </div>
 </section>
 
-<section class="sec sec-tight">
-  <div class="wrap">
-    <div class="sec-head"><div>{label("Omdömen")}<h2>Vad kunderna säger</h2></div><p class="rating">{stars()} 5 av 5 i alla omdömen</p></div>
-    <div class="revs">{reviews}</div>
-  </div>
-</section>
-
-{panel(f"""{label("Certifikat och försäkringar")}<h2>Säkra byggarbeten</h2>
-<p>{C.CERTS_INTRO}</p>
-<p>Vi är behöriga våtrumsbyggare, använder ID06 på arbetsplatsen och har utbildning i byggarbetsmiljösamordning. Bolaget har allrisk- och ansvarsförsäkring, och de anställda omfattas av kollektivavtalade försäkringar.</p>
-<div class="btns">{btn("Vårt trygghetsarbete", "trygghet.html", "blue", arrow=True)}</div>""", badges_grid(), flip=True)}
+{values_band()}
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head"><div>{label("Så går det till")}<h2>Från idé till färdigt projekt</h2></div>{btn("Få offert", quote_href(), "blue")}</div>
+    {sec_head("Så går det till", "Från idé till färdigt projekt")}
     {steps()}
   </div>
 </section>
-{faq_block()}'''
+
+{reviews_sec()}
+{contact_sec(tint=False)}
+{faq_sec(tint=True)}'''
     page("index.html", f"Byggföretag i Göteborg och Kungsbacka – badrum, kök, renovering | {C.NAME}",
          f"{C.NAME} bygger och renoverar badrum, kök, bostäder och lokaler i {C.AREA}. Behörig våtrum, ID06 och BAS P/U. Ring {C.PHONE}.",
-         main, home=True)
+         main, home=True, cta=False)
 
 
 # --- Tjänstesidor -------------------------------------------------------------------------------------------------
@@ -466,32 +515,37 @@ def service_page(s):
     typ = s["title"]
     p = PRJ.get(s["project"]) if s["project"] else None
     if p:
-        photos = [x for part in p["parts"] for x in part["photos"]][:5]
-        gallery = panel(f"""{label("Från projektportföljen")}<h2>{p["title"]}</h2><p>{p["intro"]}</p>
-<div class="btns">{btn("Se hela projektet", f"projekt-{p['slug']}.html", "blue", arrow=True)}</div>""", mosaic(photos, group=s["slug"]), flip=True)
-    else:
-        gallery = ""
-    rel = {"badrum": [0, 1, 2], "kok": [2, 0, 4], "renovering": [3, 4, 1], "nybyggnation": [1, 2, 0]}[s["slug"]]
-    revs = "".join(review_card(C.REVIEWS[i]) for i in rel)
-    others = "".join(svc_tile(o) for o in C.SERVICES if o["slug"] != s["slug"])
-    main = f'''{hero(s["title"], s["short"], [(s["photo"], s["alt"], s["pos"])],
-                 [("index.html", "Start"), ("index.html#tjanster", "Tjänster"), ("", s["title"])],
-                 btn("Få offert", quote_href(typ), "blue") + btn("Ring " + C.PHONE, "tel:" + C.TEL, "light", "phone"))}
-{trust_strip()}
-{panel(f"""{label(s["title"])}<h2>{s["lead"]}</h2>{"".join(f"<p>{x}</p>" for x in s["body"])}
-<div class="btns">{btn("Begär offert", quote_href(typ), "blue")}</div>""",
-       f'<div class="incl"><p class="incl-h">Det här kan ingå</p><ul>{items}</ul></div>', white=False)}
-{gallery}
-<section class="sec sec-tight">
+        photos = [x for part in p["parts"] for x in part["photos"]][:8]
+        gal = f'''<section class="sec tint">
   <div class="wrap">
-    <div class="sec-head"><div>{label("Omdömen")}<h2>Vad kunderna säger</h2></div><p class="rating">{stars()} 5 av 5</p></div>
-    <div class="revs">{revs}</div>
+    {sec_head("Från projektportföljen", p["title"], more_link("Se hela projektet", f"projekt-{p['slug']}.html"))}
+    {gallery(photos, s["slug"], {k: v for part in p["parts"] for k, v in part.get("captions", {}).items()})}
+  </div>
+</section>'''
+    else:
+        gal = ""
+    rel = {"badrum": (0, 1, 2), "kok": (2, 0, 4), "renovering": (3, 4, 1), "nybyggnation": (1, 2, 0)}[s["slug"]]
+    main = f'''{hero(f"Tjänster · {C.AREA}", s["title"], s["short"], s["photo"], s["alt"], s["pos"],
+                 [("index.html", "Start"), ("index.html#tjanster", "Tjänster"), ("", s["title"])],
+                 btn("Begär offert", quote_href(typ), "blue", arrow=True) + btn("Ring " + C.PHONE, "tel:" + C.TEL, "outline", "phone"))}
+{trust_strip()}
+<section class="sec">
+  <div class="wrap svc-intro">
+    <div class="prose">
+      {eyebrow(s["title"])}
+      <h2>{s["lead"]}</h2>
+      {"".join(f"<p>{x}</p>" for x in s["body"])}
+      <div class="btns">{btn("Begär offert", quote_href(typ), "blue", arrow=True)}{btn("Ring " + C.PHONE, "tel:" + C.TEL, "ghost", "phone")}</div>
+    </div>
+    <aside class="incl"><p class="incl-h">Det här kan ingå</p><ul>{items}</ul></aside>
   </div>
 </section>
-<section class="pwrap">
+{gal}
+{reviews_sec(rel, tint=not gal)}
+<section class="sec{" tint" if not gal else ""}">
   <div class="wrap">
-    <div class="sec-head"><div>{label("Fler tjänster")}<h2>Det här gör vi också</h2></div></div>
-    <ul class="tiles n3">{others}</ul>
+    {sec_head("Fler tjänster", "Det här gör vi också")}
+    <ul class="tiles">{"".join(svc_tile(o) for o in C.SERVICES if o["slug"] != s["slug"])}</ul>
   </div>
 </section>'''
     page(f'tjanst-{s["slug"]}.html', f'{s["title"]} i Göteborg och Kungsbacka | {C.NAME}',
@@ -499,21 +553,35 @@ def service_page(s):
 
 
 # --- Projekt ------------------------------------------------------------------------------------------------------
+def project_card(p):
+    n = sum(len(x["photos"]) for x in p["parts"])
+    return (f'<li class="card"><a href="projekt-{p["slug"]}.html"><span class="card-ph">{img(p["cover"], alt_for(p["cover"]), "50% 55%", "(min-width: 960px) 33vw, 100vw")}'
+            f'<span class="card-tag">{n} bilder</span></span><span class="card-body"><b>{p["title"]}</b><span>{p["intro"]}</span>'
+            f'<span class="card-more">Se projektet {icon("arrow")}</span></span></a></li>')
+
+
 def projects_page():
     cards = "".join(project_card(p) for p in C.PROJECTS)
-    main = f'''{hero("Projekt", "Badrum, kök och lokalanpassningar – bilder från våra arbetsplatser.",
-                 [("bad1-3", "Renoverat badrum med grå plattor", "50% 55%")], [("index.html", "Start"), ("", "Projekt")])}
+    main = f'''{hero("Projektportfölj", "Våra projekt", "Badrum, kök och lokalanpassningar – bilder direkt från våra arbetsplatser.",
+                 "bad1-3", "Renoverat badrum med grå plattor", "50% 55%", [("index.html", "Start"), ("", "Projekt")])}
 <section class="sec">
   <div class="wrap">
-    <div class="box"><ul class="cards">{cards}</ul></div>
+    {sec_head("Projektportfölj", "Välj ett projekt")}
+    <ul class="cards">{cards}</ul>
   </div>
 </section>
-{panel(f"""{label("Före och efter")}<h2>Badrum under snedtak</h2>
-<p>Ett äldre badrum med badkar och plastmatta blev ett ljust duschrum med grå plattor och böjd duschvägg.</p>
-<div class="btns">{btn("Se badrumsprojekten", "projekt-badrum.html", "blue", arrow=True)}</div>""", before_after("bad2-fore", "bad2-1"))}
-{panel(f"""{label("Före och efter")}<h2>Köket som byggdes om från golv till tak</h2>
-<p>Gamla luckor, kakel och korkmatta ersattes med ljusa trästommar, massiv bänkskiva och inbyggda vitvaror.</p>
-<div class="btns">{btn("Se köksprojektet", "projekt-kok.html", "blue", arrow=True)}</div>""", before_after("kok-fore", "kok-efter-2"), flip=True)}'''
+<section class="sec tint">
+  <div class="wrap">
+    {sec_head("Före och efter", "Badrum under snedtak", more_link("Se badrumsprojekten", "projekt-badrum.html"))}
+    {before_after("bad2-fore", "bad2-1")}
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap">
+    {sec_head("Före och efter", "Köket som byggdes om från golv till tak", more_link("Se köksprojektet", "projekt-kok.html"))}
+    {before_after("kok-fore", "kok-efter-2")}
+  </div>
+</section>'''
     page("projekt.html", f"Projekt – badrum, kök och kontor | {C.NAME}",
          "Bilder från Västkust Byggs projekt: badrumsrenoveringar, köksrenoveringar och lokalanpassningar för kontor.",
          main, image="bad1-1")
@@ -522,83 +590,69 @@ def projects_page():
 def project_page(p):
     parts = []
     for i, part in enumerate(p["parts"]):
-        text = f'''{label(part["eyebrow"])}<h2>{part["h"]}</h2>{"".join(f"<p>{t}</p>" for t in part["text"])}
-<p class="small">{len(part["photos"])} bilder – klicka för att förstora.</p>'''
-        parts.append(panel(text, mosaic(part["photos"], part.get("tile"), part.get("captions"), f'{p["slug"]}{i}'), flip=i % 2 == 1))
+        parts.append(f'''<section class="sec{" tint" if i % 2 == 1 else ""}">
+  <div class="wrap">
+    <div class="part-head">
+      <div>{eyebrow(part["eyebrow"])}<h2>{part["h"]}</h2></div>
+      <div>{"".join(f"<p>{t}</p>" for t in part["text"])}</div>
+    </div>
+    {gallery(part["photos"], f'{p["slug"]}{i}', part.get("captions"), 4 if len(part["photos"]) > 3 else 3)}
+  </div>
+</section>''')
     others = "".join(project_card(o) for o in C.PROJECTS if o["slug"] != p["slug"])
     svc = next((s for s in C.SERVICES if s["project"] == p["slug"]), None)
-    b = btn("Få offert", quote_href(svc["title"] if svc else None), "blue")
+    b = btn("Begär offert", quote_href(svc["title"] if svc else None), "blue", arrow=True)
     if svc:
-        b += btn(svc["title"], f'tjanst-{svc["slug"]}.html', "light")
-    main = f'''{hero(p["title"], p["intro"], [(p["cover"], alt_for(p["cover"]), "50% 55%")],
+        b += btn(svc["title"], f'tjanst-{svc["slug"]}.html', "outline")
+    main = f'''{hero("Projektportfölj", p["title"], p["intro"], p["cover"], alt_for(p["cover"]), "50% 55%",
                  [("index.html", "Start"), ("projekt.html", "Projekt"), ("", p["title"])], b)}
 {"".join(parts)}
-<section class="sec">
+<section class="sec{" tint" if len(parts) % 2 == 1 else ""}">
   <div class="wrap">
-    <div class="box">
-      <div class="box-head"><div>{label("Fler projekt")}<h2>Se även</h2></div></div>
-      <ul class="cards n2">{others}</ul>
-    </div>
+    {sec_head("Fler projekt", "Se även")}
+    <ul class="cards c2">{others}</ul>
   </div>
 </section>'''
     page(f'projekt-{p["slug"]}.html', f'{p["title"]} – projekt | {C.NAME}', f'{p["intro"]} {C.NAME}, {C.AREA}.', main, image=p["cover"])
 
 
-# --- Trygghet (efter Sydställningars säkerhetssida) ---------------------------------------------------------------
+# --- Certifikat ---------------------------------------------------------------------------------------------------
 def trust_page():
-    parts = []
-    for i, c in enumerate(C.CERTS):
-        logos = "".join(f'<span class="logo-box"><img src="img/{b}.png" alt="" loading="lazy"></span>'
-                        for b in (c.get("badge"), c.get("badge2")) if b)
-        text = f'''{label("Försäkringar" if c["slug"] == "forsakring" else "Certifikat")}<h2>{c["title"]}</h2>{"".join(f"<p>{t}</p>" for t in c["text"])}'''
-        if c["slug"] == "bas":
-            media = (f'<div class="mosaic"><div class="m-tile wide"><p><b>BAS P</b> – arbetsmiljön i projekterings- och planeringsfasen.</p>'
-                     f'<p><b>BAS U</b> – arbetsmiljön i genomförandefasen.</p></div>'
-                     + mosaic(c["photos"], group="bas")[len('<div class="mosaic">'):])
-        elif c["photos"]:
-            media = (f'<div class="logos">{logos}</div>' if logos else "") + mosaic(c["photos"], group=c["slug"])
-        else:
-            media = f'<div class="logos big">{logos}</div>'
-        parts.append(panel(text, media, flip=i % 2 == 1, pid=c["slug"]))
-    main = f'''{hero("Trygghet", "Vi bygger badrum och kök – men det vi levererar är trygghet.",
-                 [("bad2-under", ALTS["bad2-under"], "50% 60%")], [("index.html", "Start"), ("", "Trygghet")])}
-{intro("Certifikat och försäkringar", "Säkra byggarbeten med våra certifikat och försäkringar",
-       [C.CERTS_INTRO, "Här kan du läsa om våra behörigheter, hur vi använder ID06 på arbetsplatsen, vår utbildning i arbetsmiljösamordning och försäkringarna som skyddar både dig och oss."])}
-{"".join(parts)}'''
-    page("trygghet.html", f"Trygghet – behörig våtrum, ID06, BAS P/U och försäkringar | {C.NAME}",
+    cards = []
+    for c in C.CERTS:
+        logos = "".join(f'<img src="img/{b}.png" alt="" loading="lazy">' for b in (c.get("badge"), c.get("badge2")) if b)
+        top = f'<div class="cert-logos">{logos}</div>' if logos else f'<div class="cert-logos cert-text">{icon("helmet")}<b>BAS P · BAS U</b></div>'
+        cards.append(f'<li class="cert" id="{c["slug"]}">{top}<h3>{c["title"]}</h3>{"".join(f"<p>{t}</p>" for t in c["text"])}</li>')
+    main = f'''{hero("Certifikat och försäkringar", "Säkra byggarbeten", C.CERTS_INTRO,
+                 "bad2-under", ALTS["bad2-under"], "50% 60%", [("index.html", "Start"), ("", "Certifikat")])}
+{trust_strip()}
+<section class="sec">
+  <div class="wrap">
+    {sec_head("Certifikat och försäkringar", "Säkra byggarbeten med våra certifikat och försäkringar")}
+    <ul class="certs">{"".join(cards)}</ul>
+  </div>
+</section>
+{feature("bad2-1", "Badrum under snedtak med grå plattor", "Våtrum", "Kvalitetsdokument efter varje badrum",
+         "Ett badrum ska hålla i många år. Därför arbetar vi efter Byggkeramikrådets branschregler och dokumenterar tätskiktet – när badrummet är klart får du ett Kvalitetsdokument.",
+         ["Byggkeramikrådet", "BBV", "Kvalitetsdokument"], "Läs om badrumsrenovering", "tjanst-badrum.html", "50% 55%")}'''
+    page("trygghet.html", f"Certifikat och försäkringar – behörig våtrum, ID06, BAS P/U | {C.NAME}",
          "Västkust Bygg är behörig våtrumsbyggare enligt BBV, använder ID06, har BAS P/U-utbildning, allrisk- och ansvarsförsäkring via Länsförsäkringar och kollektivavtalade försäkringar via FORA.",
          main, image="bad2-under")
 
 
 # --- Om oss -------------------------------------------------------------------------------------------------------
 def about_page():
-    values = "".join(f'<li><h3>{t}</h3><p>{d}</p></li>' for t, d in C.VALUES)
-    name, role = C.CONTACT_PERSON
-    main = f'''{hero("Om oss", "Kompetens, noggrannhet och tydlighet – i varje projekt, stort som litet.",
-                 [("kontor-glas", ALTS["kontor-glas"], "50% 45%")], [("index.html", "Start"), ("", "Om oss")])}
-{intro(C.NAME, "Med er hela vägen", C.ABOUT)}
-{panel(f"""{label("Vårt team")}<h2>Professionellt byggande med erfarenhet</h2><p>{C.TEAM_TEXT}</p>
-<div class="person"><p class="label">{role}</p><p class="person-name">{name}</p><p>Din kontaktperson genom hela projektet – från första samtalet till slutgenomgången.</p>
-<div class="btns">{btn("Ring " + C.PHONE, "tel:" + C.TEL, "blue", "phone")}{btn("Mejla oss", "mailto:" + C.EMAIL, "ghost", "mail")}</div></div>""",
-          mosaic(["bad1-6", "kontor-5", "kok-detalj"], "Vi är supernöjda med Västkust Bygg och Emanuel som totalrenoverat vårt badrum. – Lotta, Malevik", group="om"))}
-<section class="band">
-  <div class="wrap band-in">
-    <div class="band-head">{label("Varför arbeta med oss")}<h2>Vår unika företagsidentitet</h2></div>
-    <ul class="values">{values}</ul>
-  </div>
-</section>
+    main = f'''{hero("Om oss", "Med er hela vägen", "Kompetens, noggrannhet och tydlighet – i varje projekt, stort som litet.",
+                 "kontor-glas", ALTS["kontor-glas"], "50% 45%", [("index.html", "Start"), ("", "Om oss")])}
+{about_split("Ett byggföretag med kompetens", C.ABOUT + [C.TEAM_TEXT], "bad1-6", link=False)}
+{values_band("Vår unika företagsidentitet")}
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head"><div>{label("Så går det till")}<h2>Från idé till färdigt projekt</h2></div></div>
+    {sec_head("Så går det till", "Från idé till färdigt projekt")}
     {steps()}
   </div>
 </section>
-<section class="sec sec-tight">
-  <div class="wrap">
-    <div class="sec-head"><div>{label("Omdömen")}<h2>Vad kunderna säger</h2></div></div>
-    <div class="revs">{"".join(review_card(r) for r in C.REVIEWS[1:4])}</div>
-  </div>
-</section>'''
+{reviews_sec((1, 0, 4))}'''
     page("om-oss.html", f"Om oss | {C.NAME}",
          f"{C.NAME} är ett byggföretag i {C.AREA}. Kompetens, noggrannhet och tydlighet från idé till färdigt projekt.",
          main, image="kontor-glas")
@@ -606,45 +660,31 @@ def about_page():
 
 # --- Kontakt ------------------------------------------------------------------------------------------------------
 def contact_page():
-    places = "".join(f'<li class="pill">{p}</li>' for p in C.AREA_PLACES)
-    hours = "".join(f"<li><span>{d}</span><b>{t}</b></li>" for d, t in C.HOURS)
-    name, role = C.CONTACT_PERSON
-    main = f'''{hero("Kontakt", "Få en skräddarsydd offert för ditt byggprojekt. Vårt team är redo att hjälpa dig.",
-                 [("kok-efter-2", ALTS["kok-efter-2"], "50% 50%")], [("index.html", "Start"), ("", "Kontakt")])}
-<section class="sec" id="offert">
-  <div class="wrap contact">
+    places = "".join(f"<li>{p}</li>" for p in C.AREA_PLACES)
+    main = f'''{hero("Kontakt", "Begär offert", "Få en skräddarsydd offert för ditt byggprojekt. Vårt team är redo att hjälpa dig.",
+                 "kok-efter-2", ALTS["kok-efter-2"], "50% 50%", [("index.html", "Start"), ("", "Kontakt")])}
+{contact_sec(tint=False)}
+<section class="sec tint">
+  <div class="wrap split split-map">
     <div>
-      {label("Offertförfrågan")}
-      <h2>Berätta om ditt projekt</h2>
-      <p>Fyll i formuläret så återkommer vi. Skicka gärna bilder i ett mejl efteråt – det gör offerten mer träffsäker.</p>
-      {quote_form()}
+      {eyebrow("Område")}
+      <h2>Vi bygger i {C.AREA}</h2>
+      <p>Våra kunder finns bland annat här. Ligger ditt projekt utanför – hör av dig ändå.</p>
+      <ul class="chips chips-light">{places}</ul>
+      <div class="btns">{btn("Öppna i Google Maps", C.MAPS_LINK, "dark", "pin", extra=' target="_blank" rel="noopener"')}</div>
     </div>
-    <aside class="cbox">
-      <p class="label">{role}</p>
-      <p class="person-name">{name}</p>
-      <ul class="clist">
-        <li>{icon("phone")}<a href="tel:{C.TEL}">{C.PHONE}</a></li>
-        <li>{icon("mail")}<a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li>
-        <li>{icon("pin")}<span>{C.AREA} med omnejd</span></li>
-      </ul>
-      <p class="cbox-h">Öppettider</p>
-      <ul class="hours">{hours}</ul>
-    </aside>
+    <div class="map"><iframe src="{C.MAP_EMBED}" title="Karta över Göteborg och Kungsbacka" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
   </div>
 </section>
-{panel(f"""{label("Område")}<h2>Vi bygger i {C.AREA}</h2><p>Våra kunder finns bland annat här. Ligger ditt projekt utanför – hör av dig ändå.</p>
-<ul class="pills">{places}</ul>
-<div class="btns">{btn("Öppna i Google Maps", C.MAPS_LINK, "blue", "pin", extra=' target="_blank" rel="noopener"')}</div>""",
-          f'<div class="map"><iframe src="{C.MAP_EMBED}" title="Karta över Göteborg och Kungsbacka" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>')}
-{faq_block()}'''
+{faq_sec()}'''
     page("kontakt.html", f"Kontakt och offert | {C.NAME}",
-         f"Begär offert från {C.NAME}. Ring {C.PHONE} eller mejla {C.EMAIL}. Måndag–fredag 08–17.", main, image="kok-efter-2")
+         f"Begär offert från {C.NAME}. Ring {C.PHONE} eller mejla {C.EMAIL}. Måndag–fredag 08–17.", main, image="kok-efter-2", cta=False)
 
 
 def not_found():
-    main = f'''<section class="sec"><div class="wrap narrow intro">{label("404")}<h1>Sidan finns inte</h1>
-<p>Länken kan vara gammal eller felstavad.</p><div class="btns">{btn("Till startsidan", "index.html", "blue")}{btn("Kontakt", "kontakt.html", "ghost")}</div></div></section>'''
-    page("404.html", f"Sidan finns inte | {C.NAME}", "Sidan kunde inte hittas.", main)
+    main = f'''<section class="sec"><div class="wrap narrow">{eyebrow("404")}<h1>Sidan finns inte</h1>
+<p class="lead">Länken kan vara gammal eller felstavad.</p><div class="btns">{btn("Till startsidan", "index.html", "blue", arrow=True)}{btn("Kontakt", "kontakt.html", "ghost")}</div></div></section>'''
+    page("404.html", f"Sidan finns inte | {C.NAME}", "Sidan kunde inte hittas.", main, cta=False)
 
 
 def seo_files():

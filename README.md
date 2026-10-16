@@ -3,14 +3,16 @@
 Ny webbplats för [Västkust Bygg & Montage AB](https://www.vastkustbygg.se/) (bygg och renovering i Göteborg och
 Kungsbacka). All text och alla bilder är skrapade från nuvarande vastkustbygg.se.
 
-Upplägget följer [Sydställningars säkerhetssida](https://www.sydstallningar.se/sakerhet/vart-sakerhetsarbete)
-blandat med GBG Mosaik-sajten:
+Designen är en mix av Elevate Studios hantverkarsajter:
 
 | Från | Vad |
 | --- | --- |
-| Sydställningar | Inter, raka hörn, hero inom sidans marginaler med rubriken nere till vänster, ljusgrå paneler med text och bildmosaik (med mörk textruta), stora bildrutor med vit pill-knapp, grå låda med kort, små versala etiketter |
-| GBG Mosaik / S-Bygg / Antonsson | Python-generatorn (`scripts/` → `docs/`), mörk inforad, bildspel i startsidans hero, förtroenderad, arbetsgång, frågor i två spalter, färgat band före sidfoten, offertformulär via FormSubmit med `?typ=` |
-| Appelgrens / GBG Mosaik | Skrapskriptet som hämtar text och bilder från den gamla hemsidan |
+| S-Bygg, Ohan, Antonsson | Python-generatorn (`scripts/` → `docs/`), Plus Jakarta Sans, piller-knappar, FAQ, offertformulär via FormSubmit med `?typ=` |
+| JJ El | Inforad med betyg, ”Begär offert”-knapp med pil i cirkel, tjänsterutor med pil och färgad ”Hittar du inte det du söker?”-ruta, om oss-bild med rund betygsbricka, galleri med utförda jobb |
+| Kungsbacka Mark & Trädgård | Hero i full bredd med tjänsterad längst ner |
+| Appelgrens Elektriska | Faktatabell i om oss, skrapskriptet |
+| Antonsson | Mörk ruta som ligger över en bred bild, arbetsgång med ikon och stora nummer, kontakt med formulär i ruta |
+| GBG Mosaik | Förtroenderaden under heron, före/efter |
 
 Färgerna kommer från loggan: svart och blått.
 
@@ -18,12 +20,12 @@ Färgerna kommer från loggan: svart och blått.
 
 Allt ligger i [`docs/`](docs/) – öppna `docs/index.html` i en webbläsare.
 
-- `index.html` – startsidan: bildspel, förtroenderad, om företaget, tjänsterutor, kök före/efter, varför oss,
-  projekt, omdömen, certifikat, arbetsgång, frågor
+- `index.html` – startsidan: hero med tjänsterad, förtroenderad, tjänsterutor, om oss med faktatabell, våtrum,
+  kök före/efter, utförda jobb, varför oss, arbetsgång, omdömen, kontakt med formulär, frågor
 - `tjanst-badrum.html`, `tjanst-kok.html`, `tjanst-renovering.html`, `tjanst-nybyggnation.html`
 - `projekt.html` + `projekt-badrum.html`, `projekt-kok.html`, `projekt-kontor.html` (alla bilder från gamla
   sajtens projektportfölj, med bildvisning)
-- `trygghet.html` – våtrumsbehörighet, ID06, BAS P/U och försäkringar (som Sydställningars säkerhetssida)
+- `trygghet.html` – certifikat och försäkringar: våtrumsbehörighet, ID06, BAS P/U, Länsförsäkringar och FORA
 - `om-oss.html`, `kontakt.html` (offertformulär), `404.html`, `sitemap.xml`, `robots.txt`
 
 ## Ändra text eller bygga om
