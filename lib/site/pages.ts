@@ -2,7 +2,7 @@ import { list } from "./collection.ts";
 import type { Page, SiteData } from "./schema.ts";
 
 /** Addresses the site itself uses, which a page of its own can never take. */
-export const RESERVED_SLUGS = ["admin", "forslag", "tjanster", "photos", "fonts", "_next", "404", "icon.png", "robots.txt", "sitemap.xml"];
+export const RESERVED_SLUGS = ["admin", "forslag", "tjanster", "photos", "fonts", "cw", "_next", "404", "icon.png", "robots.txt", "sitemap.xml"];
 
 export function homePage(site: SiteData): Page & { id: string } {
   const home = list(site.pages).find((page) => page.slug === "");
