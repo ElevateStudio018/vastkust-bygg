@@ -1,0 +1,3544 @@
+{
+  "schemaVersion": 1,
+  "theme": {
+    "colors": {
+      "primary": "#1572D3",
+      "secondary": "#121418",
+      "accent": "#2497FF",
+      "background": "#FFFFFF",
+      "surface": "#F1F3F6",
+      "text": "#3B4048",
+      "heading": "#121418",
+      "muted": "#646B75",
+      "subtle": "#C5CCD5",
+      "border": "#E2E6EB",
+      "input": "#FFFFFF",
+      "link": "#1572D3",
+      "button": "#1572D3",
+      "buttonHover": "#0F5FB3",
+      "buttonText": "#FFFFFF",
+      "navigation": "#FFFFFF",
+      "navigationText": "#121418",
+      "footer": "#121418",
+      "footerText": "#A9B0BA",
+      "onPrimary": "#FFFFFF",
+      "success": "#1E7B3A",
+      "warning": "#B45309",
+      "error": "#B91C1C"
+    },
+    "fonts": {
+      "heading": {
+        "family": "Plus Jakarta Sans",
+        "category": "sans-serif"
+      },
+      "body": {
+        "family": "Plus Jakarta Sans",
+        "category": "sans-serif"
+      },
+      "button": {
+        "family": "Plus Jakarta Sans",
+        "category": "sans-serif"
+      }
+    }
+  },
+  "settings": {
+    "siteName": "Västkust Bygg & Montage AB",
+    "siteUrl": "https://elevatestudio018.github.io/vastkust-bygg",
+    "language": "sv",
+    "favicon": {
+      "src": "/icon.png",
+      "variants": [],
+      "alt": ""
+    },
+    "logo": {
+      "kind": "wordmark"
+    },
+    "analyticsId": "",
+    "maintenance": {
+      "enabled": false,
+      "heading": "Vi uppdaterar hemsidan",
+      "text": "Sidan är snart tillbaka. Under tiden når du oss på telefon eller e-post."
+    }
+  },
+  "company": {
+    "legalName": "Västkust Bygg & Montage AB",
+    "shortName": "Västkust Bygg",
+    "foundedYear": 2023,
+    "employees": 0,
+    "city": "Göteborg",
+    "serviceArea": "Göteborg och Kungsbacka",
+    "address": {
+      "street": "",
+      "postalCode": "",
+      "city": "Göteborg",
+      "country": "SE",
+      "geo": {
+        "lat": 57.70887,
+        "lng": 11.97456
+      }
+    },
+    "phone": "076-882 03 33",
+    "email": "info@vastkustbygg.se",
+    "orgNumber": "",
+    "vatNumber": "",
+    "openingHours": "Måndag–fredag: 08.00–17.00; Lördag–söndag: Stängt",
+    "social": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": ""
+    }
+  },
+  "navigation": {
+    "barLinks": {
+      "order": [
+        "projekt",
+        "certifikat",
+        "om-oss",
+        "kontakt"
+      ],
+      "items": {
+        "projekt": {
+          "label": "Projekt",
+          "href": "/projekt"
+        },
+        "certifikat": {
+          "label": "Certifikat",
+          "href": "/certifikat"
+        },
+        "om-oss": {
+          "label": "Om oss",
+          "href": "/om-oss"
+        },
+        "kontakt": {
+          "label": "Kontakt",
+          "href": "/kontakt"
+        }
+      }
+    },
+    "menu": {
+      "order": [
+        "hem",
+        "tjanster",
+        "projekt",
+        "certifikat",
+        "om-oss",
+        "kontakt"
+      ],
+      "items": {
+        "hem": {
+          "label": "Hem",
+          "href": "/",
+          "kind": "link"
+        },
+        "tjanster": {
+          "label": "Tjänster",
+          "href": "/#tjanster",
+          "kind": "services"
+        },
+        "projekt": {
+          "label": "Projekt",
+          "href": "/projekt",
+          "kind": "link"
+        },
+        "certifikat": {
+          "label": "Certifikat",
+          "href": "/certifikat",
+          "kind": "link"
+        },
+        "om-oss": {
+          "label": "Om oss",
+          "href": "/om-oss",
+          "kind": "link"
+        },
+        "kontakt": {
+          "label": "Kontakt",
+          "href": "/kontakt",
+          "kind": "link"
+        }
+      }
+    },
+    "menuButton": "Begär offert"
+  },
+  "footer": {
+    "contactHeading": "Kontakt",
+    "servicesHeading": "Tjänster",
+    "companyHeading": "Västkust Bygg",
+    "companyLinks": {
+      "order": [
+        "projekt",
+        "certifikat",
+        "om-oss",
+        "kontakt"
+      ],
+      "items": {
+        "projekt": {
+          "label": "Projekt",
+          "href": "/projekt"
+        },
+        "certifikat": {
+          "label": "Certifikat och försäkringar",
+          "href": "/certifikat"
+        },
+        "om-oss": {
+          "label": "Om oss",
+          "href": "/om-oss"
+        },
+        "kontakt": {
+          "label": "Kontakt",
+          "href": "/kontakt"
+        }
+      }
+    },
+    "button": {
+      "label": "Begär offert",
+      "href": "#offert"
+    },
+    "copyrightName": "Västkust Bygg & Montage AB",
+    "orgLabel": "Org.nr",
+    "vatLabel": "Momsreg.nr"
+  },
+  "form": {
+    "modalHeading": "Begär offert",
+    "labels": {
+      "name": "Namn",
+      "phone": "Telefon",
+      "email": "E-post",
+      "workType": "Typ av projekt",
+      "description": "Beskriv projektet"
+    },
+    "workTypePlaceholder": "Välj typ av projekt",
+    "descriptionPlaceholder": "Vad ska göras, ungefär hur stort och när?",
+    "workTypes": {
+      "order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5",
+        "t6",
+        "t7"
+      ],
+      "items": {
+        "t1": {
+          "label": "Badrumsrenovering"
+        },
+        "t2": {
+          "label": "Köksrenovering"
+        },
+        "t3": {
+          "label": "Renovering och ombyggnation"
+        },
+        "t4": {
+          "label": "Nybyggnation"
+        },
+        "t5": {
+          "label": "Lokalanpassning"
+        },
+        "t6": {
+          "label": "Mindre jobb / reparation"
+        },
+        "t7": {
+          "label": "Annat"
+        }
+      }
+    },
+    "contactHint": "Det räcker med telefon eller e-post.",
+    "errors": {
+      "name": "Ange ditt namn.",
+      "contact": "Ange telefonnummer eller e-postadress, så att vi kan nå dig.",
+      "phone": "Ange ett giltigt telefonnummer.",
+      "email": "Ange en giltig e-postadress.",
+      "workType": "Välj typ av projekt."
+    },
+    "submit": "Skicka förfrågan",
+    "sending": "Skickar…",
+    "sendFailed": "Förfrågan kunde inte skickas. Försök igen eller ring oss på",
+    "closeHint": "Du kan stänga rutan när som helst genom att klicka utanför eller på",
+    "closeHintButton": "X",
+    "confirmation": "Tack! Vi återkommer så snart vi kan.",
+    "emailSubject": "Offertförfrågan från {namn}"
+  },
+  "ui": {
+    "skipLink": "Hoppa till innehållet",
+    "openMenu": "Öppna meny",
+    "closeMenu": "Stäng meny",
+    "menuLabel": "Meny",
+    "mainMenuLabel": "Huvudmeny",
+    "quickLinksLabel": "Snabblänkar",
+    "callPrefix": "Ring",
+    "homeLinkLabel": "Västkust Bygg & Montage AB – startsida",
+    "breadcrumbsLabel": "Brödsmulor",
+    "breadcrumbHome": "Start",
+    "carouselPrevious": "Föregående",
+    "carouselNext": "Nästa",
+    "carouselGoTo": "Gå till position {n} av {total}",
+    "uppdragFilterLabel": "Filtrera projekt",
+    "stepPrefix": "Steg",
+    "mapTitlePrefix": "Karta:",
+    "closeLabel": "Stäng",
+    "ratingLabel": "{n} av 5 stjärnor",
+    "cookieText": "Vi vill använda kakor för att se hur besökare använder sidan, så att vi kan göra den bättre. Godkänner du det?",
+    "cookieAccept": "Godkänn",
+    "cookieDecline": "Nej tack",
+    "cookieSettings": "Kakinställningar"
+  },
+  "servicePage": {
+    "badge": "",
+    "eyebrow": "Tjänster · Göteborg och Kungsbacka",
+    "includesHeading": "Det här kan ingå",
+    "galleryEyebrow": "Från projektportföljen",
+    "reviewsEyebrow": "Omdömen",
+    "reviewsHeading": "Vad kunderna säger",
+    "moreEyebrow": "Fler tjänster",
+    "cta": {
+      "heading": "Har du ett projekt på gång?",
+      "text": "Berätta vad du vill göra så återkommer vi med en skräddarsydd offert. Måndag–fredag 08.00–17.00.",
+      "button": {
+        "label": "Begär offert",
+        "href": "#offert"
+      }
+    },
+    "factsTitle": "Fakta om tjänsten",
+    "factLabels": {
+      "service": "Tjänst",
+      "performedBy": "Utförs av",
+      "seat": "Säte",
+      "area": "Område",
+      "org": "Org.nr"
+    },
+    "contactTagline": "Bygg och renovering i Göteborg och Kungsbacka",
+    "contactButton": {
+      "label": "Begär offert",
+      "href": "#offert"
+    },
+    "backLink": {
+      "label": "Tillbaka till tjänster",
+      "href": "/#tjanster"
+    },
+    "moreHeading": "Det här gör vi också",
+    "breadcrumbLabel": "Tjänster",
+    "breadcrumbHref": "/#tjanster"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "heading": "Sidan finns inte",
+    "text": "Länken kan vara gammal eller felstavad.",
+    "button": {
+      "label": "Till startsidan",
+      "href": "/"
+    },
+    "seoTitle": "Sidan finns inte"
+  },
+  "services": {
+    "order": [
+      "badrumsrenovering",
+      "koksrenovering",
+      "renovering-och-ombyggnation",
+      "nybyggnation"
+    ],
+    "items": {
+      "badrumsrenovering": {
+        "slug": "badrumsrenovering",
+        "name": "Badrumsrenovering",
+        "shortDescription": "Vi skapar funktionella och stilrena badrum genom skräddarsydda renoveringar som passar dina önskemål.",
+        "lead": "Behöriga våtrumsbyggare enligt Byggkeramikrådets branschregler. När badrummet är klart får du ett kvalitetsdokument.",
+        "description": [
+          "Ett badrum ska hålla i många år – därför är det tätskiktet du inte ser som är viktigast. Vi har gått Byggkeramikrådets utbildning och arbetar efter deras branschregler, BBV. Efter avslutad entreprenad lämnar vi ett Kvalitetsdokument till dig som beställare.",
+          "Vi tar hand om hela kedjan: rivning, underarbete, tätskikt, plattsättning och montering av inredning. Du får hjälp att bolla idéer om planlösning, plattor och förvaring, och en tydlig plan för när vad händer."
+        ],
+        "includes": [
+          "Rivning och bortforsling",
+          "Underarbete och golvfall",
+          "Tätskikt enligt BBV",
+          "Plattsättning på golv och vägg",
+          "Nischer och inbyggd förvaring",
+          "Montering av kommod, wc och dusch",
+          "Kvalitetsdokument efter avslutat arbete"
+        ],
+        "galleryHeading": "Badrumsrenoveringar",
+        "galleryLink": {
+          "label": "Se hela projektet",
+          "href": "/projekt-badrum"
+        },
+        "gallery": {
+          "order": [
+            "i1",
+            "i2",
+            "i3",
+            "i4",
+            "i5",
+            "i6",
+            "i7",
+            "i8"
+          ],
+          "items": {
+            "i1": {
+              "image": {
+                "src": "/photos/bad1-1.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-1-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-1-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-1.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg"
+              },
+              "caption": ""
+            },
+            "i2": {
+              "image": {
+                "src": "/photos/bad1-2.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-2-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-2-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-2.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg"
+              },
+              "caption": ""
+            },
+            "i3": {
+              "image": {
+                "src": "/photos/bad1-3.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-3-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-3-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-3.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg"
+              },
+              "caption": ""
+            },
+            "i4": {
+              "image": {
+                "src": "/photos/bad1-4.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-4-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-4-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-4.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg"
+              },
+              "caption": ""
+            },
+            "i5": {
+              "image": {
+                "src": "/photos/bad1-5.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-5-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-5-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-5.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg"
+              },
+              "caption": ""
+            },
+            "i6": {
+              "image": {
+                "src": "/photos/bad1-6.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-6-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-6-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-6.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg"
+              },
+              "caption": ""
+            },
+            "i7": {
+              "image": {
+                "src": "/photos/bad1-7.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-7-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-7-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-7.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg"
+              },
+              "caption": ""
+            },
+            "i8": {
+              "image": {
+                "src": "/photos/bad1-8.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-8-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-8-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-8.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg"
+              },
+              "caption": ""
+            }
+          }
+        },
+        "icon": "Droplets",
+        "image": {
+          "src": "/photos/bad1-1.webp",
+          "variants": [
+            {
+              "width": 480,
+              "src": "/photos/bad1-1-480.webp"
+            },
+            {
+              "width": 800,
+              "src": "/photos/bad1-1-800.webp"
+            },
+            {
+              "width": 1013,
+              "src": "/photos/bad1-1.webp"
+            }
+          ],
+          "alt": "Renoverat badrum med grå storformatsplattor, nisch och vägghängd toalett",
+          "focus": "50% 60%"
+        },
+        "seo": {
+          "title": "Badrumsrenovering i Göteborg och Kungsbacka",
+          "description": "Badrumsrenovering i Göteborg och Kungsbacka. Vi skapar funktionella och stilrena badrum genom skräddarsydda renoveringar som passar dina önskemål. Ring 076-882 03 33."
+        }
+      },
+      "koksrenovering": {
+        "slug": "koksrenovering",
+        "name": "Köksrenovering",
+        "shortDescription": "Få ditt drömkök med våra kökrenoveringstjänster som kombinerar design, funktionalitet och kvalitet på ett professionellt sätt.",
+        "lead": "Från rivning till sista list – vi bygger om köket så att det fungerar för just ert hem.",
+        "description": [
+          "Ett nytt kök handlar om mer än luckor. Vi river det gamla, rättar till väggar och golv och monterar stommar, bänkskivor, vitvaror och stänkskydd så att allt sitter som det ska.",
+          "Vill du flytta om eller öppna upp planlösningen går vi igenom förutsättningarna tillsammans innan vi börjar, så att det är tydligt vad som ingår."
+        ],
+        "includes": [
+          "Rivning av gammalt kök",
+          "Väggar, golv och tak",
+          "Montering av stommar och luckor",
+          "Bänkskivor och stänkskydd",
+          "Inbyggda vitvaror",
+          "Belysning i samråd med elektriker",
+          "Lister och anpassningar"
+        ],
+        "galleryHeading": "Köksrenoveringar",
+        "galleryLink": {
+          "label": "Se hela projektet",
+          "href": "/projekt-kok"
+        },
+        "gallery": {
+          "order": [
+            "i1",
+            "i2",
+            "i3",
+            "i4"
+          ],
+          "items": {
+            "i1": {
+              "image": {
+                "src": "/photos/kok-fore.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-fore-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-fore-800.webp"
+                  },
+                  {
+                    "width": 1200,
+                    "src": "/photos/kok-fore-1200.webp"
+                  },
+                  {
+                    "width": 1800,
+                    "src": "/photos/kok-fore.webp"
+                  }
+                ],
+                "alt": "Köket före renoveringen med gamla luckor, kakel och korkmatta"
+              },
+              "caption": "Före"
+            },
+            "i2": {
+              "image": {
+                "src": "/photos/kok-efter-1.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-efter-1-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-efter-1-800.webp"
+                  },
+                  {
+                    "width": 1200,
+                    "src": "/photos/kok-efter-1-1200.webp"
+                  },
+                  {
+                    "width": 1800,
+                    "src": "/photos/kok-efter-1.webp"
+                  }
+                ],
+                "alt": "Det nya köket med ljusa trästommar, massiv bänkskiva och inbyggda vitvaror"
+              },
+              "caption": ""
+            },
+            "i3": {
+              "image": {
+                "src": "/photos/kok-efter-2.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-efter-2-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-efter-2-800.webp"
+                  },
+                  {
+                    "width": 1200,
+                    "src": "/photos/kok-efter-2-1200.webp"
+                  },
+                  {
+                    "width": 1800,
+                    "src": "/photos/kok-efter-2.webp"
+                  }
+                ],
+                "alt": "Det nya köket från andra hållet med fönster och spotlightskena"
+              },
+              "caption": ""
+            },
+            "i4": {
+              "image": {
+                "src": "/photos/kok-detalj.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-detalj-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-detalj-800.webp"
+                  },
+                  {
+                    "width": 832,
+                    "src": "/photos/kok-detalj.webp"
+                  }
+                ],
+                "alt": "Detalj av bänkskiva, häll och stänkskydd i marmormönster"
+              },
+              "caption": ""
+            }
+          }
+        },
+        "icon": "Home",
+        "image": {
+          "src": "/photos/kok-efter-1.webp",
+          "variants": [
+            {
+              "width": 480,
+              "src": "/photos/kok-efter-1-480.webp"
+            },
+            {
+              "width": 800,
+              "src": "/photos/kok-efter-1-800.webp"
+            },
+            {
+              "width": 1200,
+              "src": "/photos/kok-efter-1-1200.webp"
+            },
+            {
+              "width": 1800,
+              "src": "/photos/kok-efter-1.webp"
+            }
+          ],
+          "alt": "Nyrenoverat kök med ljusa trästommar, massiv bänkskiva och marmorstänkskydd",
+          "focus": "50% 55%"
+        },
+        "seo": {
+          "title": "Köksrenovering i Göteborg och Kungsbacka",
+          "description": "Köksrenovering i Göteborg och Kungsbacka. Få ditt drömkök med våra kökrenoveringstjänster som kombinerar design, funktionalitet och kvalitet på ett professionellt sätt. Ring 076-882 03 33."
+        }
+      },
+      "renovering-och-ombyggnation": {
+        "slug": "renovering-och-ombyggnation",
+        "name": "Renovering och ombyggnation",
+        "shortDescription": "Vårt team utför noggranna renoveringar och ombyggnationer för att förvandla ditt utrymme till något nytt och modernt.",
+        "lead": "Nya väggar, ny planlösning eller en hel lokal som ska anpassas – för privatpersoner och företag.",
+        "description": [
+          "Vi bygger om bostäder och lokaler: nya innerväggar, glaspartier, undertak, golv och ytskikt. På kontor och i lokaler planerar vi arbetet så att verksamheten störs så lite som möjligt.",
+          "Även mindre jobb är välkomna – en fuktskada ovanför ett fönster eller en omfogning vid duschen. ”Jag hade inget stort byggprojekt men kände att jag var lika prioriterad som de med större projekt”, skrev en kund i Västra Frölunda."
+        ],
+        "includes": [
+          "Lokalanpassningar för kontor",
+          "Nya innerväggar och glaspartier",
+          "Ändrad planlösning",
+          "Golv, väggar och undertak",
+          "Fuktskador och reparationer",
+          "Fogning i våtrum",
+          "Bastu"
+        ],
+        "galleryHeading": "Kontor och lokalanpassningar",
+        "galleryLink": {
+          "label": "Se hela projektet",
+          "href": "/projekt-kontor"
+        },
+        "gallery": {
+          "order": [
+            "i1",
+            "i2",
+            "i3",
+            "i4",
+            "i5",
+            "i6",
+            "i7",
+            "i8"
+          ],
+          "items": {
+            "i1": {
+              "image": {
+                "src": "/photos/kontor-1.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kontor-1-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kontor-1-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/kontor-1.webp"
+                  }
+                ],
+                "alt": "Kontorslokal under ombyggnad med nya väggar"
+              },
+              "caption": ""
+            },
+            "i2": {
+              "image": {
+                "src": "/photos/kontor-2.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kontor-2-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kontor-2-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/kontor-2.webp"
+                  }
+                ],
+                "alt": "Kontorslokal under ombyggnad med nya väggar"
+              },
+              "caption": ""
+            },
+            "i3": {
+              "image": {
+                "src": "/photos/kontor-3.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kontor-3-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kontor-3-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/kontor-3.webp"
+                  }
+                ],
+                "alt": "Kontorslokal under ombyggnad med nya väggar"
+              },
+              "caption": ""
+            },
+            "i4": {
+              "image": {
+                "src": "/photos/kontor-4.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kontor-4-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kontor-4-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/kontor-4.webp"
+                  }
+                ],
+                "alt": "Kontorslokal under ombyggnad med nya väggar"
+              },
+              "caption": ""
+            },
+            "i5": {
+              "image": {
+                "src": "/photos/kontor-5.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kontor-5-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kontor-5-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/kontor-5.webp"
+                  }
+                ],
+                "alt": "Kontorslokal under ombyggnad med nya väggar"
+              },
+              "caption": ""
+            },
+            "i6": {
+              "image": {
+                "src": "/photos/kontor-6.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kontor-6-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kontor-6-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/kontor-6.webp"
+                  }
+                ],
+                "alt": "Kontorslokal under ombyggnad med nya väggar"
+              },
+              "caption": ""
+            },
+            "i7": {
+              "image": {
+                "src": "/photos/kontor-glas.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kontor-glas-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kontor-glas-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/kontor-glas.webp"
+                  }
+                ],
+                "alt": "Glasvägg mot mötesrum i en ombyggd kontorslokal"
+              },
+              "caption": ""
+            },
+            "i8": {
+              "image": {
+                "src": "/photos/kontor-klar.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kontor-klar-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kontor-klar-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/kontor-klar.webp"
+                  }
+                ],
+                "alt": "Färdig vägg och glasdörr i kontoret"
+              },
+              "caption": ""
+            }
+          }
+        },
+        "icon": "Hammer",
+        "image": {
+          "src": "/photos/kontor-2.webp",
+          "variants": [
+            {
+              "width": 480,
+              "src": "/photos/kontor-2-480.webp"
+            },
+            {
+              "width": 800,
+              "src": "/photos/kontor-2-800.webp"
+            },
+            {
+              "width": 1013,
+              "src": "/photos/kontor-2.webp"
+            }
+          ],
+          "alt": "Regelstomme till nya innerväggar i en kontorslokal under ombyggnad",
+          "focus": "50% 55%"
+        },
+        "seo": {
+          "title": "Renovering och ombyggnation i Göteborg och Kungsbacka",
+          "description": "Renovering och ombyggnation i Göteborg och Kungsbacka. Vårt team utför noggranna renoveringar och ombyggnationer för att förvandla ditt utrymme till något nytt och modernt. Ring 076-882 03 33."
+        }
+      },
+      "nybyggnation": {
+        "slug": "nybyggnation",
+        "name": "Nybyggnation",
+        "shortDescription": "Vi specialiserar oss på att skapa unika och hållbara nybyggnationer som passar dina önskemål och behov.",
+        "lead": "Från idé till färdigt projekt – med en kontaktperson som håller ihop helheten.",
+        "description": [
+          "Vi bygger nytt med samma noggrannhet som i våra renoveringar. Tillsammans går vi igenom önskemål, förutsättningar och tidplan, och du vet hela tiden vem du pratar med.",
+          "Bolaget har utbildning för byggarbetsmiljösamordning (BAS P och BAS U), så att arbetsmiljön är planerad redan från början."
+        ],
+        "includes": [
+          "Tillbyggnader",
+          "Attefallshus och komplementbyggnader",
+          "Uterum och förråd",
+          "Stomme, tak och fasad",
+          "Invändig färdigställning",
+          "Byggarbetsmiljösamordning (BAS P/U)"
+        ],
+        "galleryHeading": "",
+        "galleryLink": {
+          "label": "",
+          "href": "/"
+        },
+        "gallery": {
+          "order": [],
+          "items": {}
+        },
+        "icon": "Building2",
+        "image": {
+          "src": "/photos/kontor-glas.webp",
+          "variants": [
+            {
+              "width": 480,
+              "src": "/photos/kontor-glas-480.webp"
+            },
+            {
+              "width": 800,
+              "src": "/photos/kontor-glas-800.webp"
+            },
+            {
+              "width": 1013,
+              "src": "/photos/kontor-glas.webp"
+            }
+          ],
+          "alt": "Ny glasvägg och mötesrum i en ombyggd kontorslokal",
+          "focus": "50% 45%"
+        },
+        "seo": {
+          "title": "Nybyggnation i Göteborg och Kungsbacka",
+          "description": "Nybyggnation i Göteborg och Kungsbacka. Vi specialiserar oss på att skapa unika och hållbara nybyggnationer som passar dina önskemål och behov. Ring 076-882 03 33."
+        }
+      }
+    }
+  },
+  "uppdrag": {
+    "order": [
+      "badrum",
+      "kok",
+      "kontor"
+    ],
+    "items": {
+      "badrum": {
+        "tag": "Badrum",
+        "title": "Badrumsrenoveringar",
+        "text": "Ett urval av badrummen vi har renoverat – från rivning till färdigt rum med kvalitetsdokument.",
+        "href": "/projekt-badrum",
+        "image": {
+          "src": "/photos/bad1-1.webp",
+          "variants": [
+            {
+              "width": 480,
+              "src": "/photos/bad1-1-480.webp"
+            },
+            {
+              "width": 800,
+              "src": "/photos/bad1-1-800.webp"
+            },
+            {
+              "width": 1013,
+              "src": "/photos/bad1-1.webp"
+            }
+          ],
+          "alt": "Badrum renoverat av Västkust Bygg",
+          "focus": "50% 55%"
+        }
+      },
+      "kok": {
+        "tag": "Kök",
+        "title": "Köksrenoveringar",
+        "text": "Samma kök, före och efter. Det gamla köket revs ut och ersattes med nytt från golv till tak.",
+        "href": "/projekt-kok",
+        "image": {
+          "src": "/photos/kok-efter-1.webp",
+          "variants": [
+            {
+              "width": 480,
+              "src": "/photos/kok-efter-1-480.webp"
+            },
+            {
+              "width": 800,
+              "src": "/photos/kok-efter-1-800.webp"
+            },
+            {
+              "width": 1200,
+              "src": "/photos/kok-efter-1-1200.webp"
+            },
+            {
+              "width": 1800,
+              "src": "/photos/kok-efter-1.webp"
+            }
+          ],
+          "alt": "Det nya köket med ljusa trästommar, massiv bänkskiva och inbyggda vitvaror",
+          "focus": "50% 55%"
+        }
+      },
+      "kontor": {
+        "tag": "Kontor",
+        "title": "Kontor och lokalanpassningar",
+        "text": "En kontorslokal som anpassades med nya väggar, glaspartier och undertak – här steg för steg.",
+        "href": "/projekt-kontor",
+        "image": {
+          "src": "/photos/kontor-glas.webp",
+          "variants": [
+            {
+              "width": 480,
+              "src": "/photos/kontor-glas-480.webp"
+            },
+            {
+              "width": 800,
+              "src": "/photos/kontor-glas-800.webp"
+            },
+            {
+              "width": 1013,
+              "src": "/photos/kontor-glas.webp"
+            }
+          ],
+          "alt": "Glasvägg mot mötesrum i en ombyggd kontorslokal",
+          "focus": "50% 55%"
+        }
+      }
+    }
+  },
+  "certificates": {
+    "order": [
+      "vatrum",
+      "id06",
+      "bas",
+      "forsakring",
+      "fora"
+    ],
+    "items": {
+      "vatrum": {
+        "name": "Våtrumsbehörighet",
+        "issuer": "Byggkeramikrådet",
+        "validUntil": "",
+        "description": "Vi har gått utbildning hos Byggkeramikrådet och är behöriga att arbeta efter deras branschregler, BBV. Efter avslutad entreprenad lämnar vi ett Kvalitetsdokument till dig som beställare.",
+        "image": {
+          "src": "/photos/badge-vatrum.png",
+          "variants": [],
+          "alt": "Behörig våtrum – Byggkeramikrådet"
+        }
+      },
+      "id06": {
+        "name": "ID06",
+        "issuer": "ID06",
+        "validUntil": "",
+        "description": "Vi nyttjar ID06 mjukvarusystem och IT-lösningar som hjälper oss att effektivisera den dagliga verksamheten. Till exempel används ID06 för närvaroregistrering av personer på arbetsplatsens personalliggare, digitalisering av arbetares utbildningsbevis och inpasserings- och låsfunktioner i lokala system.\n\nMed ID06 kan våra kunder enkelt identifiera personer på arbetsplatsen och koppla varje person till ett företag, på ett säkert sätt.\n\nID06 främsta uppdrag och mål är att främja sund konkurrens och säkra arbetsplatser. Effekten av målbilden blir att vi med ID06 är med och skapar ett socialt hållbart samhälle, där vi också motverkar svartarbete, ekonomisk brottslighet och annan kriminalitet.",
+        "image": {
+          "src": "/photos/badge-id06.png",
+          "variants": [],
+          "alt": "ID06"
+        }
+      },
+      "bas": {
+        "name": "BAS P och BAS U",
+        "issuer": "",
+        "validUntil": "",
+        "description": "Bolaget har genomgått byggarbetsmiljösamordnarutbildning för att kunna hantera arbetsmiljöfrågor i projekterings- och planeringsfasen (BAS P) och/eller i genomförandefasen (BAS U).",
+        "image": null
+      },
+      "forsakring": {
+        "name": "Allrisk- och ansvarsförsäkring",
+        "issuer": "Länsförsäkringar",
+        "validUntil": "",
+        "description": "Bolaget innehar en allrisk- och ansvarsförsäkring via Länsförsäkringar.",
+        "image": {
+          "src": "/photos/badge-lf.png",
+          "variants": [],
+          "alt": "Länsförsäkringar"
+        }
+      },
+      "fora": {
+        "name": "Kollektivavtalade försäkringar",
+        "issuer": "FORA",
+        "validUntil": "",
+        "description": "Bolagets anställda omfattas av kollektivavtalade försäkringar via FORA.",
+        "image": {
+          "src": "/photos/badge-fora.png",
+          "variants": [],
+          "alt": "FORA"
+        }
+      }
+    }
+  },
+  "pages": {
+    "order": [
+      "hem",
+      "projekt",
+      "projekt-badrum",
+      "projekt-kok",
+      "projekt-kontor",
+      "certifikat",
+      "om-oss",
+      "kontakt"
+    ],
+    "items": {
+      "hem": {
+        "slug": "",
+        "title": "Hem",
+        "seo": {
+          "title": "Byggföretag i Göteborg och Kungsbacka – badrum, kök, renovering",
+          "description": "Västkust Bygg & Montage AB bygger och renoverar badrum, kök, bostäder och lokaler i Göteborg och Kungsbacka. Behörig våtrum, ID06 och BAS P/U. Ring 076-882 03 33."
+        },
+        "sections": {
+          "order": [
+            "hero",
+            "tjanster",
+            "om-oss",
+            "vatrum",
+            "fore-efter",
+            "jobb",
+            "varfor",
+            "process",
+            "omdomen",
+            "kontakt",
+            "fragor"
+          ],
+          "items": {
+            "hero": {
+              "type": "hero",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Bygg och renovering · Göteborg och Kungsbacka",
+              "heading": "Kompetens, noggrannhet och tydlighet",
+              "text": "Badrum, kök, renoveringar och nybyggnation – vi är med er hela vägen, från idé till färdigt projekt.",
+              "image": {
+                "src": "/photos/kok-efter-1.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-efter-1-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-efter-1-800.webp"
+                  },
+                  {
+                    "width": 1200,
+                    "src": "/photos/kok-efter-1-1200.webp"
+                  },
+                  {
+                    "width": 1800,
+                    "src": "/photos/kok-efter-1.webp"
+                  }
+                ],
+                "alt": "Det nya köket med ljusa trästommar, massiv bänkskiva och inbyggda vitvaror",
+                "focus": "50% 62%"
+              },
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              }
+            },
+            "tjanster": {
+              "type": "services",
+              "hidden": false,
+              "anchor": "tjanster",
+              "label": "",
+              "eyebrow": "Våra tjänster",
+              "heading": "Erfaret byggföretag för alla dina behov",
+              "link": {
+                "label": "Alla projekt",
+                "href": "/projekt"
+              },
+              "cardLinkPrefix": "",
+              "moreHeading": "Även mindre uppdrag",
+              "moreItems": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4",
+                  "i5",
+                  "i6"
+                ],
+                "items": {
+                  "i1": {
+                    "label": "Fuktskador"
+                  },
+                  "i2": {
+                    "label": "Omfogning i våtrum"
+                  },
+                  "i3": {
+                    "label": "Bastu"
+                  },
+                  "i4": {
+                    "label": "Glaspartier"
+                  },
+                  "i5": {
+                    "label": "Undertak"
+                  },
+                  "i6": {
+                    "label": "Golv och lister"
+                  }
+                }
+              },
+              "ctaHeading": "Hittar du inte det du söker?",
+              "ctaText": "Vi tar uppdrag i alla storlekar. Berätta vad du behöver hjälp med.",
+              "ctaButton": {
+                "label": "Begär offert",
+                "href": "#offert"
+              }
+            },
+            "om-oss": {
+              "type": "about",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Om Västkust Bygg",
+              "heading": "Ett byggföretag med kompetens",
+              "subheading": "Västkust Bygg & Montage AB är med er hela vägen, från idé till färdigt projekt. Vi erbjuder en helhetslösning där kompetens, noggrannhet och tydlighet är viktiga faktorer för oss. Vår erfarenhet och expertis inom byggbranschen gör oss till det optimala valet för ditt projekt.",
+              "text": "Vår unika helhetslösning skiljer oss från konkurrenterna. Genom att integrera kompetens, noggrannhet och tydlighet levererar vi enastående resultat som överträffar förväntningarna. Vårt dedikerade team står redo att ta ansvar och säkerställa att varje projekt blir en framgång.",
+              "facts": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4",
+                  "i5",
+                  "i6"
+                ],
+                "items": {
+                  "i1": {
+                    "label": "Arbetsledare",
+                    "value": "Emanuel Ström"
+                  },
+                  "i2": {
+                    "label": "Område",
+                    "value": "Göteborg och Kungsbacka"
+                  },
+                  "i3": {
+                    "label": "Våtrum",
+                    "value": "Behörig enligt BBV"
+                  },
+                  "i4": {
+                    "label": "Försäkring",
+                    "value": "Länsförsäkringar"
+                  },
+                  "i5": {
+                    "label": "Arbetsplats",
+                    "value": "ID06 och personalliggare"
+                  },
+                  "i6": {
+                    "label": "Öppettider",
+                    "value": "Måndag–fredag 08.00–17.00"
+                  }
+                }
+              },
+              "link": {
+                "label": "Läs mer om oss",
+                "href": "/om-oss"
+              },
+              "image": {
+                "src": "/photos/bad1-2.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-2-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-2-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-2.webp"
+                  }
+                ],
+                "alt": "Badrum med upplyst nisch och tvättställ på trä",
+                "focus": "50% 55%"
+              },
+              "badgeValue": "5/5",
+              "badgeLabel": "i omdömen"
+            },
+            "vatrum": {
+              "type": "overlay",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Badrum",
+              "heading": "Behörig våtrumsbyggare",
+              "text": "Vi har gått utbildning hos Byggkeramikrådet och arbetar efter branschreglerna BBV. Efter avslutad entreprenad lämnar vi ett Kvalitetsdokument till dig som beställare.",
+              "chips": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ],
+                "items": {
+                  "i1": {
+                    "label": "Tätskikt enligt BBV"
+                  },
+                  "i2": {
+                    "label": "Kvalitetsdokument"
+                  },
+                  "i3": {
+                    "label": "Plattsättning"
+                  },
+                  "i4": {
+                    "label": "Helrenovering"
+                  }
+                }
+              },
+              "link": {
+                "label": "Läs om badrumsrenovering",
+                "href": "/tjanster/badrumsrenovering"
+              },
+              "image": {
+                "src": "/photos/bad1-5.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-5-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-5-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-5.webp"
+                  }
+                ],
+                "alt": "Renoverat badrum med grå plattor och glasvägg",
+                "focus": "50% 62%"
+              }
+            },
+            "fore-efter": {
+              "type": "beforeAfter",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Före och efter",
+              "heading": "Samma kök – helt nytt rum",
+              "link": {
+                "label": "Se köksprojektet",
+                "href": "/projekt-kok"
+              },
+              "beforeLabel": "Före",
+              "before": {
+                "src": "/photos/kok-fore.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-fore-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-fore-800.webp"
+                  },
+                  {
+                    "width": 1200,
+                    "src": "/photos/kok-fore-1200.webp"
+                  },
+                  {
+                    "width": 1800,
+                    "src": "/photos/kok-fore.webp"
+                  }
+                ],
+                "alt": "Köket före renoveringen med gamla luckor, kakel och korkmatta"
+              },
+              "afterLabel": "Efter",
+              "after": {
+                "src": "/photos/kok-efter-2.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-efter-2-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-efter-2-800.webp"
+                  },
+                  {
+                    "width": 1200,
+                    "src": "/photos/kok-efter-2-1200.webp"
+                  },
+                  {
+                    "width": 1800,
+                    "src": "/photos/kok-efter-2.webp"
+                  }
+                ],
+                "alt": "Det nya köket från andra hållet med fönster och spotlightskena"
+              }
+            },
+            "jobb": {
+              "type": "gallery",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Utförda jobb",
+              "heading": "Ett urval av våra projekt",
+              "text": "",
+              "link": {
+                "label": "Se alla projekt",
+                "href": "/projekt"
+              },
+              "images": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4",
+                  "i5",
+                  "i6",
+                  "i7",
+                  "i8"
+                ],
+                "items": {
+                  "i1": {
+                    "image": {
+                      "src": "/photos/bad1-1.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad1-1-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad1-1-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/bad1-1.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": "Badrum med nisch"
+                  },
+                  "i2": {
+                    "image": {
+                      "src": "/photos/kok-efter-1.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kok-efter-1-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kok-efter-1-800.webp"
+                        },
+                        {
+                          "width": 1200,
+                          "src": "/photos/kok-efter-1-1200.webp"
+                        },
+                        {
+                          "width": 1800,
+                          "src": "/photos/kok-efter-1.webp"
+                        }
+                      ],
+                      "alt": "Det nya köket med ljusa trästommar, massiv bänkskiva och inbyggda vitvaror"
+                    },
+                    "caption": "Kök från golv till tak"
+                  },
+                  "i3": {
+                    "image": {
+                      "src": "/photos/kontor-glas.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kontor-glas-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kontor-glas-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/kontor-glas.webp"
+                        }
+                      ],
+                      "alt": "Glasvägg mot mötesrum i en ombyggd kontorslokal"
+                    },
+                    "caption": "Glasvägg på kontor"
+                  },
+                  "i4": {
+                    "image": {
+                      "src": "/photos/bad2-1.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad2-1-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad2-1-800.webp"
+                        },
+                        {
+                          "width": 832,
+                          "src": "/photos/bad2-1.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": "Badrum under snedtak"
+                  },
+                  "i5": {
+                    "image": {
+                      "src": "/photos/bastu.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bastu-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bastu-800.webp"
+                        },
+                        {
+                          "width": 832,
+                          "src": "/photos/bastu.webp"
+                        }
+                      ],
+                      "alt": "Bastu med lavar i trä"
+                    },
+                    "caption": "Bastu"
+                  },
+                  "i6": {
+                    "image": {
+                      "src": "/photos/kok-detalj.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kok-detalj-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kok-detalj-800.webp"
+                        },
+                        {
+                          "width": 832,
+                          "src": "/photos/kok-detalj.webp"
+                        }
+                      ],
+                      "alt": "Detalj av bänkskiva, häll och stänkskydd i marmormönster"
+                    },
+                    "caption": "Bänkskiva och stänkskydd"
+                  },
+                  "i7": {
+                    "image": {
+                      "src": "/photos/bad3-1.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad3-1-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad3-1-800.webp"
+                        },
+                        {
+                          "width": 1200,
+                          "src": "/photos/bad3-1.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": "Duschrum"
+                  },
+                  "i8": {
+                    "image": {
+                      "src": "/photos/kontor-3.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kontor-3-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kontor-3-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/kontor-3.webp"
+                        }
+                      ],
+                      "alt": "Kontorslokal under ombyggnad med nya väggar"
+                    },
+                    "caption": "Lokalanpassning"
+                  }
+                }
+              }
+            },
+            "varfor": {
+              "type": "values",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Varför arbeta med oss",
+              "heading": "Vad gör oss unika?",
+              "text": "Västkust Bygg & Montage AB:s hantverkare har lång erfarenhet inom byggbranschen, vilket gör oss till en pålitlig partner för ditt projekt. Vi strävar alltid efter att leverera högkvalitativt arbete och nöjda kunder.",
+              "items": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ],
+                "items": {
+                  "i1": {
+                    "heading": "Skickliga hantverkare",
+                    "text": "Vi har ett team av skickliga hantverkare som är experter inom sitt arbete och levererar högkvalitativa resultat med precision och noggrannhet.",
+                    "icon": "HardHat"
+                  },
+                  "i2": {
+                    "heading": "Innovativa lösningar",
+                    "text": "Vi strävar efter att implementera innovativa lösningar och tekniker i våra projekt för att säkerställa effektivitet, hållbarhet och modern design.",
+                    "icon": "Wrench"
+                  },
+                  "i3": {
+                    "heading": "Kundanpassad service",
+                    "text": "Vår kundanpassade service innebär att vi lyssnar aktivt på våra kunders önskemål och behov för att skapa skräddarsydda lösningar som överträffar deras förväntningar.",
+                    "icon": "Users"
+                  }
+                }
+              }
+            },
+            "process": {
+              "type": "process",
+              "hidden": false,
+              "anchor": "sa-gar-det-till",
+              "label": "",
+              "eyebrow": "Så går det till",
+              "heading": "Från idé till färdigt projekt",
+              "text": "",
+              "steps": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ],
+                "items": {
+                  "i1": {
+                    "title": "Idé och kontakt",
+                    "description": "Du ringer, mejlar eller fyller i formuläret och berättar vad du vill göra.",
+                    "icon": "Phone"
+                  },
+                  "i2": {
+                    "title": "Besök och offert",
+                    "description": "Vi tittar på plats och lämnar en skräddarsydd offert med vad som ingår.",
+                    "icon": "MapPin"
+                  },
+                  "i3": {
+                    "title": "Vi bygger",
+                    "description": "En kontaktperson, tydlig tidplan och ordning och reda på arbetsplatsen.",
+                    "icon": "FileText"
+                  },
+                  "i4": {
+                    "title": "Klart och dokumenterat",
+                    "description": "Gemensam genomgång – och för våtrum ett kvalitetsdokument enligt BBV.",
+                    "icon": "Wrench"
+                  }
+                }
+              }
+            },
+            "omdomen": {
+              "type": "testimonials",
+              "hidden": false,
+              "anchor": "omdomen",
+              "label": "",
+              "eyebrow": "Omdömen",
+              "heading": "Vad kunderna säger",
+              "text": "i alla omdömen",
+              "items": {
+                "order": [
+                  "r1",
+                  "r3",
+                  "r4",
+                  "r2",
+                  "r5"
+                ],
+                "items": {
+                  "r1": {
+                    "title": "Helrenovering av badrum",
+                    "quote": "Vi är supernöjda med Västkust Bygg och Emanuel som totalrenoverat vårt badrum. Ordning och reda, snyggt och prydligt från start till mål. Vi fick hjälp med att bolla idéer och lösningsförslag under projektets gång. Vi kommer absolut anlita dem igen och rekommendera Västkust Bygg till våra vänner och bekanta.",
+                    "name": "Lotta",
+                    "detail": "Malevik, 26 maj 2025",
+                    "rating": 5,
+                    "image": null
+                  },
+                  "r3": {
+                    "title": "Helrenovering av badrum",
+                    "quote": "Bra genomfört arbete där arbetet utförts enligt utsatt tid. Uppskattar snabb kommunikation under hela processen. Nöjd med resultatet och kommer anlita Västkust Bygg och Montage AB till andra uppdrag framöver. Kan varmt rekommendera dem.",
+                    "name": "Maria",
+                    "detail": "Lindome, 15 apr 2025",
+                    "rating": 5,
+                    "image": null
+                  },
+                  "r4": {
+                    "title": "Reparera fukt ovanför ett sovrumsfönster",
+                    "quote": "Jag kommer att anlita dem igen. Jag hade inget stort byggprojekt men kände att jag var lika prioriterad som de med större projekt. Kanonbemötande 😃",
+                    "name": "Suzanne",
+                    "detail": "Västra Frölunda, 15 okt 2024",
+                    "rating": 5,
+                    "image": null
+                  },
+                  "r2": {
+                    "title": "Badrumsrenovering",
+                    "quote": "Västkust Bygg och Montage har nu renoverat vårt badrum. Emanuel Ström har genomfört renoveringen väldigt professionellt och har under hela processen givit goda råd och lyssnat på oss som kunder. Vi anlitar gärna detta företag fler gånger.",
+                    "name": "Ingvar Nore",
+                    "detail": "Google",
+                    "rating": 5,
+                    "image": null
+                  },
+                  "r5": {
+                    "title": "Foga om vid ett handfat och dusch",
+                    "quote": "Jag rekommenderar detta företag för att de är snabba, har ett proffsigt bemötande och sätter kunden i fokus. De får 5 stjärnor av 5 möjliga.",
+                    "name": "Niclas",
+                    "detail": "Hovås, 2 nov 2024",
+                    "rating": 5,
+                    "image": null
+                  }
+                }
+              }
+            },
+            "kontakt": {
+              "type": "contact",
+              "hidden": false,
+              "anchor": "kontakt",
+              "label": "",
+              "eyebrow": "Kontakt",
+              "heading": "Kontakta oss",
+              "text": "Få en skräddarsydd offert för ditt byggprojekt. Hör av dig så återkommer vi – vill du hellre ringa går det lika bra.",
+              "phoneLabel": "Telefon",
+              "emailLabel": "E-post",
+              "addressLabel": "Område",
+              "openingHoursLabel": "Öppettider",
+              "orgLabel": "Org.nr",
+              "formHeading": "Begär offert"
+            },
+            "fragor": {
+              "type": "faq",
+              "hidden": false,
+              "anchor": "fragor",
+              "label": "",
+              "eyebrow": "Vanliga frågor",
+              "heading": "Frågor och svar",
+              "phonePrompt": "Hittar du inte svaret? Ring",
+              "items": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4",
+                  "i5",
+                  "i6"
+                ],
+                "items": {
+                  "i1": {
+                    "question": "Vilka uppdrag tar ni?",
+                    "answer": "Badrums- och köksrenoveringar, renoveringar och ombyggnationer, lokalanpassningar och nybyggnation – men även mindre jobb som fuktskador och omfogning."
+                  },
+                  "i2": {
+                    "question": "Är ni behöriga att bygga badrum?",
+                    "answer": "Ja. Vi har gått Byggkeramikrådets utbildning och arbetar efter branschreglerna BBV. När badrummet är klart får du ett Kvalitetsdokument."
+                  },
+                  "i3": {
+                    "question": "Hur får jag en offert?",
+                    "answer": "Fyll i formuläret, mejla info@vastkustbygg.se eller ring 076-882 03 33. Oftast vill vi se på plats innan vi lämnar en offert som håller."
+                  },
+                  "i4": {
+                    "question": "Var arbetar ni?",
+                    "answer": "Främst i Göteborg och Kungsbacka med omnejd. Ligger ditt projekt någon annanstans – hör av dig så svarar vi om vi kan ta det."
+                  },
+                  "i5": {
+                    "question": "Gäller ROT-avdrag?",
+                    "answer": "ROT-avdraget gäller arbetskostnaden för många renoveringar och ombyggnader i bostäder. Vi visar hur det påverkar priset i offerten."
+                  },
+                  "i6": {
+                    "question": "Är ni försäkrade?",
+                    "answer": "Ja. Bolaget har allrisk- och ansvarsförsäkring via Länsförsäkringar, och de anställda omfattas av kollektivavtalade försäkringar via FORA."
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "projekt": {
+        "slug": "projekt",
+        "title": "Projekt",
+        "seo": {
+          "title": "Projekt – badrum, kök och kontor",
+          "description": "Bilder från Västkust Byggs projekt: badrumsrenoveringar, köksrenoveringar och lokalanpassningar för kontor."
+        },
+        "sections": {
+          "order": [
+            "bild",
+            "s2",
+            "s3",
+            "s4",
+            "s5"
+          ],
+          "items": {
+            "bild": {
+              "type": "pageHero",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Projektportfölj",
+              "heading": "Våra projekt",
+              "text": "Badrum, kök och lokalanpassningar – bilder direkt från våra arbetsplatser.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              },
+              "image": {
+                "src": "/photos/bad1-3.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-3-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-3-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-3.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg",
+                "focus": "50% 55%"
+              },
+              "size": "medium"
+            },
+            "s2": {
+              "type": "uppdragGrid",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Projektportfölj",
+              "heading": "Välj ett projekt",
+              "text": "",
+              "filterAllLabel": "Se projektet"
+            },
+            "s3": {
+              "type": "beforeAfter",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Före och efter",
+              "heading": "Badrum under snedtak",
+              "link": {
+                "label": "Se badrumsprojekten",
+                "href": "/projekt-badrum"
+              },
+              "beforeLabel": "Före",
+              "before": {
+                "src": "/photos/bad2-fore.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad2-fore-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad2-fore-800.webp"
+                  },
+                  {
+                    "width": 832,
+                    "src": "/photos/bad2-fore.webp"
+                  }
+                ],
+                "alt": "Badrummet före med badkar och plastmatta"
+              },
+              "afterLabel": "Efter",
+              "after": {
+                "src": "/photos/bad2-1.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad2-1-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad2-1-800.webp"
+                  },
+                  {
+                    "width": 832,
+                    "src": "/photos/bad2-1.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg"
+              }
+            },
+            "s4": {
+              "type": "beforeAfter",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Före och efter",
+              "heading": "Köket som byggdes om från golv till tak",
+              "link": {
+                "label": "Se köksprojektet",
+                "href": "/projekt-kok"
+              },
+              "beforeLabel": "Före",
+              "before": {
+                "src": "/photos/kok-fore.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-fore-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-fore-800.webp"
+                  },
+                  {
+                    "width": 1200,
+                    "src": "/photos/kok-fore-1200.webp"
+                  },
+                  {
+                    "width": 1800,
+                    "src": "/photos/kok-fore.webp"
+                  }
+                ],
+                "alt": "Köket före renoveringen med gamla luckor, kakel och korkmatta"
+              },
+              "afterLabel": "Efter",
+              "after": {
+                "src": "/photos/kok-efter-2.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-efter-2-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-efter-2-800.webp"
+                  },
+                  {
+                    "width": 1200,
+                    "src": "/photos/kok-efter-2-1200.webp"
+                  },
+                  {
+                    "width": 1800,
+                    "src": "/photos/kok-efter-2.webp"
+                  }
+                ],
+                "alt": "Det nya köket från andra hållet med fönster och spotlightskena"
+              }
+            },
+            "s5": {
+              "type": "cta",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Har du ett projekt på gång?",
+              "text": "Berätta vad du vill göra så återkommer vi med en skräddarsydd offert. Måndag–fredag 08.00–17.00.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              }
+            }
+          }
+        }
+      },
+      "projekt-badrum": {
+        "slug": "projekt-badrum",
+        "title": "Badrumsrenoveringar",
+        "seo": {
+          "title": "Badrumsrenoveringar – projekt",
+          "description": "Ett urval av badrummen vi har renoverat – från rivning till färdigt rum med kvalitetsdokument. Västkust Bygg & Montage AB, Göteborg och Kungsbacka."
+        },
+        "sections": {
+          "order": [
+            "bild",
+            "s2",
+            "s3",
+            "s4",
+            "s5"
+          ],
+          "items": {
+            "bild": {
+              "type": "pageHero",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Projektportfölj",
+              "heading": "Badrumsrenoveringar",
+              "text": "Ett urval av badrummen vi har renoverat – från rivning till färdigt rum med kvalitetsdokument.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              },
+              "image": {
+                "src": "/photos/bad1-1.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-1-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-1-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-1.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg",
+                "focus": "50% 55%"
+              },
+              "size": "medium"
+            },
+            "s2": {
+              "type": "gallery",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Helrenovering",
+              "heading": "Grått och varmt",
+              "text": "Storformatsplattor från golv till tak, en upplyst nisch ovanför toaletten och en kommod i trä med tvättställ ovanpå.\n\nGlasväggen ger ett öppet duschutrymme och fönstret får släppa in ljuset hela vägen.",
+              "link": {
+                "label": "",
+                "href": "/"
+              },
+              "images": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4",
+                  "i5",
+                  "i6",
+                  "i7",
+                  "i8"
+                ],
+                "items": {
+                  "i1": {
+                    "image": {
+                      "src": "/photos/bad1-1.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad1-1-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad1-1-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/bad1-1.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i2": {
+                    "image": {
+                      "src": "/photos/bad1-2.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad1-2-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad1-2-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/bad1-2.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i3": {
+                    "image": {
+                      "src": "/photos/bad1-3.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad1-3-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad1-3-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/bad1-3.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i4": {
+                    "image": {
+                      "src": "/photos/bad1-4.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad1-4-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad1-4-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/bad1-4.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i5": {
+                    "image": {
+                      "src": "/photos/bad1-5.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad1-5-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad1-5-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/bad1-5.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i6": {
+                    "image": {
+                      "src": "/photos/bad1-6.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad1-6-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad1-6-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/bad1-6.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i7": {
+                    "image": {
+                      "src": "/photos/bad1-7.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad1-7-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad1-7-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/bad1-7.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i8": {
+                    "image": {
+                      "src": "/photos/bad1-8.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad1-8-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad1-8-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/bad1-8.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  }
+                }
+              }
+            },
+            "s3": {
+              "type": "gallery",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Före – under – efter",
+              "heading": "Badrum under snedtak",
+              "text": "Ett äldre badrum med badkar på lejonfötter och plastmatta blev ett ljust duschrum med grå plattor.\n\nSnedtaket kläddes in, golvet fick nytt fall och en böjd duschvägg gör att det lilla rummet känns större.",
+              "link": {
+                "label": "",
+                "href": "/"
+              },
+              "images": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4",
+                  "i5"
+                ],
+                "items": {
+                  "i1": {
+                    "image": {
+                      "src": "/photos/bad2-fore.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad2-fore-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad2-fore-800.webp"
+                        },
+                        {
+                          "width": 832,
+                          "src": "/photos/bad2-fore.webp"
+                        }
+                      ],
+                      "alt": "Badrummet före med badkar och plastmatta"
+                    },
+                    "caption": "Före"
+                  },
+                  "i2": {
+                    "image": {
+                      "src": "/photos/bad2-under.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad2-under-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad2-under-800.webp"
+                        },
+                        {
+                          "width": 832,
+                          "src": "/photos/bad2-under.webp"
+                        }
+                      ],
+                      "alt": "Duschhörna med nya plattor och golvbrunn under arbetet"
+                    },
+                    "caption": "Under arbetet"
+                  },
+                  "i3": {
+                    "image": {
+                      "src": "/photos/bad2-1.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad2-1-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad2-1-800.webp"
+                        },
+                        {
+                          "width": 832,
+                          "src": "/photos/bad2-1.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i4": {
+                    "image": {
+                      "src": "/photos/bad2-2.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad2-2-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad2-2-800.webp"
+                        },
+                        {
+                          "width": 832,
+                          "src": "/photos/bad2-2.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i5": {
+                    "image": {
+                      "src": "/photos/bad2-3.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad2-3-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad2-3-800.webp"
+                        },
+                        {
+                          "width": 832,
+                          "src": "/photos/bad2-3.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  }
+                }
+              }
+            },
+            "s4": {
+              "type": "gallery",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Fler projekt",
+              "heading": "Ljust duschrum och bastu",
+              "text": "Ett ljust badrum med duschhörna i glas och spegelskåp, och en bastu med lavar i trä.",
+              "link": {
+                "label": "",
+                "href": "/"
+              },
+              "images": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ],
+                "items": {
+                  "i1": {
+                    "image": {
+                      "src": "/photos/bad3-1.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad3-1-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad3-1-800.webp"
+                        },
+                        {
+                          "width": 1200,
+                          "src": "/photos/bad3-1.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i2": {
+                    "image": {
+                      "src": "/photos/bad3-2.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bad3-2-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bad3-2-800.webp"
+                        },
+                        {
+                          "width": 1200,
+                          "src": "/photos/bad3-2.webp"
+                        }
+                      ],
+                      "alt": "Badrum renoverat av Västkust Bygg"
+                    },
+                    "caption": ""
+                  },
+                  "i3": {
+                    "image": {
+                      "src": "/photos/bastu.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/bastu-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/bastu-800.webp"
+                        },
+                        {
+                          "width": 832,
+                          "src": "/photos/bastu.webp"
+                        }
+                      ],
+                      "alt": "Bastu med lavar i trä"
+                    },
+                    "caption": ""
+                  }
+                }
+              }
+            },
+            "s5": {
+              "type": "cta",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Har du ett projekt på gång?",
+              "text": "Berätta vad du vill göra så återkommer vi med en skräddarsydd offert. Måndag–fredag 08.00–17.00.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              }
+            }
+          }
+        }
+      },
+      "projekt-kok": {
+        "slug": "projekt-kok",
+        "title": "Köksrenoveringar",
+        "seo": {
+          "title": "Köksrenoveringar – projekt",
+          "description": "Samma kök, före och efter. Det gamla köket revs ut och ersattes med nytt från golv till tak. Västkust Bygg & Montage AB, Göteborg och Kungsbacka."
+        },
+        "sections": {
+          "order": [
+            "bild",
+            "s2",
+            "s3"
+          ],
+          "items": {
+            "bild": {
+              "type": "pageHero",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Projektportfölj",
+              "heading": "Köksrenoveringar",
+              "text": "Samma kök, före och efter. Det gamla köket revs ut och ersattes med nytt från golv till tak.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              },
+              "image": {
+                "src": "/photos/kok-efter-1.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-efter-1-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-efter-1-800.webp"
+                  },
+                  {
+                    "width": 1200,
+                    "src": "/photos/kok-efter-1-1200.webp"
+                  },
+                  {
+                    "width": 1800,
+                    "src": "/photos/kok-efter-1.webp"
+                  }
+                ],
+                "alt": "Det nya köket med ljusa trästommar, massiv bänkskiva och inbyggda vitvaror",
+                "focus": "50% 55%"
+              },
+              "size": "medium"
+            },
+            "s2": {
+              "type": "gallery",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Totalrenovering",
+              "heading": "Från 70-tal till nytt",
+              "text": "Ut åkte de gamla luckorna, kaklet och korkmattan. In kom ljusa trästommar, en massiv bänkskiva, stänkskydd i marmormönster och inbyggda vitvaror i ett högskåp.\n\nTaket fick ny belysning och vi rättade till väggarna innan något monterades.",
+              "link": {
+                "label": "",
+                "href": "/"
+              },
+              "images": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ],
+                "items": {
+                  "i1": {
+                    "image": {
+                      "src": "/photos/kok-fore.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kok-fore-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kok-fore-800.webp"
+                        },
+                        {
+                          "width": 1200,
+                          "src": "/photos/kok-fore-1200.webp"
+                        },
+                        {
+                          "width": 1800,
+                          "src": "/photos/kok-fore.webp"
+                        }
+                      ],
+                      "alt": "Köket före renoveringen med gamla luckor, kakel och korkmatta"
+                    },
+                    "caption": "Före"
+                  },
+                  "i2": {
+                    "image": {
+                      "src": "/photos/kok-efter-1.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kok-efter-1-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kok-efter-1-800.webp"
+                        },
+                        {
+                          "width": 1200,
+                          "src": "/photos/kok-efter-1-1200.webp"
+                        },
+                        {
+                          "width": 1800,
+                          "src": "/photos/kok-efter-1.webp"
+                        }
+                      ],
+                      "alt": "Det nya köket med ljusa trästommar, massiv bänkskiva och inbyggda vitvaror"
+                    },
+                    "caption": ""
+                  },
+                  "i3": {
+                    "image": {
+                      "src": "/photos/kok-efter-2.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kok-efter-2-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kok-efter-2-800.webp"
+                        },
+                        {
+                          "width": 1200,
+                          "src": "/photos/kok-efter-2-1200.webp"
+                        },
+                        {
+                          "width": 1800,
+                          "src": "/photos/kok-efter-2.webp"
+                        }
+                      ],
+                      "alt": "Det nya köket från andra hållet med fönster och spotlightskena"
+                    },
+                    "caption": ""
+                  },
+                  "i4": {
+                    "image": {
+                      "src": "/photos/kok-detalj.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kok-detalj-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kok-detalj-800.webp"
+                        },
+                        {
+                          "width": 832,
+                          "src": "/photos/kok-detalj.webp"
+                        }
+                      ],
+                      "alt": "Detalj av bänkskiva, häll och stänkskydd i marmormönster"
+                    },
+                    "caption": ""
+                  }
+                }
+              }
+            },
+            "s3": {
+              "type": "cta",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Har du ett projekt på gång?",
+              "text": "Berätta vad du vill göra så återkommer vi med en skräddarsydd offert. Måndag–fredag 08.00–17.00.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              }
+            }
+          }
+        }
+      },
+      "projekt-kontor": {
+        "slug": "projekt-kontor",
+        "title": "Kontor och lokalanpassningar",
+        "seo": {
+          "title": "Kontor och lokalanpassningar – projekt",
+          "description": "En kontorslokal som anpassades med nya väggar, glaspartier och undertak – här steg för steg. Västkust Bygg & Montage AB, Göteborg och Kungsbacka."
+        },
+        "sections": {
+          "order": [
+            "bild",
+            "s2",
+            "s3",
+            "s4"
+          ],
+          "items": {
+            "bild": {
+              "type": "pageHero",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Projektportfölj",
+              "heading": "Kontor och lokalanpassningar",
+              "text": "En kontorslokal som anpassades med nya väggar, glaspartier och undertak – här steg för steg.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              },
+              "image": {
+                "src": "/photos/kontor-glas.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kontor-glas-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kontor-glas-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/kontor-glas.webp"
+                  }
+                ],
+                "alt": "Glasvägg mot mötesrum i en ombyggd kontorslokal",
+                "focus": "50% 55%"
+              },
+              "size": "medium"
+            },
+            "s2": {
+              "type": "gallery",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Under arbetet",
+              "heading": "Från regelstomme…",
+              "text": "Nya rum byggdes upp i en öppen kontorsyta: regelstommar, gips och nya dörrar, med undertaket öppet för installationer.",
+              "link": {
+                "label": "",
+                "href": "/"
+              },
+              "images": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4",
+                  "i5",
+                  "i6"
+                ],
+                "items": {
+                  "i1": {
+                    "image": {
+                      "src": "/photos/kontor-1.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kontor-1-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kontor-1-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/kontor-1.webp"
+                        }
+                      ],
+                      "alt": "Kontorslokal under ombyggnad med nya väggar"
+                    },
+                    "caption": ""
+                  },
+                  "i2": {
+                    "image": {
+                      "src": "/photos/kontor-2.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kontor-2-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kontor-2-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/kontor-2.webp"
+                        }
+                      ],
+                      "alt": "Kontorslokal under ombyggnad med nya väggar"
+                    },
+                    "caption": ""
+                  },
+                  "i3": {
+                    "image": {
+                      "src": "/photos/kontor-3.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kontor-3-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kontor-3-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/kontor-3.webp"
+                        }
+                      ],
+                      "alt": "Kontorslokal under ombyggnad med nya väggar"
+                    },
+                    "caption": ""
+                  },
+                  "i4": {
+                    "image": {
+                      "src": "/photos/kontor-4.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kontor-4-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kontor-4-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/kontor-4.webp"
+                        }
+                      ],
+                      "alt": "Kontorslokal under ombyggnad med nya väggar"
+                    },
+                    "caption": ""
+                  },
+                  "i5": {
+                    "image": {
+                      "src": "/photos/kontor-5.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kontor-5-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kontor-5-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/kontor-5.webp"
+                        }
+                      ],
+                      "alt": "Kontorslokal under ombyggnad med nya väggar"
+                    },
+                    "caption": ""
+                  },
+                  "i6": {
+                    "image": {
+                      "src": "/photos/kontor-6.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kontor-6-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kontor-6-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/kontor-6.webp"
+                        }
+                      ],
+                      "alt": "Kontorslokal under ombyggnad med nya väggar"
+                    },
+                    "caption": ""
+                  }
+                }
+              }
+            },
+            "s3": {
+              "type": "gallery",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Resultat",
+              "heading": "…till färdigt kontor",
+              "text": "Glaspartier mot det öppna landskapet ger ljus in i mötesrummen, och de nya väggarna är klara för tavlor och skärmar.",
+              "link": {
+                "label": "",
+                "href": "/"
+              },
+              "images": {
+                "order": [
+                  "i1",
+                  "i2"
+                ],
+                "items": {
+                  "i1": {
+                    "image": {
+                      "src": "/photos/kontor-glas.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kontor-glas-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kontor-glas-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/kontor-glas.webp"
+                        }
+                      ],
+                      "alt": "Glasvägg mot mötesrum i en ombyggd kontorslokal"
+                    },
+                    "caption": ""
+                  },
+                  "i2": {
+                    "image": {
+                      "src": "/photos/kontor-klar.webp",
+                      "variants": [
+                        {
+                          "width": 480,
+                          "src": "/photos/kontor-klar-480.webp"
+                        },
+                        {
+                          "width": 800,
+                          "src": "/photos/kontor-klar-800.webp"
+                        },
+                        {
+                          "width": 1013,
+                          "src": "/photos/kontor-klar.webp"
+                        }
+                      ],
+                      "alt": "Färdig vägg och glasdörr i kontoret"
+                    },
+                    "caption": ""
+                  }
+                }
+              }
+            },
+            "s4": {
+              "type": "cta",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Har du ett projekt på gång?",
+              "text": "Berätta vad du vill göra så återkommer vi med en skräddarsydd offert. Måndag–fredag 08.00–17.00.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              }
+            }
+          }
+        }
+      },
+      "certifikat": {
+        "slug": "certifikat",
+        "title": "Certifikat",
+        "seo": {
+          "title": "Certifikat och försäkringar – behörig våtrum, ID06, BAS P/U",
+          "description": "Västkust Bygg är behörig våtrumsbyggare enligt BBV, använder ID06, har BAS P/U-utbildning, allrisk- och ansvarsförsäkring via Länsförsäkringar och kollektivavtalade försäkringar via FORA."
+        },
+        "sections": {
+          "order": [
+            "bild",
+            "s2",
+            "s3",
+            "s4"
+          ],
+          "items": {
+            "bild": {
+              "type": "pageHero",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Certifikat och försäkringar",
+              "heading": "Säkra byggarbeten",
+              "text": "Vi är stolta över våra branschackrediteringar och certifieringar som säkerställer högsta kvalitet och professionalism i vårt arbete.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              },
+              "image": {
+                "src": "/photos/bad2-under.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad2-under-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad2-under-800.webp"
+                  },
+                  {
+                    "width": 832,
+                    "src": "/photos/bad2-under.webp"
+                  }
+                ],
+                "alt": "Duschhörna med nya plattor och golvbrunn under arbetet",
+                "focus": "50% 60%"
+              },
+              "size": "medium"
+            },
+            "s2": {
+              "type": "certificates",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Certifikat och försäkringar",
+              "heading": "Säkra byggarbeten med våra certifikat och försäkringar",
+              "text": "",
+              "issuerPrefix": "",
+              "validUntilPrefix": "Giltigt till",
+              "emptyHeading": "Certifikat",
+              "emptyText": "Fråga oss gärna om våra behörigheter på"
+            },
+            "s3": {
+              "type": "overlay",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Våtrum",
+              "heading": "Kvalitetsdokument efter varje badrum",
+              "text": "Ett badrum ska hålla i många år. Därför arbetar vi efter Byggkeramikrådets branschregler och dokumenterar tätskiktet – när badrummet är klart får du ett Kvalitetsdokument.",
+              "chips": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ],
+                "items": {
+                  "i1": {
+                    "label": "Byggkeramikrådet"
+                  },
+                  "i2": {
+                    "label": "BBV"
+                  },
+                  "i3": {
+                    "label": "Kvalitetsdokument"
+                  }
+                }
+              },
+              "link": {
+                "label": "Läs om badrumsrenovering",
+                "href": "/tjanster/badrumsrenovering"
+              },
+              "image": {
+                "src": "/photos/bad2-1.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad2-1-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad2-1-800.webp"
+                  },
+                  {
+                    "width": 832,
+                    "src": "/photos/bad2-1.webp"
+                  }
+                ],
+                "alt": "Badrum under snedtak med grå plattor",
+                "focus": "50% 55%"
+              }
+            },
+            "s4": {
+              "type": "cta",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Har du ett projekt på gång?",
+              "text": "Berätta vad du vill göra så återkommer vi med en skräddarsydd offert. Måndag–fredag 08.00–17.00.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              }
+            }
+          }
+        }
+      },
+      "om-oss": {
+        "slug": "om-oss",
+        "title": "Om oss",
+        "seo": {
+          "title": "Om oss",
+          "description": "Västkust Bygg & Montage AB är ett byggföretag i Göteborg och Kungsbacka. Kompetens, noggrannhet och tydlighet från idé till färdigt projekt."
+        },
+        "sections": {
+          "order": [
+            "bild",
+            "s2",
+            "s3",
+            "s4",
+            "s5",
+            "s6"
+          ],
+          "items": {
+            "bild": {
+              "type": "pageHero",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Om oss",
+              "heading": "Med er hela vägen",
+              "text": "Kompetens, noggrannhet och tydlighet – i varje projekt, stort som litet.",
+              "button": {
+                "label": "",
+                "href": "/"
+              },
+              "image": {
+                "src": "/photos/kontor-glas.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kontor-glas-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kontor-glas-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/kontor-glas.webp"
+                  }
+                ],
+                "alt": "Glasvägg mot mötesrum i en ombyggd kontorslokal",
+                "focus": "50% 45%"
+              },
+              "size": "medium"
+            },
+            "s2": {
+              "type": "about",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Om Västkust Bygg",
+              "heading": "Ett byggföretag med kompetens",
+              "subheading": "Västkust Bygg & Montage AB är med er hela vägen, från idé till färdigt projekt. Vi erbjuder en helhetslösning där kompetens, noggrannhet och tydlighet är viktiga faktorer för oss. Vår erfarenhet och expertis inom byggbranschen gör oss till det optimala valet för ditt projekt.",
+              "text": "Vår unika helhetslösning skiljer oss från konkurrenterna. Genom att integrera kompetens, noggrannhet och tydlighet levererar vi enastående resultat som överträffar förväntningarna. Vårt dedikerade team står redo att ta ansvar och säkerställa att varje projekt blir en framgång.\n\nVästkust Bygg & Montage AB:s hantverkare har lång erfarenhet inom byggbranschen, vilket gör oss till en pålitlig partner för ditt projekt. Vi strävar alltid efter att leverera högkvalitativt arbete och nöjda kunder.",
+              "facts": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4",
+                  "i5",
+                  "i6"
+                ],
+                "items": {
+                  "i1": {
+                    "label": "Arbetsledare",
+                    "value": "Emanuel Ström"
+                  },
+                  "i2": {
+                    "label": "Område",
+                    "value": "Göteborg och Kungsbacka"
+                  },
+                  "i3": {
+                    "label": "Våtrum",
+                    "value": "Behörig enligt BBV"
+                  },
+                  "i4": {
+                    "label": "Försäkring",
+                    "value": "Länsförsäkringar"
+                  },
+                  "i5": {
+                    "label": "Arbetsplats",
+                    "value": "ID06 och personalliggare"
+                  },
+                  "i6": {
+                    "label": "Öppettider",
+                    "value": "Måndag–fredag 08.00–17.00"
+                  }
+                }
+              },
+              "link": {
+                "label": "",
+                "href": "/"
+              },
+              "image": {
+                "src": "/photos/bad1-6.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad1-6-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad1-6-800.webp"
+                  },
+                  {
+                    "width": 1013,
+                    "src": "/photos/bad1-6.webp"
+                  }
+                ],
+                "alt": "Badrum renoverat av Västkust Bygg",
+                "focus": "50% 50%"
+              },
+              "badgeValue": "5/5",
+              "badgeLabel": "i omdömen"
+            },
+            "s3": {
+              "type": "values",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Varför arbeta med oss",
+              "heading": "Vår unika företagsidentitet",
+              "text": "Västkust Bygg & Montage AB:s hantverkare har lång erfarenhet inom byggbranschen, vilket gör oss till en pålitlig partner för ditt projekt. Vi strävar alltid efter att leverera högkvalitativt arbete och nöjda kunder.",
+              "items": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ],
+                "items": {
+                  "i1": {
+                    "heading": "Skickliga hantverkare",
+                    "text": "Vi har ett team av skickliga hantverkare som är experter inom sitt arbete och levererar högkvalitativa resultat med precision och noggrannhet.",
+                    "icon": "HardHat"
+                  },
+                  "i2": {
+                    "heading": "Innovativa lösningar",
+                    "text": "Vi strävar efter att implementera innovativa lösningar och tekniker i våra projekt för att säkerställa effektivitet, hållbarhet och modern design.",
+                    "icon": "Wrench"
+                  },
+                  "i3": {
+                    "heading": "Kundanpassad service",
+                    "text": "Vår kundanpassade service innebär att vi lyssnar aktivt på våra kunders önskemål och behov för att skapa skräddarsydda lösningar som överträffar deras förväntningar.",
+                    "icon": "Users"
+                  }
+                }
+              }
+            },
+            "s4": {
+              "type": "process",
+              "hidden": false,
+              "anchor": "sa-gar-det-till",
+              "label": "",
+              "eyebrow": "Så går det till",
+              "heading": "Från idé till färdigt projekt",
+              "text": "",
+              "steps": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ],
+                "items": {
+                  "i1": {
+                    "title": "Idé och kontakt",
+                    "description": "Du ringer, mejlar eller fyller i formuläret och berättar vad du vill göra.",
+                    "icon": "Phone"
+                  },
+                  "i2": {
+                    "title": "Besök och offert",
+                    "description": "Vi tittar på plats och lämnar en skräddarsydd offert med vad som ingår.",
+                    "icon": "MapPin"
+                  },
+                  "i3": {
+                    "title": "Vi bygger",
+                    "description": "En kontaktperson, tydlig tidplan och ordning och reda på arbetsplatsen.",
+                    "icon": "FileText"
+                  },
+                  "i4": {
+                    "title": "Klart och dokumenterat",
+                    "description": "Gemensam genomgång – och för våtrum ett kvalitetsdokument enligt BBV.",
+                    "icon": "Wrench"
+                  }
+                }
+              }
+            },
+            "s5": {
+              "type": "testimonials",
+              "hidden": false,
+              "anchor": "omdomen",
+              "label": "",
+              "eyebrow": "Omdömen",
+              "heading": "Vad kunderna säger",
+              "text": "i alla omdömen",
+              "items": {
+                "order": [
+                  "r2",
+                  "r1",
+                  "r5",
+                  "r3",
+                  "r4"
+                ],
+                "items": {
+                  "r2": {
+                    "title": "Badrumsrenovering",
+                    "quote": "Västkust Bygg och Montage har nu renoverat vårt badrum. Emanuel Ström har genomfört renoveringen väldigt professionellt och har under hela processen givit goda råd och lyssnat på oss som kunder. Vi anlitar gärna detta företag fler gånger.",
+                    "name": "Ingvar Nore",
+                    "detail": "Google",
+                    "rating": 5,
+                    "image": null
+                  },
+                  "r1": {
+                    "title": "Helrenovering av badrum",
+                    "quote": "Vi är supernöjda med Västkust Bygg och Emanuel som totalrenoverat vårt badrum. Ordning och reda, snyggt och prydligt från start till mål. Vi fick hjälp med att bolla idéer och lösningsförslag under projektets gång. Vi kommer absolut anlita dem igen och rekommendera Västkust Bygg till våra vänner och bekanta.",
+                    "name": "Lotta",
+                    "detail": "Malevik, 26 maj 2025",
+                    "rating": 5,
+                    "image": null
+                  },
+                  "r5": {
+                    "title": "Foga om vid ett handfat och dusch",
+                    "quote": "Jag rekommenderar detta företag för att de är snabba, har ett proffsigt bemötande och sätter kunden i fokus. De får 5 stjärnor av 5 möjliga.",
+                    "name": "Niclas",
+                    "detail": "Hovås, 2 nov 2024",
+                    "rating": 5,
+                    "image": null
+                  },
+                  "r3": {
+                    "title": "Helrenovering av badrum",
+                    "quote": "Bra genomfört arbete där arbetet utförts enligt utsatt tid. Uppskattar snabb kommunikation under hela processen. Nöjd med resultatet och kommer anlita Västkust Bygg och Montage AB till andra uppdrag framöver. Kan varmt rekommendera dem.",
+                    "name": "Maria",
+                    "detail": "Lindome, 15 apr 2025",
+                    "rating": 5,
+                    "image": null
+                  },
+                  "r4": {
+                    "title": "Reparera fukt ovanför ett sovrumsfönster",
+                    "quote": "Jag kommer att anlita dem igen. Jag hade inget stort byggprojekt men kände att jag var lika prioriterad som de med större projekt. Kanonbemötande 😃",
+                    "name": "Suzanne",
+                    "detail": "Västra Frölunda, 15 okt 2024",
+                    "rating": 5,
+                    "image": null
+                  }
+                }
+              }
+            },
+            "s6": {
+              "type": "cta",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Har du ett projekt på gång?",
+              "text": "Berätta vad du vill göra så återkommer vi med en skräddarsydd offert. Måndag–fredag 08.00–17.00.",
+              "button": {
+                "label": "Begär offert",
+                "href": "#offert"
+              }
+            }
+          }
+        }
+      },
+      "kontakt": {
+        "slug": "kontakt",
+        "title": "Kontakt",
+        "seo": {
+          "title": "Kontakt och offert",
+          "description": "Begär offert från Västkust Bygg & Montage AB. Ring 076-882 03 33 eller mejla info@vastkustbygg.se. Måndag–fredag 08–17."
+        },
+        "sections": {
+          "order": [
+            "bild",
+            "s2",
+            "s3",
+            "s4"
+          ],
+          "items": {
+            "bild": {
+              "type": "pageHero",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Kontakt",
+              "heading": "Begär offert",
+              "text": "Få en skräddarsydd offert för ditt byggprojekt. Vårt team är redo att hjälpa dig.",
+              "button": {
+                "label": "",
+                "href": "/"
+              },
+              "image": {
+                "src": "/photos/kok-efter-2.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/kok-efter-2-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/kok-efter-2-800.webp"
+                  },
+                  {
+                    "width": 1200,
+                    "src": "/photos/kok-efter-2-1200.webp"
+                  },
+                  {
+                    "width": 1800,
+                    "src": "/photos/kok-efter-2.webp"
+                  }
+                ],
+                "alt": "Det nya köket från andra hållet med fönster och spotlightskena",
+                "focus": "50% 50%"
+              },
+              "size": "medium"
+            },
+            "s2": {
+              "type": "contact",
+              "hidden": false,
+              "anchor": "kontakt",
+              "label": "",
+              "eyebrow": "Kontakt",
+              "heading": "Kontakta oss",
+              "text": "Få en skräddarsydd offert för ditt byggprojekt. Hör av dig så återkommer vi – vill du hellre ringa går det lika bra.",
+              "phoneLabel": "Telefon",
+              "emailLabel": "E-post",
+              "addressLabel": "Område",
+              "openingHoursLabel": "Öppettider",
+              "orgLabel": "Org.nr",
+              "formHeading": "Begär offert"
+            },
+            "s3": {
+              "type": "area",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Område",
+              "heading": "Vi bygger i Göteborg och Kungsbacka",
+              "text": "Våra kunder finns bland annat här. Ligger ditt projekt utanför – hör av dig ändå.",
+              "places": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4",
+                  "i5",
+                  "i6",
+                  "i7",
+                  "i8"
+                ],
+                "items": {
+                  "i1": {
+                    "label": "Göteborg"
+                  },
+                  "i2": {
+                    "label": "Västra Frölunda"
+                  },
+                  "i3": {
+                    "label": "Hovås"
+                  },
+                  "i4": {
+                    "label": "Askim"
+                  },
+                  "i5": {
+                    "label": "Mölndal"
+                  },
+                  "i6": {
+                    "label": "Lindome"
+                  },
+                  "i7": {
+                    "label": "Kungsbacka"
+                  },
+                  "i8": {
+                    "label": "Malevik"
+                  }
+                }
+              },
+              "link": {
+                "label": "Öppna i Google Maps",
+                "href": "https://www.google.com/maps/place/?q=place_id:ChIJrz2xu5lvzC4RC-5UkH9xpUw"
+              },
+              "mapQuery": "Göteborg"
+            },
+            "s4": {
+              "type": "faq",
+              "hidden": false,
+              "anchor": "fragor",
+              "label": "",
+              "eyebrow": "Vanliga frågor",
+              "heading": "Frågor och svar",
+              "phonePrompt": "Hittar du inte svaret? Ring",
+              "items": {
+                "order": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4",
+                  "i5",
+                  "i6"
+                ],
+                "items": {
+                  "i1": {
+                    "question": "Vilka uppdrag tar ni?",
+                    "answer": "Badrums- och köksrenoveringar, renoveringar och ombyggnationer, lokalanpassningar och nybyggnation – men även mindre jobb som fuktskador och omfogning."
+                  },
+                  "i2": {
+                    "question": "Är ni behöriga att bygga badrum?",
+                    "answer": "Ja. Vi har gått Byggkeramikrådets utbildning och arbetar efter branschreglerna BBV. När badrummet är klart får du ett Kvalitetsdokument."
+                  },
+                  "i3": {
+                    "question": "Hur får jag en offert?",
+                    "answer": "Fyll i formuläret, mejla info@vastkustbygg.se eller ring 076-882 03 33. Oftast vill vi se på plats innan vi lämnar en offert som håller."
+                  },
+                  "i4": {
+                    "question": "Var arbetar ni?",
+                    "answer": "Främst i Göteborg och Kungsbacka med omnejd. Ligger ditt projekt någon annanstans – hör av dig så svarar vi om vi kan ta det."
+                  },
+                  "i5": {
+                    "question": "Gäller ROT-avdrag?",
+                    "answer": "ROT-avdraget gäller arbetskostnaden för många renoveringar och ombyggnader i bostäder. Vi visar hur det påverkar priset i offerten."
+                  },
+                  "i6": {
+                    "question": "Är ni försäkrade?",
+                    "answer": "Ja. Bolaget har allrisk- och ansvarsförsäkring via Länsförsäkringar, och de anställda omfattas av kollektivavtalade försäkringar via FORA."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,70 +1,68 @@
-# Västkust Bygg & Montage AB – ny webbplats
+# Västkust Bygg & Montage AB – hemsida med adminpanel
 
-Ny webbplats för [Västkust Bygg & Montage AB](https://www.vastkustbygg.se/) (bygg och renovering i Göteborg och
-Kungsbacka). All text och alla bilder är skrapade från nuvarande vastkustbygg.se.
+Ny hemsida för [Västkust Bygg & Montage AB](https://www.vastkustbygg.se/) (bygg och renovering i Göteborg och
+Kungsbacka), med adminpanelen från Elevate Studios Bugg-test: ägaren ändrar texter, bilder, färger och sidor själv,
+får offertförfrågningarna i panelen och kan be AI-assistenten om ändringar.
 
-Designen är en mix av Elevate Studios hantverkarsajter:
+**Kom igång: läs [SETUP.md](SETUP.md)** – GitHub Pages, Supabase och inloggningen.
 
-| Från | Vad |
-| --- | --- |
-| S-Bygg, Ohan, Antonsson | Python-generatorn (`scripts/` → `docs/`), Plus Jakarta Sans, piller-knappar, FAQ, offertformulär via FormSubmit med `?typ=` |
-| JJ El | ”Begär offert”-knapp med pil i cirkel, tjänsterutor med pil och färgad ”Hittar du inte det du söker?”-ruta, om oss-bild med rund betygsbricka, galleri med utförda jobb |
-| Kungsbacka Mark & Trädgård | Hero i helskärm |
-| Appelgrens Elektriska | Faktatabell i om oss, skrapskriptet |
-| Antonsson | Mörk ruta som ligger över en bred bild, arbetsgång med ikon och stora nummer, kontakt med formulär i ruta |
-| GBG Mosaik | Före/efter |
+## Så hänger det ihop
 
-Färgerna kommer från loggan: svart och blått.
+- **Next.js** (statisk export till GitHub Pages, basePath `/vastkust-bygg`). Hela innehållet är ett dokument
+  (`lib/site/schema.ts`); varje sida är en lista sektioner som ritas av `components/sections/`.
+- **Utseendet** är den godkända designen (en mix av Elevate Studios hantverkarsajter): `app/site.css`, avgränsad till
+  `.vk` så att adminpanelen inte påverkas. Färger och typsnitt kommer från temat i adminpanelen (Plus Jakarta Sans,
+  loggans svart och blått).
+- **Adminpanelen** (`app/admin`, `components/admin`) och **Supabase** (`supabase/`: databas, Edge Functions för
+  publicering, offertförfrågningar, förslag, inbjudningar och AI) är desamma som i Bugg-test.
+- Utan Supabase byggs sajten från `content/baseline.json` och offertformuläret mejlar via FormSubmit till Elevate
+  Studio; adminpanelen visar då att den inte är ansluten.
 
 ## Sidor
 
-Allt ligger i [`docs/`](docs/) – öppna `docs/index.html` i en webbläsare.
+Start (hero i helskärm, tjänsterutor, om oss med faktatabell, våtrum, kök före/efter, utförda jobb, varför oss,
+arbetsgång, omdömen att bläddra i, kontakt med formulär, frågor), fyra tjänstesidor under `/tjanster/…`, `/projekt`
+med tre projektsidor (`/projekt-badrum`, `/projekt-kok`, `/projekt-kontor`), `/certifikat`, `/om-oss`, `/kontakt` och
+`/admin`.
 
-- `index.html` – startsidan: hero i helskärm, tjänsterutor, om oss med faktatabell, våtrum,
-  kök före/efter, utförda jobb, varför oss, arbetsgång, omdömen (bläddra med pilarna), kontakt med formulär, frågor
-- `tjanst-badrum.html`, `tjanst-kok.html`, `tjanst-renovering.html`, `tjanst-nybyggnation.html`
-- `projekt.html` + `projekt-badrum.html`, `projekt-kok.html`, `projekt-kontor.html` (alla bilder från gamla
-  sajtens projektportfölj, med bildvisning)
-- `trygghet.html` – certifikat och försäkringar: våtrumsbehörighet, ID06, BAS P/U, Länsförsäkringar och FORA
-- `om-oss.html`, `kontakt.html` (offertformulär), `404.html`, `sitemap.xml`, `robots.txt`
+Sektionstyper som lagts till för den här designen: *Bild med mörk ruta* (`overlay`), *Före och efter*
+(`beforeAfter`), *Mörkt band med kort* (`values`) och *Område och karta* (`area`). Alla sektioner har dessutom en
+liten text ovanför rubriken (`eyebrow`), och tjänsterna har ingress, ”Det här kan ingå” och egna bilder.
 
-## Ändra text eller bygga om
+## Utveckla
 
 ```bash
-python3 scripts/skrapa.py      # hämtar text (skrapat/text.txt) och originalbilder (skrapat/original/, inte incheckad)
-python3 scripts/bilder.py      # gör webbversioner till docs/img/ och loggan i ljus/mörk version (kräver Pillow)
-python3 scripts/build.py docs  # bygger sidorna
+npm ci
+npm run dev                       # http://localhost:3000
+GITHUB_PAGES=true npm run build   # som på GitHub Pages, till out/
+npx tsx supabase/tests/changeset.test.ts
+node scripts/sync-shared.mjs      # efter ändringar i lib/site eller content/baseline.json
 ```
 
-All text och alla uppgifter finns i `scripts/innehall.py`; layouten i `scripts/build.py`, `docs/assets/site.css` och
-`docs/assets/site.js`. Ändra aldrig HTML-filerna i `docs/` direkt – de skrivs över.
+## Ursprungligt innehåll
+
+All text och alla bilder är skrapade från nuvarande vastkustbygg.se. Verktygen ligger i `tools/` (Python, Pillow):
+
+```bash
+python3 tools/skrapa.py          # text och originalbilder till skrapat/ (inte incheckat)
+python3 tools/bilder.py          # webp i flera storlekar till public/photos, loggorna och ikonen till public/
+python3 tools/make_baseline.py   # content/baseline.json och baseline-migrationen, från tools/innehall.py
+node scripts/sync-shared.mjs
+```
+
+När sajten är kopplad till Supabase ändras innehållet i adminpanelen, inte i baseline.
 
 ## Fakta och förslag – gå igenom före lansering
 
 **Från vastkustbygg.se:** namn, telefon 076-882 03 33, info@vastkustbygg.se, öppettider (mån–fre 08–17),
-arbetsledare Emanuel Ström, tjänsterna och deras korttexter, ”Om oss”-texterna, de tre punkterna under ”Vad gör oss
-unika?”, alla fem kundomdömen, texterna om ID06, våtrumsbehörighet (BBV), BAS P/U, Länsförsäkringar och FORA,
-loggan, certifikatloggorna och alla projektbilder.
+arbetsledare Emanuel Ström, tjänsterna och deras korttexter, ”Om oss”-texterna, ”Vad gör oss unika?”, alla fem
+kundomdömen, texterna om ID06, våtrumsbehörighet (BBV), BAS P/U, Länsförsäkringar och FORA, loggan, certifikatloggorna
+och alla projektbilder.
 
-**Förslag som Västkust Bygg bör bekräfta eller ändra** (märkta FÖRSLAG i `scripts/innehall.py`):
+**Förslag som Västkust Bygg bör bekräfta eller ändra** (märkta FÖRSLAG i `tools/innehall.py`):
 
-- Området *Göteborg och Kungsbacka* och ortlistan – bygger på orterna i omdömena (Malevik, Lindome, Västra
-  Frölunda, Hovås).
-- Tjänstesidornas längre texter och listorna ”Det här kan ingå” (särskilt Nybyggnation: tillbyggnader,
-  attefallshus m.m.), arbetsgången, frågorna och svaren, och beskrivningarna av projekten.
-- Gatuadress och org.nr saknas på gamla sajten (där står bara en mallrad) och visas inte.
+- Området *Göteborg och Kungsbacka* och ortlistan – bygger på orterna i omdömena.
+- Tjänstesidornas längre texter och ”Det här kan ingå”, arbetsgången, frågorna och svaren och projektbeskrivningarna.
+- Gatuadress, org.nr och grundår saknas på gamla sajten och visas inte (grundåret 2023 i företagsuppgifterna är en
+  platshållare som inte syns någonstans).
 - Omdömet från Ingvar Nore kommer från Google; de övriga fyra har ort och datum men ingen källa på gamla sajten.
-
-Inga priser, årtal eller antal anställda anges.
-
-## Offertformuläret
-
-Formuläret skickar e-post via [FormSubmit](https://formsubmit.co). Under förhandsvisningen går förfrågningarna till
-Elevate Studio; byt `FORM_EMAIL` i `scripts/innehall.py` till info@vastkustbygg.se vid lansering (första förfrågan
-skickar ett aktiveringsmejl). ”Få offert” från en tjänstesida fyller i projekttypen (`kontakt.html?typ=…#offert`).
-
-## Publicera
-
-Sidan publiceras av `.github/workflows/deploy-pages.yml` vid varje push till `main` eller
-`claude/happy-wright-lhp01u` (GitHub Pages, källa *GitHub Actions*). Byt `SITE_URL` i `scripts/innehall.py` om sajten
-flyttas till vastkustbygg.se.
