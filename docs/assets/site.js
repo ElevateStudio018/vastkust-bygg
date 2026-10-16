@@ -39,6 +39,27 @@
     }, 6000);
   }
 
+  // Omdömena: bläddra med pilarna (eller svep/scrolla i raden)
+  document.querySelectorAll("[data-slider]").forEach(function (slider) {
+    var track = slider.querySelector(".rev-track");
+    var sec = slider.closest("section");
+    var prev = sec.querySelector(".rev-prev"), next = sec.querySelector(".rev-next");
+    if (!track || !prev || !next) return;
+    function step() {
+      var li = track.querySelector("li");
+      return li ? li.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0) : track.clientWidth;
+    }
+    function update() {
+      prev.disabled = track.scrollLeft < 4;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    }
+    prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
+    next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
+
   // Bildvisning för projektbilderna (data-lb = grupp)
   var lb = document.getElementById("lb");
   if (lb) {

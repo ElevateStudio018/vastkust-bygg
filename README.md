@@ -9,10 +9,10 @@ Designen är en mix av Elevate Studios hantverkarsajter:
 | --- | --- |
 | S-Bygg, Ohan, Antonsson | Python-generatorn (`scripts/` → `docs/`), Plus Jakarta Sans, piller-knappar, FAQ, offertformulär via FormSubmit med `?typ=` |
 | JJ El | Inforad med betyg, ”Begär offert”-knapp med pil i cirkel, tjänsterutor med pil och färgad ”Hittar du inte det du söker?”-ruta, om oss-bild med rund betygsbricka, galleri med utförda jobb |
-| Kungsbacka Mark & Trädgård | Hero i full bredd med tjänsterad längst ner |
+| Kungsbacka Mark & Trädgård | Hero i helskärm |
 | Appelgrens Elektriska | Faktatabell i om oss, skrapskriptet |
 | Antonsson | Mörk ruta som ligger över en bred bild, arbetsgång med ikon och stora nummer, kontakt med formulär i ruta |
-| GBG Mosaik | Förtroenderaden under heron, före/efter |
+| GBG Mosaik | Före/efter |
 
 Färgerna kommer från loggan: svart och blått.
 
@@ -20,8 +20,8 @@ Färgerna kommer från loggan: svart och blått.
 
 Allt ligger i [`docs/`](docs/) – öppna `docs/index.html` i en webbläsare.
 
-- `index.html` – startsidan: hero med tjänsterad, förtroenderad, tjänsterutor, om oss med faktatabell, våtrum,
-  kök före/efter, utförda jobb, varför oss, arbetsgång, omdömen, kontakt med formulär, frågor
+- `index.html` – startsidan: hero i helskärm, tjänsterutor, om oss med faktatabell, våtrum,
+  kök före/efter, utförda jobb, varför oss, arbetsgång, omdömen (bläddra med pilarna), kontakt med formulär, frågor
 - `tjanst-badrum.html`, `tjanst-kok.html`, `tjanst-renovering.html`, `tjanst-nybyggnation.html`
 - `projekt.html` + `projekt-badrum.html`, `projekt-kok.html`, `projekt-kontor.html` (alla bilder från gamla
   sajtens projektportfölj, med bildvisning)

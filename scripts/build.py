@@ -18,7 +18,7 @@ OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "docs")
 E = html.escape
 SVC = {s["slug"]: s for s in C.SERVICES}
 PRJ = {p["slug"]: p for p in C.PROJECTS}
-VERSION = "3"
+VERSION = "4"
 
 # --- Ikoner -------------------------------------------------------------------------------------------------------
 def icon(name, cls="ic"):
@@ -252,27 +252,10 @@ def hero(eb, title, lead, photo, alt, pos="50% 50%", crumbs=None, btns=None, hom
         parts = " / ".join(f'<a href="{h}">{t}</a>' for h, t in crumbs[:-1])
         cr = f'<nav class="crumbs" aria-label="Brödsmulor">{parts} / <span aria-current="page">{crumbs[-1][1]}</span></nav>'
     b = f'<div class="btns">{btns}</div>' if btns else ""
-    row = ""
-    if home:
-        links = "".join(f'<li><a href="tjanst-{s["slug"]}.html"><small>0{i + 1}</small>{s["title"]}</a></li>'
-                        for i, s in enumerate(C.SERVICES))
-        row = f'<div class="hero-row"><ul class="wrap">{links}</ul></div>'
     return f'''<section class="hero{" hero-home" if home else ""}">
   <div class="hero-bg">{img(photo, alt, pos, "100vw", lazy=False)}</div>
   <div class="wrap hero-in">{cr}{eyebrow(eb) if eb else ""}<h1>{title}</h1><p class="hero-lead">{lead}</p>{b}</div>
-  {row}
 </section>'''
-
-
-def trust_strip():
-    items = [
-        ("drop", "Behörig våtrum", "Byggkeramikrådets regler, BBV"),
-        ("id", "ID06", "Personalliggare och ID-kort"),
-        ("helmet", "BAS P och BAS U", "Byggarbetsmiljösamordning"),
-        ("shield", "Försäkrade", "Länsförsäkringar och FORA"),
-    ]
-    li = "".join(f'<li>{icon(i)}<span><b>{t}</b><small>{s}</small></span></li>' for i, t, s in items)
-    return f'<section class="trust" aria-label="Certifikat och försäkringar"><ul class="wrap trust-in">{li}</ul></section>'
 
 
 def sec_head(eb, title, right=""):
@@ -383,12 +366,16 @@ def review_card(r):
 
 
 def reviews_sec(idx=(0, 2, 3), tint=True):
-    cards = "".join(review_card(C.REVIEWS[i]) for i in idx)
-    right = f'<p class="rating">{stars()}<span><b>5 av 5</b> i alla omdömen</span></p>'
+    """Alla omdömen i en rad man bläddrar i; idx styr vilket som visas först."""
+    order = list(idx) + [i for i in range(len(C.REVIEWS)) if i not in idx]
+    cards = "".join(f'<li>{review_card(C.REVIEWS[i])}</li>' for i in order)
+    nav = (f'<div class="rev-nav"><p class="rating">{stars()}<span><b>5 av 5</b> i alla omdömen</span></p>'
+           f'<span class="rev-btns"><button class="rev-prev" type="button" aria-label="Föregående omdöme" disabled>{icon("left")}</button>'
+           f'<button class="rev-next" type="button" aria-label="Nästa omdöme">{icon("right")}</button></span></div>')
     return f'''<section class="sec{" tint" if tint else ""}">
   <div class="wrap">
-    {sec_head("Omdömen", "Vad kunderna säger", right)}
-    <div class="revs">{cards}</div>
+    {sec_head("Omdömen", "Vad kunderna säger", nav)}
+    <div class="rev-slider" data-slider><ul class="rev-track" tabindex="0" aria-label="Omdömen">{cards}</ul></div>
   </div>
 </section>'''
 
@@ -463,7 +450,6 @@ def index():
                  "kok-efter-1", ALTS["kok-efter-1"], "50% 62%",
                  btns=btn("Begär offert", quote_href(), "blue", arrow=True) + btn("Ring " + C.PHONE, "tel:" + C.TEL, "outline", "phone"),
                  home=True)}
-{trust_strip()}
 
 <section class="sec" id="tjanster">
   <div class="wrap">
@@ -528,7 +514,6 @@ def service_page(s):
     main = f'''{hero(f"Tjänster · {C.AREA}", s["title"], s["short"], s["photo"], s["alt"], s["pos"],
                  [("index.html", "Start"), ("index.html#tjanster", "Tjänster"), ("", s["title"])],
                  btn("Begär offert", quote_href(typ), "blue", arrow=True) + btn("Ring " + C.PHONE, "tel:" + C.TEL, "outline", "phone"))}
-{trust_strip()}
 <section class="sec">
   <div class="wrap svc-intro">
     <div class="prose">
@@ -625,7 +610,6 @@ def trust_page():
         cards.append(f'<li class="cert" id="{c["slug"]}">{top}<h3>{c["title"]}</h3>{"".join(f"<p>{t}</p>" for t in c["text"])}</li>')
     main = f'''{hero("Certifikat och försäkringar", "Säkra byggarbeten", C.CERTS_INTRO,
                  "bad2-under", ALTS["bad2-under"], "50% 60%", [("index.html", "Start"), ("", "Certifikat")])}
-{trust_strip()}
 <section class="sec">
   <div class="wrap">
     {sec_head("Certifikat och försäkringar", "Säkra byggarbeten med våra certifikat och försäkringar")}
