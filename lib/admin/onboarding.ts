@@ -30,7 +30,8 @@ export function doneFromContent(draft: SiteData | null, conversations: number): 
   const done: string[] = [];
   const { company } = draft;
   if (company.phone && company.email && company.address.street) done.push("contact");
-  if (draft.settings.logo.kind === "image") done.push("logo");
+  // The built-in wordmark is Västkust's real logo (components/Wordmark.tsx), so the site has a logo either way.
+  if (draft.settings.logo.kind === "image" || draft.settings.logo.kind === "wordmark") done.push("logo");
   if (conversations > 0) done.push("ai");
   return done;
 }
