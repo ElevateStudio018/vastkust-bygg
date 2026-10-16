@@ -18,7 +18,7 @@ OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "docs")
 E = html.escape
 SVC = {s["slug"]: s for s in C.SERVICES}
 PRJ = {p["slug"]: p for p in C.PROJECTS}
-VERSION = "4"
+VERSION = "5"
 
 # --- Ikoner -------------------------------------------------------------------------------------------------------
 def icon(name, cls="ic"):
@@ -116,16 +116,6 @@ def header(active):
             items.append(f'<li><a href="{href}"{cur}>{text}</a></li>')
     mob = "".join(f'<li><a href="{h if h != "tjanster" else "index.html#tjanster"}">{t}</a></li>' for h, t in NAV)
     return f'''<a class="skip" href="#main">Hoppa till innehållet</a>
-<div class="topbar">
-  <div class="wrap topbar-in">
-    <span>Bygg och renovering i {C.AREA}</span>
-    <span class="topbar-r">
-      <a href="tel:{C.TEL}">{icon("phone")}{C.PHONE}</a>
-      <a href="mailto:{C.EMAIL}">{icon("mail")}{C.EMAIL}</a>
-      <span class="tb-stars">{icon("star")}5/5 i omdömen</span>
-    </span>
-  </div>
-</div>
 <header class="head">
   <div class="wrap bar">
     <a class="logo" href="index.html" aria-label="{C.NAME}, till startsidan"><img src="img/logo-mork.png" alt="{C.NAME}" width="900" height="320"></a>

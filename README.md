@@ -8,7 +8,7 @@ Designen är en mix av Elevate Studios hantverkarsajter:
 | Från | Vad |
 | --- | --- |
 | S-Bygg, Ohan, Antonsson | Python-generatorn (`scripts/` → `docs/`), Plus Jakarta Sans, piller-knappar, FAQ, offertformulär via FormSubmit med `?typ=` |
-| JJ El | Inforad med betyg, ”Begär offert”-knapp med pil i cirkel, tjänsterutor med pil och färgad ”Hittar du inte det du söker?”-ruta, om oss-bild med rund betygsbricka, galleri med utförda jobb |
+| JJ El | ”Begär offert”-knapp med pil i cirkel, tjänsterutor med pil och färgad ”Hittar du inte det du söker?”-ruta, om oss-bild med rund betygsbricka, galleri med utförda jobb |
 | Kungsbacka Mark & Trädgård | Hero i helskärm |
 | Appelgrens Elektriska | Faktatabell i om oss, skrapskriptet |
 | Antonsson | Mörk ruta som ligger över en bred bild, arbetsgång med ikon och stora nummer, kontakt med formulär i ruta |
