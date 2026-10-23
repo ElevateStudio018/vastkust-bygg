@@ -47,11 +47,11 @@ export function HeroVideo() {
   // on their own when the attribute is there from the start.
   const html =
     `<video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback ` +
-    `aria-hidden="true" tabindex="-1" poster="${withBasePath("/videos/hero-poster.webp")}">` +
-    `<source src="${withBasePath("/videos/hero-720.mp4")}" type="video/mp4" media="(max-width: 900px)">` +
-    `<source src="${withBasePath("/videos/hero-720.webm")}" type="video/webm" media="(max-width: 900px)">` +
-    `<source src="${withBasePath("/videos/hero-1080.mp4")}" type="video/mp4">` +
-    `<source src="${withBasePath("/videos/hero-1080.webm")}" type="video/webm">` +
+    `aria-hidden="true" tabindex="-1" poster="${withBasePath("/videos/hero-poster.webp?v=2")}">` +
+    `<source src="${withBasePath("/videos/hero-720.mp4?v=2")}" type="video/mp4" media="(max-width: 900px)">` +
+    `<source src="${withBasePath("/videos/hero-720.webm?v=2")}" type="video/webm" media="(max-width: 900px)">` +
+    `<source src="${withBasePath("/videos/hero-1080.mp4?v=2")}" type="video/mp4">` +
+    `<source src="${withBasePath("/videos/hero-1080.webm?v=2")}" type="video/webm">` +
     `</video>`;
   return <div ref={box} className="hero-video-box" dangerouslySetInnerHTML={{ __html: html }} />;
 }
