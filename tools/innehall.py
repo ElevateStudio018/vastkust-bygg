@@ -17,8 +17,8 @@ CONTACT_PERSON = ("Emanuel Ström", "Arbetsledare")
 # Google-platsen som länkas från nuvarande sajt. Gatuadress saknas på sajten (där står bara en mallrad) och visas inte.
 MAPS_LINK = "https://www.google.com/maps/place/?q=place_id:ChIJrz2xu5lvzC4RC-5UkH9xpUw"
 # FÖRSLAG: området bygger på orterna i kundomdömena (Malevik, Lindome, Västra Frölunda, Hovås).
-AREA = "Göteborg och Kungsbacka"
-AREA_PLACES = ["Göteborg", "Västra Frölunda", "Hovås", "Askim", "Mölndal", "Lindome", "Kungsbacka", "Malevik"]
+AREA = "Göteborg med omnejd"
+AREA_PLACES = ["Göteborg", "Mölndal", "Partille", "Härryda", "Lerum", "Kungälv", "Ale"]
 
 # Offertformuläret skickar via FormSubmit. Under förhandsvisningen går förfrågningarna till Elevate Studio;
 # byt till info@vastkustbygg.se vid lansering (första förfrågan till en ny adress skickar ett aktiveringsmejl).

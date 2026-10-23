@@ -66,7 +66,7 @@
     "foundedYear": 2023,
     "employees": 0,
     "city": "Göteborg",
-    "serviceArea": "Göteborg och Kungsbacka",
+    "serviceArea": "Göteborg, Mölndal, Partille, Härryda, Lerum, Kungälv och Ale",
     "address": {
       "street": "",
       "postalCode": "",
@@ -79,7 +79,7 @@
     },
     "phone": "076-882 03 33",
     "email": "info@vastkustbygg.se",
-    "orgNumber": "",
+    "orgNumber": "559071-1999",
     "vatNumber": "",
     "openingHours": "Måndag–fredag: 08.00–17.00; Lördag–söndag: Stängt",
     "social": {
@@ -168,7 +168,8 @@
         "projekt",
         "certifikat",
         "om-oss",
-        "kontakt"
+        "kontakt",
+        "integritetspolicy"
       ],
       "items": {
         "projekt": {
@@ -186,6 +187,10 @@
         "kontakt": {
           "label": "Kontakt",
           "href": "/kontakt"
+        },
+        "integritetspolicy": {
+          "label": "Integritetspolicy",
+          "href": "/integritetspolicy"
         }
       }
     },
@@ -284,7 +289,7 @@
   },
   "servicePage": {
     "badge": "",
-    "eyebrow": "Tjänster · Göteborg och Kungsbacka",
+    "eyebrow": "Tjänster · Göteborg med omnejd",
     "includesHeading": "Det här kan ingå",
     "galleryEyebrow": "Från projektportföljen",
     "reviewsEyebrow": "Omdömen",
@@ -306,7 +311,7 @@
       "area": "Område",
       "org": "Org.nr"
     },
-    "contactTagline": "Bygg och renovering i Göteborg och Kungsbacka",
+    "contactTagline": "Bygg och renovering i Göteborg med omnejd",
     "contactButton": {
       "label": "Begär offert",
       "href": "#offert"
@@ -563,8 +568,8 @@
           "focus": "50% 60%"
         },
         "seo": {
-          "title": "Badrumsrenovering i Göteborg och Kungsbacka",
-          "description": "Badrumsrenovering i Göteborg och Kungsbacka. Vi skapar funktionella och stilrena badrum genom skräddarsydda renoveringar som passar dina önskemål. Ring 076-882 03 33."
+          "title": "Badrumsrenovering i Göteborg med omnejd",
+          "description": "Badrumsrenovering i Göteborg med omnejd. Vi skapar funktionella och stilrena badrum genom skräddarsydda renoveringar som passar dina önskemål. Ring 076-882 03 33."
         }
       },
       "koksrenovering": {
@@ -721,8 +726,8 @@
           "focus": "50% 55%"
         },
         "seo": {
-          "title": "Köksrenovering i Göteborg och Kungsbacka",
-          "description": "Köksrenovering i Göteborg och Kungsbacka. Få ditt drömkök med våra kökrenoveringstjänster som kombinerar design, funktionalitet och kvalitet på ett professionellt sätt. Ring 076-882 03 33."
+          "title": "Köksrenovering i Göteborg med omnejd",
+          "description": "Köksrenovering i Göteborg med omnejd. Få ditt drömkök med våra kökrenoveringstjänster som kombinerar design, funktionalitet och kvalitet på ett professionellt sätt. Ring 076-882 03 33."
         }
       },
       "renovering-och-ombyggnation": {
@@ -951,8 +956,8 @@
           "focus": "50% 55%"
         },
         "seo": {
-          "title": "Renovering och ombyggnation i Göteborg och Kungsbacka",
-          "description": "Renovering och ombyggnation i Göteborg och Kungsbacka. Vårt team utför noggranna renoveringar och ombyggnationer för att förvandla ditt utrymme till något nytt och modernt. Ring 076-882 03 33."
+          "title": "Renovering och ombyggnation i Göteborg med omnejd",
+          "description": "Renovering och ombyggnation i Göteborg med omnejd. Vårt team utför noggranna renoveringar och ombyggnationer för att förvandla ditt utrymme till något nytt och modernt. Ring 076-882 03 33."
         }
       },
       "nybyggnation": {
@@ -1002,8 +1007,8 @@
           "focus": "50% 45%"
         },
         "seo": {
-          "title": "Nybyggnation i Göteborg och Kungsbacka",
-          "description": "Nybyggnation i Göteborg och Kungsbacka. Vi specialiserar oss på att skapa unika och hållbara nybyggnationer som passar dina önskemål och behov. Ring 076-882 03 33."
+          "title": "Nybyggnation i Göteborg med omnejd",
+          "description": "Nybyggnation i Göteborg med omnejd. Vi specialiserar oss på att skapa unika och hållbara nybyggnationer som passar dina önskemål och behov. Ring 076-882 03 33."
         }
       }
     }
@@ -1167,15 +1172,16 @@
       "projekt-kontor",
       "certifikat",
       "om-oss",
-      "kontakt"
+      "kontakt",
+      "integritetspolicy"
     ],
     "items": {
       "hem": {
         "slug": "",
         "title": "Hem",
         "seo": {
-          "title": "Byggföretag i Göteborg och Kungsbacka – badrum, kök, renovering",
-          "description": "Västkust Bygg & Montage AB bygger och renoverar badrum, kök, bostäder och lokaler i Göteborg och Kungsbacka. Behörig våtrum, ID06 och BAS P/U. Ring 076-882 03 33."
+          "title": "Byggföretag i Göteborg med omnejd – badrum, kök, renovering",
+          "description": "Västkust Bygg & Montage AB bygger och renoverar badrum, kök, bostäder och lokaler i Göteborg med omnejd. Behörig våtrum, ID06 och BAS P/U. Ring 076-882 03 33."
         },
         "sections": {
           "order": [
@@ -1197,7 +1203,7 @@
               "hidden": false,
               "anchor": "",
               "label": "",
-              "eyebrow": "Bygg och renovering · Göteborg och Kungsbacka",
+              "eyebrow": "Bygg och renovering · Göteborg med omnejd",
               "heading": "Kompetens, noggrannhet och tydlighet",
               "text": "Badrum, kök, renoveringar och nybyggnation – vi är med er hela vägen, från idé till färdigt projekt.",
               "image": {
@@ -1303,7 +1309,7 @@
                   },
                   "i2": {
                     "label": "Område",
-                    "value": "Göteborg och Kungsbacka"
+                    "value": "Göteborg med omnejd"
                   },
                   "i3": {
                     "label": "Våtrum",
@@ -1839,7 +1845,7 @@
                   },
                   "i4": {
                     "question": "Var arbetar ni?",
-                    "answer": "Främst i Göteborg och Kungsbacka med omnejd. Ligger ditt projekt någon annanstans – hör av dig så svarar vi om vi kan ta det."
+                    "answer": "Främst i Göteborg, Mölndal, Partille, Härryda, Lerum, Kungälv och Ale. Ligger ditt projekt någon annanstans – hör av dig så svarar vi om vi kan ta det."
                   },
                   "i5": {
                     "question": "Gäller ROT-avdrag?",
@@ -2043,7 +2049,7 @@
         "title": "Badrumsrenoveringar",
         "seo": {
           "title": "Badrumsrenoveringar – projekt",
-          "description": "Ett urval av badrummen vi har renoverat – från rivning till färdigt rum med kvalitetsdokument. Västkust Bygg & Montage AB, Göteborg och Kungsbacka."
+          "description": "Ett urval av badrummen vi har renoverat – från rivning till färdigt rum med kvalitetsdokument. Västkust Bygg & Montage AB, Göteborg med omnejd."
         },
         "sections": {
           "order": [
@@ -2517,7 +2523,7 @@
         "title": "Köksrenoveringar",
         "seo": {
           "title": "Köksrenoveringar – projekt",
-          "description": "Samma kök, före och efter. Det gamla köket revs ut och ersattes med nytt från golv till tak. Västkust Bygg & Montage AB, Göteborg och Kungsbacka."
+          "description": "Samma kök, före och efter. Det gamla köket revs ut och ersattes med nytt från golv till tak. Västkust Bygg & Montage AB, Göteborg med omnejd."
         },
         "sections": {
           "order": [
@@ -2703,7 +2709,7 @@
         "title": "Kontor och lokalanpassningar",
         "seo": {
           "title": "Kontor och lokalanpassningar – projekt",
-          "description": "En kontorslokal som anpassades med nya väggar, glaspartier och undertak – här steg för steg. Västkust Bygg & Montage AB, Göteborg och Kungsbacka."
+          "description": "En kontorslokal som anpassades med nya väggar, glaspartier och undertak – här steg för steg. Västkust Bygg & Montage AB, Göteborg med omnejd."
         },
         "sections": {
           "order": [
@@ -3108,7 +3114,7 @@
         "title": "Om oss",
         "seo": {
           "title": "Om oss",
-          "description": "Västkust Bygg & Montage AB är ett byggföretag i Göteborg och Kungsbacka. Kompetens, noggrannhet och tydlighet från idé till färdigt projekt."
+          "description": "Västkust Bygg & Montage AB är ett byggföretag i Göteborg med omnejd. Kompetens, noggrannhet och tydlighet från idé till färdigt projekt."
         },
         "sections": {
           "order": [
@@ -3178,7 +3184,7 @@
                   },
                   "i2": {
                     "label": "Område",
-                    "value": "Göteborg och Kungsbacka"
+                    "value": "Göteborg med omnejd"
                   },
                   "i3": {
                     "label": "Våtrum",
@@ -3445,7 +3451,7 @@
               "anchor": "",
               "label": "",
               "eyebrow": "Område",
-              "heading": "Vi bygger i Göteborg och Kungsbacka",
+              "heading": "Vi bygger i Göteborg med omnejd",
               "text": "Våra kunder finns bland annat här. Ligger ditt projekt utanför – hör av dig ändå.",
               "places": {
                 "order": [
@@ -3455,33 +3461,29 @@
                   "i4",
                   "i5",
                   "i6",
-                  "i7",
-                  "i8"
+                  "i7"
                 ],
                 "items": {
                   "i1": {
                     "label": "Göteborg"
                   },
                   "i2": {
-                    "label": "Västra Frölunda"
-                  },
-                  "i3": {
-                    "label": "Hovås"
-                  },
-                  "i4": {
-                    "label": "Askim"
-                  },
-                  "i5": {
                     "label": "Mölndal"
                   },
+                  "i3": {
+                    "label": "Partille"
+                  },
+                  "i4": {
+                    "label": "Härryda"
+                  },
+                  "i5": {
+                    "label": "Lerum"
+                  },
                   "i6": {
-                    "label": "Lindome"
+                    "label": "Kungälv"
                   },
                   "i7": {
-                    "label": "Kungsbacka"
-                  },
-                  "i8": {
-                    "label": "Malevik"
+                    "label": "Ale"
                   }
                 }
               },
@@ -3523,7 +3525,7 @@
                   },
                   "i4": {
                     "question": "Var arbetar ni?",
-                    "answer": "Främst i Göteborg och Kungsbacka med omnejd. Ligger ditt projekt någon annanstans – hör av dig så svarar vi om vi kan ta det."
+                    "answer": "Främst i Göteborg, Mölndal, Partille, Härryda, Lerum, Kungälv och Ale. Ligger ditt projekt någon annanstans – hör av dig så svarar vi om vi kan ta det."
                   },
                   "i5": {
                     "question": "Gäller ROT-avdrag?",
@@ -3535,6 +3537,170 @@
                   }
                 }
               }
+            }
+          }
+        }
+      },
+      "integritetspolicy": {
+        "slug": "integritetspolicy",
+        "title": "Integritetspolicy",
+        "seo": {
+          "title": "Integritetspolicy",
+          "description": "Så hanterar Västkust Bygg & Montage AB personuppgifterna du lämnar när du skickar en offertförfrågan."
+        },
+        "sections": {
+          "order": [
+            "bild",
+            "ansvar",
+            "uppgifter",
+            "varfor",
+            "hur-lange",
+            "leverantorer",
+            "kakor",
+            "rattigheter"
+          ],
+          "items": {
+            "bild": {
+              "type": "pageHero",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "Integritet",
+              "heading": "Integritetspolicy",
+              "text": "Så hanterar vi uppgifterna du lämnar när du kontaktar oss.",
+              "button": {
+                "label": "",
+                "href": "#"
+              },
+              "image": {
+                "src": "/photos/bad2-under.webp",
+                "variants": [
+                  {
+                    "width": 480,
+                    "src": "/photos/bad2-under-480.webp"
+                  },
+                  {
+                    "width": 800,
+                    "src": "/photos/bad2-under-800.webp"
+                  },
+                  {
+                    "width": 832,
+                    "src": "/photos/bad2-under.webp"
+                  }
+                ],
+                "alt": "Duschhörna med nya plattor och golvbrunn under arbetet",
+                "focus": "50% 60%"
+              },
+              "size": "medium"
+            },
+            "ansvar": {
+              "type": "text",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Vem ansvarar för dina uppgifter?",
+              "paragraphs": [
+                "Västkust Bygg & Montage AB (org.nr 559071-1999) ansvarar för de personuppgifter som lämnas via webbplatsen. Har du frågor når du oss på info@vastkustbygg.se eller 076-882 03 33."
+              ],
+              "image": null,
+              "imageSide": "right",
+              "button": null,
+              "tone": "light"
+            },
+            "uppgifter": {
+              "type": "text",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Vilka uppgifter vi sparar",
+              "paragraphs": [
+                "När du skickar en offertförfrågan sparar vi det du fyller i: namn, telefonnummer, e-postadress, typ av projekt och din beskrivning.",
+                "För att stoppa skräppost sparar vi också en kod som räknas fram ur din IP-adress. Koden går inte att räkna tillbaka till adressen."
+              ],
+              "image": null,
+              "imageSide": "right",
+              "button": null,
+              "tone": "light"
+            },
+            "varfor": {
+              "type": "text",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Varför vi använder dem",
+              "paragraphs": [
+                "Vi använder uppgifterna för att svara på din förfrågan, ta fram en offert och hålla kontakten om jobbet. Det gör vi för att du har bett om en offert. Blir det ett uppdrag använder vi uppgifterna för att kunna utföra det.",
+                "Vi säljer inte dina uppgifter och skickar ingen reklam till dig."
+              ],
+              "image": null,
+              "imageSide": "right",
+              "button": null,
+              "tone": "light"
+            },
+            "hur-lange": {
+              "type": "text",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Hur länge vi sparar dem",
+              "paragraphs": [
+                "Förfrågningar som inte leder till ett uppdrag raderar vi senast 12 månader efter att vi har svarat. Blir det ett uppdrag sparar vi det som behövs för faktura och garanti så länge lagen kräver, till exempel sju år enligt bokföringslagen."
+              ],
+              "image": null,
+              "imageSide": "right",
+              "button": null,
+              "tone": "light"
+            },
+            "leverantorer": {
+              "type": "text",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Vilka som hanterar uppgifterna åt oss",
+              "paragraphs": [
+                "Förfrågningarna lagras hos Supabase på servrar i Stockholm. Webbplatsen visas via GitHub Pages, som tar emot din IP-adress när du besöker sidan, precis som alla webbservrar. GitHub finns i USA och omfattas av EU:s och USA:s ramverk för dataskydd.",
+                "Leverantörerna får bara använda uppgifterna för att leverera sin tjänst till oss."
+              ],
+              "image": null,
+              "imageSide": "right",
+              "button": null,
+              "tone": "light"
+            },
+            "kakor": {
+              "type": "text",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Kakor och karta",
+              "paragraphs": [
+                "Webbplatsen använder inga kakor för statistik eller marknadsföring. På kontaktsidan finns en karta från Google Maps. När kartan visas tar Google emot din IP-adress och kan sätta egna kakor enligt Googles integritetspolicy."
+              ],
+              "image": null,
+              "imageSide": "right",
+              "button": null,
+              "tone": "light"
+            },
+            "rattigheter": {
+              "type": "text",
+              "hidden": false,
+              "anchor": "",
+              "label": "",
+              "eyebrow": "",
+              "heading": "Dina rättigheter",
+              "paragraphs": [
+                "Du har rätt att få veta vilka uppgifter vi har om dig, att få fel rättade och att få uppgifterna raderade. Mejla info@vastkustbygg.se så hjälper vi dig.",
+                "Tycker du att vi hanterar dina uppgifter fel kan du vända dig till Integritetsskyddsmyndigheten (IMY) på imy.se."
+              ],
+              "image": null,
+              "imageSide": "right",
+              "button": null,
+              "tone": "light"
             }
           }
         }
