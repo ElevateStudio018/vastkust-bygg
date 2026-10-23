@@ -63,6 +63,23 @@ ska skrivas exakt som nedan.
 | `RESEND_API_KEY` | Mejl om offertförfrågningar och förslag. | [resend.com](https://resend.com): registrera dig med **elevate.studio018@gmail.com** → **API Keys** → **Create API key**. Med den adressen behövs ingen egen domän under testperioden. |
 | `ANTHROPIC_API_KEY` | AI-assistenten. | [console.anthropic.com](https://console.anthropic.com) → **API keys** → **Create key**. Lägg också in ett betalkort och några dollar under **Billing**. |
 
+### Steg 5 – Google-omdömen (valfritt)
+
+Hemsidan hämtar omdömena själv var sjätte timme och visar dem i stället för de som står i adminpanelen.
+ServiceFinder fungerar redan, utan nyckel. För Google behövs två saker:
+
+1. **Nyckel:** [console.cloud.google.com](https://console.cloud.google.com) → skapa ett projekt → **APIs & Services**
+   → **Library** → slå på **Places API (New)** → **Credentials** → **Create credentials** → **API key**. Begränsa
+   nyckeln till Places API (New). Google kräver ett betalkort på kontot, men fyra hämtningar om dagen ligger långt
+   under den gratis månadskvoten, så det kostar inget.
+2. **Plats-id:** sök fram Västkust Bygg & Montage på
+   [Place ID Finder](https://developers.google.com/maps/documentation/places/web-service/place-id) och kopiera id:t
+   (börjar med `ChIJ`).
+
+Lägg in dem på GitHub under repot → **Settings** → **Secrets and variables** → **Actions**: nyckeln som *secret*
+`GOOGLE_PLACES_API_KEY`, plats-id:t som *variable* `GOOGLE_PLACE_ID`. Nästa bygge tar med Googles omdömen (Google
+lämnar ut högst fem åt gången, och hemsidan sparar dem efter hand).
+
 ### Vid lansering (senare, när du säger till)
 
 - Västkust Bygg (info@vastkustbygg.se) läggs till som admin och får sin inbjudan.

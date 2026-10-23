@@ -11,7 +11,8 @@ import { focusStyle, imageProps } from "@/lib/site/images.ts";
 import { QUOTE_HREF } from "@/lib/site/links.ts";
 import type { Service, SiteData } from "@/lib/site/schema.ts";
 
-/** The reviews shown on the service pages: those of the first reviews section on the site. */
+/** The reviews typed into the admin, for the service pages: those of the first reviews section on the site. The
+ *  reviews fetched from ServiceFinder and Google replace them when there are any (see Reviews). */
 function siteReviews(site: SiteData) {
   for (const page of list(site.pages)) {
     for (const section of list(page.sections)) {

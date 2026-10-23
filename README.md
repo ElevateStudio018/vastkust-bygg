@@ -15,6 +15,9 @@ får offertförfrågningarna i panelen och kan be AI-assistenten om ändringar.
   loggans svart och blått).
 - **Adminpanelen** (`app/admin`, `components/admin`) och **Supabase** (`supabase/`: databas, Edge Functions för
   publicering, offertförfrågningar, förslag, inbjudningar och AI) är desamma som i Bugg-test.
+- **Omdömena** hämtas från ServiceFinder (och Google, med nyckel) före varje bygge av `scripts/fetch-reviews.ts`
+  till `content/reviews.json`. Workflowet bygger var sjätte timme och checkar in filen när det kommit nya, så listan
+  växer. Finns det hämtade omdömen visas de i stället för dem i adminpanelen.
 - Utan Supabase byggs sajten från `content/baseline.json` och offertformuläret mejlar via FormSubmit till Elevate
   Studio; adminpanelen visar då att den inte är ansluten.
 
@@ -65,4 +68,4 @@ och alla projektbilder.
 - Tjänstesidornas längre texter och ”Det här kan ingå”, arbetsgången, frågorna och svaren och projektbeskrivningarna.
 - Gatuadress, org.nr och grundår saknas på gamla sajten och visas inte (grundåret 2023 i företagsuppgifterna är en
   platshållare som inte syns någonstans).
-- Omdömet från Ingvar Nore kommer från Google; de övriga fyra har ort och datum men ingen källa på gamla sajten.
+- Omdömena från gamla sajten (i adminpanelen) visas bara om inga kunde hämtas från ServiceFinder eller Google.

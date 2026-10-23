@@ -212,6 +212,9 @@
 .vk .rev-track .rev { width: 100%; }
 .vk .rating { display: inline-flex; align-items: center; gap: 10px; margin: 0; font-size: 15px; color: var(--muted); }
 .vk .rating b { color: var(--ink); }
+.vk a.rating { text-decoration: none; }
+.vk a.rating:hover span { color: var(--ink); }
+.vk .rating-list { display: inline-flex; flex-direction: column; gap: 4px; }
 .vk .stars { display: inline-flex; gap: 2px; color: #f5b301; }
 .vk .stars .ic { width: 17px; height: 17px; }
 .vk .revs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }

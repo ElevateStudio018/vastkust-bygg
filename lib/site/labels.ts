@@ -388,6 +388,7 @@ export const sectionFields: Record<SectionType, FieldSpec[]> = {
       key: "items",
       label: "Omdömen",
       kind: "collection",
+      hint: "Hemsidan hämtar era omdömen från ServiceFinder och Google av sig själv och visar dem. De här visas bara om inga kunde hämtas.",
       item: {
         label: "Omdöme",
         titleKey: "name",

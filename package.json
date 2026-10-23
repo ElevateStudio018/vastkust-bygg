@@ -5,12 +5,13 @@
   "scripts": {
     "predev": "tsx scripts/fetch-snapshot.ts",
     "dev": "next dev",
-    "prebuild": "tsx scripts/fetch-snapshot.ts",
+    "prebuild": "tsx scripts/fetch-snapshot.ts && tsx scripts/fetch-reviews.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "photos": "node scripts/photo-sizes.mjs",
-    "snapshot": "tsx scripts/fetch-snapshot.ts"
+    "snapshot": "tsx scripts/fetch-snapshot.ts",
+    "reviews": "tsx scripts/fetch-reviews.ts"
   },
   "dependencies": {
     "@fontsource/figtree": "^5.3.0",
