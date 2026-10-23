@@ -12,7 +12,8 @@ const PAUSE_MS = 4000;
 const MIN_TO_ROLL = 4;
 
 /**
- * The reviews in a row that rolls by on its own and slows down under the mouse. The row is drawn twice so it can loop
+ * The reviews in a row that rolls by on its own, from one edge of the screen to the other, and slows down under the
+ * mouse. The row is drawn twice so it can loop
  * without a jump; the copy is hidden from screen readers and the keyboard. The arrows and swiping still work, and the
  * roll stands still for visitors who have asked for less motion.
  */
@@ -116,7 +117,7 @@ export function ReviewSlider({ head, aside, children, labels }: { head: ReactNod
           </span>
         </div>
       </div>
-      <div className="rev-slider" onPointerEnter={() => (hovering.current = true)} onPointerLeave={() => (hovering.current = false)}>
+      <div className={`rev-slider${loops ? " full" : ""}`} onPointerEnter={() => (hovering.current = true)} onPointerLeave={() => (hovering.current = false)}>
         <ul className={`rev-track${rolling ? " rolling" : ""}`} ref={track} tabIndex={0}>
           {items}
           {loops && items.map((item, index) => cloneElement(item as ReactElement<Record<string, unknown>>, { key: `copy-${item.key ?? index}`, "aria-hidden": true, "data-copy": "" }))}

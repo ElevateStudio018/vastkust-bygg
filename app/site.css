@@ -216,6 +216,10 @@
 .vk .rev-track { list-style: none; margin: 0; padding: 8px 0 36px; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .vk .rev-track::-webkit-scrollbar { display: none; }
 .vk .rev-track.rolling { scroll-snap-type: none; }
+/* A rolling row runs the full width of the screen; the heading above stays in line with the page. */
+.vk .sec:has(.rev-slider.full) { overflow-x: clip; }
+.vk .rev-slider.full { margin: 0 calc(50% - 50vw); padding: 0; }
+.vk .rev-slider.full .rev-track { grid-auto-columns: clamp(300px, 27vw, 420px); }
 .vk .rev-track > li { scroll-snap-align: start; display: flex; }
 .vk .rev-track .rev { width: 100%; }
 .vk .rating { display: inline-flex; align-items: center; gap: 10px; margin: 0; font-size: 15px; color: var(--muted); }
@@ -393,6 +397,10 @@
 .vk .sec-head { flex-direction: column; align-items: flex-start; gap: 14px; }
 .vk .faq details p { margin-right: 0; }
 .vk .rev-track { grid-auto-columns: 86%; gap: 12px; }
+.vk .rev-slider.full .rev-track { grid-auto-columns: 82vw; }
+.vk .rev-nav { flex-wrap: wrap; row-gap: 14px; }
+.vk .rev-nav .rating-list { flex: 1 1 100%; }
+.vk .rev-nav .rev-btns { margin-left: auto; }
 .vk .rev-nav { width: 100%; justify-content: space-between; }
 .vk .foot-grid { grid-template-columns: 1fr; }
 .vk .foot-end { flex-direction: column; }
