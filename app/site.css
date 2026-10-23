@@ -143,6 +143,13 @@
 .vk .tile-text { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; padding: 24px; }
 .vk .tile-text b { display: block; font-size: 22px; letter-spacing: -.015em; margin-bottom: 6px; }
 .vk .tile-text span { display: block; font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, .85); }
+/* With a mouse the description stays hidden until the tile is pointed at (or reached with the keyboard); on touch
+   screens, which cannot hover, it is always shown. */
+@media (hover: hover) {
+  .vk .tile-text b { margin-bottom: 0; }
+  .vk .tile-text span { max-height: 0; opacity: 0; overflow: hidden; transform: translateY(8px); transition: max-height .45s var(--ease), opacity .3s, transform .45s var(--ease), padding-top .45s var(--ease); }
+  .vk .tile > a:hover .tile-text span, .vk .tile > a:focus-visible .tile-text span { max-height: 9em; padding-top: 6px; opacity: 1; transform: none; }
+}
 .vk .tile > div { padding: 30px 28px; display: flex; flex-direction: column; }
 .vk .tile-h { font-size: 22px; font-weight: 700; letter-spacing: -.015em; line-height: 1.2; margin-bottom: 14px; }
 .vk .tile-list > div { background: var(--tint); }
@@ -206,7 +213,7 @@
 .vk .rev-btns button:hover:not(:disabled) { background: var(--ink); color: #fff; }
 .vk .rev-btns button:disabled { opacity: .3; cursor: default; }
 .vk .rev-slider { overflow: hidden; margin: -4px -6px 0; padding: 0 6px; }
-.vk .rev-track { list-style: none; margin: 0; padding: 4px 0 24px; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.vk .rev-track { list-style: none; margin: 0; padding: 8px 0 36px; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .vk .rev-track::-webkit-scrollbar { display: none; }
 .vk .rev-track > li { scroll-snap-align: start; display: flex; }
 .vk .rev-track .rev { width: 100%; }
@@ -220,6 +227,13 @@
 .vk .revs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .vk .rev { margin: 0; background: #fff; border-radius: var(--r); padding: 28px; display: flex; flex-direction: column; box-shadow: 0 1px 0 var(--line), 0 10px 30px -18px rgba(18, 20, 24, .25); }
 .vk .sec:not(.tint) .rev { border: 1px solid var(--line); box-shadow: none; }
+.vk .rev-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.vk .rev-src { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.vk .src-logo { width: 18px; height: 18px; flex: none; }
+.vk .rev-a { display: flex; width: 100%; color: inherit; text-decoration: none; border-radius: var(--r); }
+.vk .rev-a .rev { transition: transform .25s var(--ease), box-shadow .25s; }
+.vk .rev-a:hover .rev { transform: translateY(-3px); box-shadow: 0 1px 0 var(--line), 0 18px 40px -20px rgba(18, 20, 24, .35); }
+.vk .rev-a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 .vk .rev-job { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin: 14px 0 8px; }
 .vk .rev blockquote { margin: 0 0 22px; flex: 1; }
 .vk .rev blockquote p { margin: 0; font-size: 16px; }

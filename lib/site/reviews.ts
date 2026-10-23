@@ -24,6 +24,8 @@ export const sourcedReviewSchema = z.object({
   /** YYYY-MM-DD. */
   date: z.string(),
   rating: z.number().int().min(0).max(5),
+  /** Where the review can be read (the company's page on that site, or the review itself on Google Maps). */
+  url: z.string().default(""),
 });
 
 export const reviewsFileSchema = z.object({

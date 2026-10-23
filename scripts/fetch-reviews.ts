@@ -44,6 +44,7 @@ async function fromServiceFinder(): Promise<Fetched> {
       name: text(r.author?.name),
       date: text(r.datePublished).slice(0, 10),
       rating: stars(r.reviewRating?.ratingValue),
+      url: SERVICEFINDER_URL,
     }))
     .filter((r: SourcedReview) => r.name && (r.quote || r.title));
   return {
@@ -72,6 +73,7 @@ async function fromGoogle(): Promise<Fetched> {
       name: text(r.authorAttribution?.displayName),
       date: text(r.publishTime).slice(0, 10),
       rating: stars(r.rating),
+      url: text(r.googleMapsUri) || text(place.googleMapsUri),
     }))
     .filter((r: SourcedReview) => r.quote && r.name);
   return {
