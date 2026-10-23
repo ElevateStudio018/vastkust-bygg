@@ -6,21 +6,24 @@ import { Icon } from "../Icon";
 /** Pixels a second: the steady roll, and the slow roll while the pointer is over the reviews. */
 const SPEED = 38;
 const SLOW = 9;
-/** How long the roll waits after the visitor scrolls, swipes or uses the arrows themselves. */
+/** How long the roll waits after the visitor scrolls or swipes the row themselves. */
 const PAUSE_MS = 4000;
 /** Fewer reviews than this fit on the screen anyway, so they stand still. */
 const MIN_TO_ROLL = 4;
 
 /**
  * The reviews in a row that rolls by on its own, from one edge of the screen to the other, and slows down under the
- * mouse. The row is drawn twice so it can loop
- * without a jump; the copy is hidden from screen readers and the keyboard. The arrows and swiping still work, and the
- * roll stands still for visitors who have asked for less motion.
+ * mouse. The row is drawn twice so it can loop without a jump; the copy is hidden from screen readers and the
+ * keyboard. The arrows glide one review on and the roll carries on; swiping pauses it for a moment. The roll stands
+ * still for visitors who have asked for less motion.
  */
 export function ReviewSlider({ head, aside, children, labels }: { head: ReactNode; aside?: ReactNode; children: ReactNode; labels: { previous: string; next: string } }) {
   const track = useRef<HTMLUListElement>(null);
   const hovering = useRef(false);
   const pausedUntil = useRef(0);
+  /** Distance the arrows still have to glide; the roll carries it out bit by bit, then simply rolls on. */
+  const glide = useRef(0);
+  const animated = useRef(false);
   const items = Children.toArray(children).filter(isValidElement) as ReactElement[];
   const loops = items.length >= MIN_TO_ROLL;
   const [rolling, setRolling] = useState(false);
@@ -52,6 +55,7 @@ export function ReviewSlider({ head, aside, children, labels }: { head: ReactNod
     let frame = 0;
     if (loops && !still) {
       setRolling(true);
+      animated.current = true;
       let speed = 0;
       let last = performance.now();
       let position = el.scrollLeft;
@@ -65,9 +69,12 @@ export function ReviewSlider({ head, aside, children, labels }: { head: ReactNod
           const target = hovering.current ? SLOW : SPEED;
           speed += (target - speed) * Math.min(1, seconds * 3);
           if (Math.abs(el.scrollLeft - position) > 2) position = el.scrollLeft;
-          position += speed * seconds;
+          const part = glide.current * Math.min(1, seconds * 6);
+          glide.current = Math.abs(glide.current - part) < 0.5 ? 0 : glide.current - part;
+          position += speed * seconds + part;
           const width = loopWidth(el);
           if (width > 0 && position >= width) position -= width;
+          if (width > 0 && position < 0) position += width;
           el.scrollLeft = position;
         }
         frame = requestAnimationFrame(tick);
@@ -80,6 +87,7 @@ export function ReviewSlider({ head, aside, children, labels }: { head: ReactNod
     el.addEventListener("wheel", pause, { passive: true });
     el.addEventListener("focusin", pause);
     return () => {
+      animated.current = false;
       cancelAnimationFrame(frame);
       el.removeEventListener("scroll", updateEnds);
       window.removeEventListener("resize", updateEnds);
@@ -92,10 +100,15 @@ export function ReviewSlider({ head, aside, children, labels }: { head: ReactNod
   function step(direction: 1 | -1) {
     const el = track.current;
     if (!el) return;
-    pausedUntil.current = performance.now() + PAUSE_MS;
     const item = el.querySelector("li");
     const gap = parseFloat(getComputedStyle(el).columnGap || "0") || 0;
     const distance = item ? item.getBoundingClientRect().width + gap : el.clientWidth;
+    // While rolling: glide one review on (or back) and keep rolling, without stopping.
+    if (animated.current) {
+      pausedUntil.current = 0;
+      glide.current += direction * distance;
+      return;
+    }
     // Going back from the very start: jump to the same spot in the copy first, so there is somewhere to go.
     if (loops && direction < 0 && el.scrollLeft < distance) el.scrollLeft += loopWidth(el);
     el.scrollBy({ left: direction * distance, behavior: "smooth" });
