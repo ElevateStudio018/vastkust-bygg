@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-23T12:47:46.253Z",
+  "fetchedAt": "2026-10-23T12:54:41.415Z",
   "sources": [
     {
       "id": "servicefinder",
@@ -27,6 +27,16 @@
       "quote": "Helrenovering av badrum. Bra genomfört arbete där arbetet utförts enligt utsatt tid. Uppskattar snabb kommunikation under hela processen. Nöjd med resultatet och kommer anlita Västkust bygg och Montage AB till andra uppdrag framöver. Kan varmt rekommendera dem.",
       "name": "Maria",
       "date": "2025-04-15",
+      "rating": 5,
+      "url": "https://servicefinder.se/foretag/6845744"
+    },
+    {
+      "id": "servicefinder-2024-11-13-tommie",
+      "source": "servicefinder",
+      "title": "Byta ett par fönster i källare i Göteborg",
+      "quote": "",
+      "name": "Tommie",
+      "date": "2024-11-13",
       "rating": 5,
       "url": "https://servicefinder.se/foretag/6845744"
     }
