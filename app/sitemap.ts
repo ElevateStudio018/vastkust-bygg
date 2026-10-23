@@ -27,5 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...pages, ...services];
+  const reviews: MetadataRoute.Sitemap = [{ url: `${siteUrl}/omdomen`, changeFrequency: "weekly", priority: 0.6 }];
+
+  return [...pages, ...services, ...reviews];
 }

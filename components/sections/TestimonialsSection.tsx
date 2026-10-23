@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Eyebrow, Stars } from "../vk/parts";
+import { Icon } from "../Icon";
 import { ReviewSlider } from "../vk/ReviewSlider";
 import { SourceLogo } from "../vk/SourceLogo";
 import { list } from "@/lib/site/collection.ts";
@@ -99,6 +101,9 @@ export function Reviews({ eyebrow, heading, text, reviews: own, site, tint = tru
           </span>
         </a>
       ))}
+      <Link href="/omdomen" className="more">
+        Visa alla omdömen <Icon name="ArrowRight" className="ic" />
+      </Link>
     </span>
   ) : average > 0 ? (
     <p className="rating">
