@@ -15,7 +15,7 @@ får offertförfrågningarna i panelen och kan be AI-assistenten om ändringar.
   loggans svart och blått).
 - **Adminpanelen** (`app/admin`, `components/admin`) och **Supabase** (`supabase/`: databas, Edge Functions för
   publicering, offertförfrågningar, förslag, inbjudningar och AI) är desamma som i Bugg-test.
-- **Omdömena** hämtas från ServiceFinder (och Google, med nyckel) före varje bygge av `scripts/fetch-reviews.ts`
+- **Omdömena** hämtas från ServiceFinder och Google (via SerpApi) före varje bygge av `scripts/fetch-reviews.ts`
   till `content/reviews.json`. Workflowet bygger var sjätte timme och checkar in filen när det kommit nya, så listan
   växer. Finns det hämtade omdömen visas de i stället för dem i adminpanelen.
 - Utan Supabase byggs sajten från `content/baseline.json` och offertformuläret mejlar via FormSubmit till Elevate

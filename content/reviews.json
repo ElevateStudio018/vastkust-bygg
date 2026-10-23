@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-23T12:54:41.415Z",
+  "fetchedAt": "2026-10-23T13:15:16.193Z",
   "sources": [
     {
       "id": "servicefinder",
@@ -7,9 +7,36 @@
       "rating": 4.9,
       "count": 20,
       "url": "https://servicefinder.se/foretag/6845744"
+    },
+    {
+      "id": "google",
+      "name": "Google",
+      "rating": 5,
+      "count": 2,
+      "url": "https://www.google.com/maps/place/?q=place_id:ChIJrz2xu5lvzC4RC-5UkH9xpUw"
     }
   ],
   "reviews": [
+    {
+      "id": "google-2026-10-22t10-44-49-henrik-freed",
+      "source": "google",
+      "title": "",
+      "quote": "Vi är supernöjda med renoveringen av vårt badrum, så jäkla bra det har blivit. En hel del utmaningar med detta badrum men det löste Västkust Bygg och Montage AB på ett galant och tillfredsställande sätt. En eloge till Emanuel som kom med goda inspel och idéer på lösningar och andra tips och trix på vägen. Vi kan inte annat än att varmt rekommendera Västkust Bygg och Montage.",
+      "name": "Henrik Freed",
+      "date": "2026-10-22",
+      "rating": 5,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pkalQwRllUMnRtVmtGeVdqWm1VSEZtWkVob1NHYxAB!2m1!1s0x0:0x4ca5717f9054ee0b!3m1!1s2@1:CAIQACodChtycF9oOjdjT0FYT2tmVkFyWjZmUHFmZEhoSGc%7C%7C?hl=sv"
+    },
+    {
+      "id": "google-2025-12-16t09-55-24-ingvar-nore",
+      "source": "google",
+      "title": "",
+      "quote": "Västkust Bygg och Montage har nu renoverat vårt badrum. Emanuel Ström har genomfört renoveringen väldigt professionellt och har under hela processen givit goda råd och lyssnat på oss som kunder. Vi anlitar gärna detta företag fler gånger / Ingvar Nore",
+      "name": "Ingvar Nore",
+      "date": "2025-12-16",
+      "rating": 5,
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pSa1lXZHVNRXBvUnpGbmFsSlhWWEI0UTNkcE1YYxAB!2m1!1s0x0:0x4ca5717f9054ee0b!3m1!1s2@1:CAIQACodChtycF9oOjRkYWduMEpoRzFnalJXVXB4Q3dpMXc%7C%7C?hl=sv"
+    },
     {
       "id": "servicefinder-2025-10-06-sara",
       "source": "servicefinder",

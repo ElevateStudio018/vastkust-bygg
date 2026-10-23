@@ -34,9 +34,10 @@ jobs:
           # The site's Supabase project (public values, row level security protects the data). Repository variables
           # (Settings → Secrets and variables → Actions → Variables) override the project ref eeasibbhydlpoaomjwsn.
           NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL || 'https://eeasibbhydlpoaomjwsn.supabase.co' }}
-          # Google reviews, once the key and the place are set (SETUP.md, step 5); without them only ServiceFinder.
+          # Google reviews through SerpApi (SETUP.md, step 5). Only the scheduled builds fetch them, four a day, which
+          # stays well inside the free 250 a month; the other builds keep the ones already saved.
+          SERPAPI_KEY: ${{ github.event_name == 'schedule' && secrets.SERPAPI_KEY || '' }}
           GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
-          GOOGLE_PLACE_ID: ${{ vars.GOOGLE_PLACE_ID }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVlYXNpYmJoeWRscG9hb21qd3NuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIxNTc5NzYsImV4cCI6MjEwNzczMzk3Nn0.sDuvaPniIlfhnidcC2wICdKsVK09ssDtYgQEwHTQtok' }}
       # Keeps the reviews fetched in this build, so the list grows past the few each site shows at a time.
       - name: Save new reviews

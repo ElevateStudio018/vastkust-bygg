@@ -5,7 +5,8 @@
 // rating from last time, and the build never fails because of it.
 //
 // ServiceFinder: the company's public page, which lists the overall rating and the three latest reviews.
-// Google: the Places API, when GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID are set (up to five reviews, Google's pick).
+// Google: through SerpApi when SERPAPI_KEY is set (the newest reviews, free up to 250 fetches a month), otherwise
+// through Google's Places API when GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID are set (up to five, Google's pick).
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { reviewsFileSchema, type ReviewSource, type ReviewsFile, type SourcedReview } from "../lib/site/reviews.ts";
 
@@ -14,7 +15,10 @@ const out = "content/reviews.json";
 const KEEP = 30;
 const SERVICEFINDER_URL = process.env.SERVICEFINDER_URL ?? "https://servicefinder.se/foretag/6845744";
 const GOOGLE_KEY = process.env.GOOGLE_PLACES_API_KEY;
-const GOOGLE_PLACE = process.env.GOOGLE_PLACE_ID;
+const GOOGLE_PLACE = process.env.GOOGLE_PLACE_ID ?? "ChIJrz2xu5lvzC4RC-5UkH9xpUw";
+const SERPAPI_KEY = process.env.SERPAPI_KEY;
+/** Västkust Bygg och Montage AB on Google Maps, as SerpApi names it. */
+const GOOGLE_DATA_ID = process.env.GOOGLE_DATA_ID ?? "0x2ecc6f99bbb13daf:0x4ca5717f9054ee0b";
 
 interface Fetched {
   source: ReviewSource;
@@ -66,7 +70,7 @@ async function fromGoogle(): Promise<Fetched> {
   const place = (await response.json()) as Record<string, any>;
   const reviews = (place.reviews ?? [])
     .map((r: Record<string, any>): SourcedReview => ({
-      id: `google-${text(r.publishTime).slice(0, 19)}-${text(r.authorAttribution?.displayName)}`.toLowerCase().replace(/[^a-z0-9-]+/g, "-"),
+      id: googleId(text(r.publishTime), text(r.authorAttribution?.displayName)),
       source: "google",
       title: "",
       quote: text(r.originalText?.text) || text(r.text?.text),
@@ -82,6 +86,31 @@ async function fromGoogle(): Promise<Fetched> {
   };
 }
 
+const googleId = (date: string, name: string) => `google-${date.slice(0, 19)}-${name}`.toLowerCase().replace(/[^a-z0-9-]+/g, "-");
+
+async function fromSerpApi(): Promise<Fetched> {
+  const params = new URLSearchParams({ engine: "google_maps_reviews", data_id: GOOGLE_DATA_ID, hl: "sv", sort_by: "newestFirst", api_key: SERPAPI_KEY! });
+  const data = (await (await get(`https://serpapi.com/search.json?${params}`)).json()) as Record<string, any>;
+  if (data.error) throw new Error(`SerpApi: ${data.error}`);
+  const placeUrl = `https://www.google.com/maps/place/?q=place_id:${GOOGLE_PLACE}`;
+  const reviews = (data.reviews ?? [])
+    .map((r: Record<string, any>): SourcedReview => ({
+      id: googleId(text(r.iso_date), text(r.user?.name)),
+      source: "google",
+      title: "",
+      quote: text(r.extracted_snippet?.original) || text(r.snippet),
+      name: text(r.user?.name),
+      date: text(r.iso_date).slice(0, 10),
+      rating: stars(r.rating),
+      url: text(r.link) || placeUrl,
+    }))
+    .filter((r: SourcedReview) => r.quote && r.name);
+  return {
+    source: { id: "google", name: "Google", rating: Number(data.place_info?.rating) || 0, count: Number(data.place_info?.reviews) || 0, url: placeUrl },
+    reviews,
+  };
+}
+
 function previous(): ReviewsFile {
   if (!existsSync(out)) return { fetchedAt: "", sources: [], reviews: [] };
   const parsed = reviewsFileSchema.safeParse(JSON.parse(readFileSync(out, "utf8")));
@@ -91,7 +120,8 @@ function previous(): ReviewsFile {
 async function main() {
   const last = previous();
   const jobs: [ReviewSource["id"], () => Promise<Fetched>][] = [["servicefinder", fromServiceFinder]];
-  if (GOOGLE_KEY && GOOGLE_PLACE) jobs.push(["google", fromGoogle]);
+  if (SERPAPI_KEY) jobs.push(["google", fromSerpApi]);
+  else if (GOOGLE_KEY) jobs.push(["google", fromGoogle]);
 
   const sources: ReviewSource[] = [];
   const reviews: SourcedReview[] = [];
