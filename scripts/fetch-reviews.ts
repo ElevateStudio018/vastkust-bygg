@@ -111,6 +111,11 @@ async function main() {
     }
   }
 
+  // A source not fetched in this run (Google without its key) keeps what it had.
+  const fetchedIds = new Set(jobs.map(([id]) => id));
+  sources.push(...last.sources.filter((s) => !fetchedIds.has(s.id)));
+  reviews.push(...last.reviews.filter((r) => !fetchedIds.has(r.source)));
+
   reviews.sort((a, b) => b.date.localeCompare(a.date));
   const unchanged = JSON.stringify({ sources, reviews }) === JSON.stringify({ sources: last.sources, reviews: last.reviews });
   // The time only moves when something changed, so the workflow commits the file only when there is news.
