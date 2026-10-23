@@ -1,5 +1,3 @@
-/* Headings: Rethink Sans ExtraBold (SIL Open Font License), served from the site itself. */
-@font-face { font-family: "Rethink Sans"; font-style: normal; font-weight: 800; font-display: swap; src: url("./fonts/rethink-sans-800.woff2") format("woff2"); }
 /* The public site's look (the approved design), scoped to .vk so the admin panel is left alone. Colours and fonts
    come from the admin's theme. */
 .vk {
@@ -29,7 +27,7 @@
   --head-h: 78px;
   --r: 10px;
   --font: var(--font-body);
-  --font-h: "Rethink Sans", var(--font-heading);
+  --font-h: var(--font-heading);
   --font-b: var(--font-button);
   --ease: cubic-bezier(.22, 1, .36, 1);
 }
@@ -40,7 +38,7 @@
 .vk img { display: block; max-width: 100%; height: auto; }
 .vk a { color: inherit; }
 .vk button, .vk input, .vk select, .vk textarea { font: inherit; color: inherit; }
-.vk h1, .vk h2, .vk h3 { font-family: var(--font-h); font-weight: 800; line-height: 1.1; margin: 0 0 .5em; letter-spacing: -.01em; }
+.vk h1, .vk h2, .vk h3 { font-family: var(--font-h); font-weight: 700; line-height: 1.12; margin: 0 0 .5em; letter-spacing: -.025em; }
 .vk h1 { font-size: clamp(38px, 5.4vw, 68px); }
 .vk h2 { font-size: clamp(28px, 3.2vw, 42px); }
 .vk h3 { font-size: 20px; letter-spacing: -.01em; line-height: 1.25; }
