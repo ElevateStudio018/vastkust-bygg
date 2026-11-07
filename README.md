@@ -4,11 +4,13 @@ Ny hemsida för [Västkust Bygg & Montage AB](https://www.vastkustbygg.se/) (byg
 Kungsbacka), med adminpanelen från Elevate Studios Bugg-test: ägaren ändrar texter, bilder, färger och sidor själv,
 får offertförfrågningarna i panelen och kan be AI-assistenten om ändringar.
 
-**Kom igång: läs [SETUP.md](SETUP.md)** – GitHub Pages, Supabase och inloggningen.
+**Kom igång: läs [SETUP.md](SETUP.md)** – GitHub Pages, Supabase och inloggningen. **Byte till vastkustbygg.se:
+se [LANSERING.md](LANSERING.md).**
 
 ## Så hänger det ihop
 
-- **Next.js** (statisk export till GitHub Pages, basePath `/vastkust-bygg`). Hela innehållet är ett dokument
+- **Next.js** (statisk export till GitHub Pages, basePath `/vastkust-bygg` på förhandsadressen, roten när repo-variabeln
+  `SITE_DOMAIN` är satt). Hela innehållet är ett dokument
   (`lib/site/schema.ts`); varje sida är en lista sektioner som ritas av `components/sections/`.
 - **Utseendet** är den godkända designen (en mix av Elevate Studios hantverkarsajter): `app/site.css`, avgränsad till
   `.vk` så att adminpanelen inte påverkas. Färger och typsnitt kommer från temat i adminpanelen (Plus Jakarta Sans,

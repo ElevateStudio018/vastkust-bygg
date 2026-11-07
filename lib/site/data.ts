@@ -8,7 +8,12 @@ import { withBasePath } from "./images.ts";
 let site: SiteData | undefined;
 
 export function getSite(): SiteData {
-  site ??= siteDataSchema.parse(snapshot);
+  if (!site) {
+    site = siteDataSchema.parse(snapshot);
+    // On the site's own domain the links point there, whatever address the content was published with.
+    const ownUrl = process.env.NEXT_PUBLIC_SITE_URL;
+    if (ownUrl) site = { ...site, settings: { ...site.settings, siteUrl: ownUrl } };
+  }
   return site;
 }
 
