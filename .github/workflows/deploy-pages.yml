@@ -31,9 +31,9 @@ jobs:
       - run: npm run build
         env:
           GITHUB_PAGES: "true"
-          # The site's own domain once it is launched (repository variable SITE_DOMAIN, e.g. vastkustbygg.se). Empty:
-          # the preview at elevatestudio018.github.io/vastkust-bygg. See LANSERING.md before setting it.
-          CUSTOM_DOMAIN: ${{ vars.SITE_DOMAIN }}
+          # The site's own domain (repository variable SITE_DOMAIN overrides it). The site is served from vastkustbygg.se;
+          # GitHub Pages already redirects the old preview address there. See LANSERING.md.
+          CUSTOM_DOMAIN: ${{ vars.SITE_DOMAIN || 'vastkustbygg.se' }}
           # The site's Supabase project (public values, row level security protects the data). Repository variables
           # (Settings → Secrets and variables → Actions → Variables) override the project ref eeasibbhydlpoaomjwsn.
           NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL || 'https://eeasibbhydlpoaomjwsn.supabase.co' }}
@@ -54,8 +54,7 @@ jobs:
       # GitHub takes the domain from the repository's Pages settings when publishing with Actions; the CNAME file in
       # the published site states the same, so the build output says where it belongs.
       - name: Domain file
-        if: ${{ vars.SITE_DOMAIN != '' }}
-        run: echo "${{ vars.SITE_DOMAIN }}" > out/CNAME
+        run: echo "${{ vars.SITE_DOMAIN || 'vastkustbygg.se' }}" > out/CNAME
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
