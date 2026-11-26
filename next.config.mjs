@@ -13,6 +13,9 @@ const nextConfig = {
   // Plain files in public/ (such as the photos) need the base path added by hand.
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
+    // The repository and branch the admin panel publishes to (lib/admin/github.ts); GitHub Actions sets both.
+    NEXT_PUBLIC_CONTENT_REPOSITORY: process.env.GITHUB_REPOSITORY || "ElevateStudio018/vastkust-bygg",
+    NEXT_PUBLIC_CONTENT_BRANCH: process.env.GITHUB_REF_NAME || "claude/happy-wright-lhp01u",
     // Overrides the address in the content (canonical links, sitemap, social cards) once the site has its own domain.
     NEXT_PUBLIC_SITE_URL: customDomain ? `https://${customDomain}` : "",
   },

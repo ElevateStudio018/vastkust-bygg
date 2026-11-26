@@ -1,5 +1,5 @@
 // Runs before every build and dev start (npm prebuild/predev): writes content/snapshot.json, the content the site is
-// built from. That is content/site.json, which is edited in Pages CMS (.pages.yml) and committed to the repository;
+// built from. That is content/site.json, which the admin panel commits to the repository when content is published;
 // without it the published snapshot in Supabase when the site is connected to one, else the original content
 // (content/baseline.json). A build that cannot read or validate its content fails rather than publishing anything
 // else, so the live site keeps its last good version.
@@ -37,7 +37,7 @@ async function fetchPublished(): Promise<{ version: number; data: unknown }> {
 }
 
 /**
- * An image replaced in Pages CMS gets a new src but keeps the old image's smaller copies (variants), which would show
+ * An image replaced in the admin gets a new src but keeps the old image's smaller copies (variants), which would show
  * the old picture on phones; drop variants that are not copies of the current src.
  */
 function dropStaleVariants(value: unknown): unknown {
@@ -60,7 +60,10 @@ async function main() {
     }
     writeFileSync(out, JSON.stringify(parsed.data));
     await writeFonts(parsed.data);
-    console.log("snapshot: content/site.json (edited in Pages CMS)");
+    // The admin compares this with the version it published to tell when the new site is live.
+    const version = existsSync("content/version.json") ? JSON.parse(readFileSync("content/version.json", "utf8")).version ?? 0 : 0;
+    writeFileSync("public/site-version.json", JSON.stringify({ version }));
+    console.log(`snapshot: content/site.json (version ${version}, edited in the admin panel)`);
     return;
   }
   if (!url || !key) {
