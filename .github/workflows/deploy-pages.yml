@@ -31,10 +31,11 @@ jobs:
       - run: npm run build
         env:
           GITHUB_PAGES: "true"
-          # The site's own domain (repository variable SITE_DOMAIN overrides it). The site is served from vastkustbygg.se;
-          # GitHub Pages already redirects the old preview address there. See LANSERING.md.
-          CUSTOM_DOMAIN: ${{ vars.SITE_DOMAIN || 'vastkustbygg.se' }}
-          # The content comes from content/site.json (edited in Pages CMS); no database.
+          # Preview until launch: without a domain the site is built for elevatestudio018.github.io/vastkust-bygg, where the
+          # admin panel works too. At launch, set the repository variable SITE_DOMAIN to vastkustbygg.se (and the same
+          # domain under Settings → Pages) once the domain's DNS points to GitHub Pages. See LANSERING.md.
+          CUSTOM_DOMAIN: ${{ vars.SITE_DOMAIN || '' }}
+          # The content comes from content/site.json, which the admin panel commits; no database.
           # Google reviews through SerpApi (SETUP.md, step 5). Pushes do not fetch them; the scheduled builds (four a
           # day) and the ones started by hand do, well inside the free 250 a month. The rest keep the saved ones.
           SERPAPI_KEY: ${{ github.event_name != 'push' && secrets.SERPAPI_KEY || '' }}
@@ -49,9 +50,10 @@ jobs:
             git pull --rebase --autostash origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" || echo "Could not save the reviews; the next build fetches them again."
           fi
       # GitHub takes the domain from the repository's Pages settings when publishing with Actions; the CNAME file in
-      # the published site states the same, so the build output says where it belongs.
+      # the published site states the same, so the build output says where it belongs (only once a domain is set).
       - name: Domain file
-        run: echo "${{ vars.SITE_DOMAIN || 'vastkustbygg.se' }}" > out/CNAME
+        if: ${{ vars.SITE_DOMAIN != '' }}
+        run: echo "${{ vars.SITE_DOMAIN }}" > out/CNAME
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
